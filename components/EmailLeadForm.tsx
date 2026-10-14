@@ -114,14 +114,12 @@ export default function EmailLeadForm({
           {/* Instant PDF Access Unlock Button */}
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
-              href="#preview-resource"
-              onClick={() => {
-                alert('Downloading "7 Practical Exercises for Better Focus (PDF)". Check your browser downloads!');
-              }}
+              href="/Study_Abroad_Playbook_EBook.pdf"
+              download="The_Study_Abroad_Playbook_EBook.pdf"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-gold-500 to-gold-600 text-obsidian-950 font-bold hover:brightness-110 transition-all shadow-glow-gold text-sm"
             >
               <Download className="w-4 h-4" />
-              <span>Download PDF Immediately (Free)</span>
+              <span>Download Field Guide PDF (Free)</span>
             </a>
 
             {showWelcomeEmailCopy && (
@@ -138,25 +136,27 @@ export default function EmailLeadForm({
           {showEmailSample && (
             <div className="mt-6 text-left max-w-lg mx-auto p-5 bg-obsidian-950 rounded-2xl border border-white/10 text-xs text-obsidian-300 space-y-2">
               <div className="font-mono text-[10px] text-gold-400 border-b border-white/10 pb-1">
-                Subject: Your Copy: 7 Practical Exercises for Better Focus · The Inner Method
+                Subject: Your Copy: The 5 Removals Test & University Audit Diagnostic · Dr. Karan Gupta
               </div>
               <p className="font-serif text-sm font-semibold text-white">
-                Welcome to the quiet side of personal development.
+                Welcome to strategic international admissions clarity.
               </p>
               <p>
                 Hello {firstName || 'there'},
               </p>
               <p>
-                Thank you for requesting <em>7 Practical Exercises for Better Focus</em>. You can access your high-resolution field guide via the button below:
+                Thank you for requesting <em>The 5 Removals Test & Foreign University Audit Diagnostic</em>. You can access your high-resolution field guide PDF below:
               </p>
               <p className="font-medium text-gold-300">
-                [Download: 7-Practical-Exercises-Focus.pdf — 24 Pages]
+                <a href="/Study_Abroad_Playbook_EBook.pdf" download className="underline">
+                  [Download: The_Study_Abroad_Playbook_EBook.pdf — 29 Pages]
+                </a>
               </p>
               <p>
-                Each Sunday, we send one concise essay examining the neurobiology of attention and emotional patterns. If you ever wish to step away, you can unsubscribe with a single click at the bottom of any email.
+                Each Sunday, we analyze one strategic global admissions framework, visa shift, or high-ROI career metric. If you ever wish to step away, you can unsubscribe with a single click at the bottom of any email.
               </p>
               <p className="text-obsidian-500 pt-2 border-t border-white/10 text-[11px]">
-                The Inner Method Publishing · Unsubscribe · Manage Preferences
+                The Study Abroad Playbook Publishing · Unsubscribe · Manage Preferences
               </p>
             </div>
           )}

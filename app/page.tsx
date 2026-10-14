@@ -24,6 +24,8 @@ import {
   Headphones,
   Play,
   RotateCw,
+  Award,
+  Globe,
 } from 'lucide-react';
 
 export default function HomePage() {
@@ -52,30 +54,29 @@ export default function HomePage() {
       {/* ============================================================ */}
       {/* 1. HERO SECTION: INTERACTIVE 3D FLIPBOOK & WEBGL SHOWCASE     */}
       {/* ============================================================ */}
-      <section className="relative overflow-hidden pt-8 pb-20 md:pt-12 md:pb-28 border-b border-white/10 bg-gradient-to-b from-obsidian-950 via-obsidian-900 to-obsidian-950">
+      <section className="relative overflow-hidden pt-8 pb-20 md:pt-12 md:pb-28 border-b border-white/10 bg-gradient-to-b from-[#050E1A] via-obsidian-900 to-obsidian-950">
         {/* Luminous Ambient Background Glows */}
-        <div className="absolute top-10 left-1/4 w-[500px] h-[500px] bg-gold-500/10 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute top-36 right-10 w-[450px] h-[450px] bg-emerald-500/10 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute top-10 left-1/4 w-[500px] h-[500px] bg-gold-500/10 rounded-full blur-[130px] pointer-events-none" />
+        <div className="absolute top-36 right-10 w-[450px] h-[450px] bg-red-600/10 rounded-full blur-[140px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* Top Hero Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Column: Headline & Value Proposition */}
             <div className="lg:col-span-5 space-y-6 text-center lg:text-left">
               {/* Badge */}
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-300 text-xs font-semibold tracking-wide shadow-glow-gold">
-                <Sparkles className="w-3.5 h-3.5 text-gold-400" />
-                <span>Original Psychology & Focus Publishing</span>
+                <Award className="w-3.5 h-3.5 text-gold-400" />
+                <span>Ivy League Admissions Masterclass · Dr. Karan Gupta</span>
               </div>
 
               {/* Main Headline */}
               <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.12]">
-                Books to reclaim your attention and <span className="gold-shimmer">master your mind.</span>
+                How to win the global education game & avoid the <span className="text-[#E63946] gold-shimmer">1-Crore debt trap.</span>
               </h1>
 
               {/* Subtitle */}
               <p className="text-base sm:text-lg text-obsidian-300 max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
-                Science-grounded digital workbooks, interactive protocols, and companion audio guides engineered to dissolve chronic mental scatter and unlock 4 hours of daily depth.
+                Synthesized from 30 years of foreign admissions counseling and 100,000+ guided students across Harvard, Stanford, Oxford, and Cambridge into mathematical frameworks, visa reality checks, and high-ROI career algorithms.
               </p>
 
               {/* Action Buttons */}
@@ -84,7 +85,7 @@ export default function HomePage() {
                   href="/shop"
                   className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-gradient-to-r from-gold-500 to-gold-600 text-obsidian-950 font-bold text-sm hover:brightness-110 transition-all flex items-center justify-center gap-2 shadow-glow-gold"
                 >
-                  <span>Explore The Catalogue</span>
+                  <span>Explore The Playbook</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
 
@@ -94,26 +95,26 @@ export default function HomePage() {
                   className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-obsidian-800/80 text-white border border-gold-500/30 font-semibold text-sm hover:bg-obsidian-750 transition-all flex items-center justify-center gap-2 backdrop-blur-sm"
                 >
                   <Eye className="w-4 h-4 text-gold-400" />
-                  <span>Look Inside Sample</span>
+                  <span>Interactive 3D Preview</span>
                 </button>
               </div>
 
-              {/* Audio Protocol Sample Teaser */}
+              {/* Masterclass Audio Dialogue Sample */}
               <div className="p-4 rounded-2xl bg-obsidian-850/80 border border-white/10 backdrop-blur-sm flex items-center justify-between gap-3 text-xs">
                 <div className="flex items-center gap-3">
                   <button
                     onClick={() => setIsPlayingAudioSample(!isPlayingAudioSample)}
                     className="w-9 h-9 rounded-full bg-gold-500 text-obsidian-950 flex items-center justify-center font-bold hover:scale-105 transition-transform shrink-0 shadow-glow-gold"
-                    title="Play Audio Sample"
+                    title="Play Masterclass Audio Clip"
                   >
                     <Play className="w-4 h-4 fill-obsidian-950 ml-0.5" />
                   </button>
-                  <div>
+                  <div className="text-left">
                     <span className="font-semibold text-white block">
-                      Audio Companion Sample: Focus Priming
+                      Masterclass Dialogue: Dr. Karan Gupta & Raj Shamani
                     </span>
                     <span className="text-obsidian-400 text-[11px] font-mono">
-                      {isPlayingAudioSample ? 'Playing 15-second teaser protocol...' : 'Click to preview audio exercise'}
+                      {isPlayingAudioSample ? 'Playing: "The Indian Scarcity Math & Dundee vs Bath"' : 'Click to hear Dr. Gupta on avoiding bad loans'}
                     </span>
                   </div>
                 </div>
@@ -124,11 +125,11 @@ export default function HomePage() {
               <div className="pt-2 border-t border-white/10 grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs text-obsidian-300">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Instant PDF & EPUB</span>
+                  <span>100,000+ Students Guided</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Kindle & iPad Ready</span>
+                  <span>Instant Master PDF</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
@@ -150,7 +151,7 @@ export default function HomePage() {
                   }`}
                 >
                   <BookOpen className="w-3.5 h-3.5" />
-                  <span>3D Page-Flip Book</span>
+                  <span>3D Physical FlipBook</span>
                 </button>
 
                 <button
@@ -183,7 +184,7 @@ export default function HomePage() {
                 ))}
               </div>
 
-              {/* 3D Component Container */}
+              {/* 3D Component Stage */}
               <div className="w-full bg-obsidian-900/85 rounded-3xl border border-gold-500/30 p-4 sm:p-6 shadow-2xl backdrop-blur-xl relative border-glow-gold">
                 {heroMode === 'flipbook' ? (
                   <Realistic3DFlipBook
@@ -209,12 +210,22 @@ export default function HomePage() {
                       ${selectedProduct.price.toFixed(2)} USD
                     </span>
                   </div>
-                  <GumroadButton
-                    product={selectedProduct}
-                    variant="primary"
-                    size="sm"
-                    label="Instant Access"
-                  />
+                  <div className="flex items-center gap-2">
+                    <a
+                      href="/Study_Abroad_Playbook_EBook.pdf"
+                      download="The_Study_Abroad_Playbook_EBook.pdf"
+                      className="hidden sm:inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-obsidian-800 text-obsidian-300 hover:text-white border border-white/10 text-xs font-semibold"
+                    >
+                      <Download className="w-3.5 h-3.5" />
+                      <span>Sample PDF</span>
+                    </a>
+                    <GumroadButton
+                      product={selectedProduct}
+                      variant="primary"
+                      size="sm"
+                      label="Unlock Playbook"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -248,10 +259,10 @@ export default function HomePage() {
               </div>
               <div>
                 <h4 className="text-xs font-bold text-white uppercase tracking-wider">
-                  Instant File Delivery
+                  Instant Master PDF
                 </h4>
                 <p className="text-[11px] text-obsidian-400">
-                  Download immediately after purchase
+                  Full 29-page masterclass edition
                 </p>
               </div>
             </div>
@@ -262,10 +273,10 @@ export default function HomePage() {
               </div>
               <div>
                 <h4 className="text-xs font-bold text-white uppercase tracking-wider">
-                  Universal Formats
+                  Interactive 3D FlipBook
                 </h4>
                 <p className="text-[11px] text-obsidian-400">
-                  PDF, EPUB, Worksheets & Audio
+                  Audio page turns & 5 Removals Test
                 </p>
               </div>
             </div>
@@ -279,7 +290,7 @@ export default function HomePage() {
                   30-Day Guarantee
                 </h4>
                 <p className="text-[11px] text-obsidian-400">
-                  Zero-hassle money-back promise
+                  Zero-hassle refund promise
                 </p>
               </div>
             </div>
@@ -294,13 +305,13 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
             <span className="text-xs font-mono uppercase tracking-[0.25em] text-gold-400 font-semibold">
-              The Digital Catalogue
+              The Publications Suite
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-              Editions built for genuine cognitive change.
+              Editions built for strategic admissions ROI.
             </h2>
             <p className="text-sm sm:text-base text-obsidian-300 leading-relaxed">
-              Every edition unites neurobiology with practical fillable worksheets, guided audio sessions, and reflective journals.
+              Every edition unites real empirical admissions data, profile evaluation algorithms, and post-study employment frameworks.
             </p>
           </div>
 
@@ -319,7 +330,7 @@ export default function HomePage() {
               href="/shop"
               className="inline-flex items-center gap-2 text-sm font-semibold text-gold-400 hover:text-gold-300 transition-colors border-b-2 border-gold-500/50 pb-1"
             >
-              <span>Explore all digital editions and bundle pricing</span>
+              <span>Explore all editions, toolkits and bundle pricing</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -327,23 +338,23 @@ export default function HomePage() {
       </section>
 
       {/* ============================================================ */}
-      {/* 4. EDITORIAL METHODOLOGY: SYSTEMS OVER WILLPOWER            */}
+      {/* 4. ADMISSIONS METHODOLOGY & OPERATIONAL FRAMEWORKS            */}
       {/* ============================================================ */}
       <section className="py-24 bg-obsidian-900 border-y border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5 space-y-5">
               <span className="text-xs font-mono uppercase tracking-[0.25em] text-gold-400 font-semibold">
-                Our Editorial Philosophy
+                Strategic Admissions Engine
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white leading-tight">
-                Why willpower alone always runs dry.
+                Why degrees alone never guarantee jobs.
               </h2>
               <p className="text-sm text-obsidian-300 leading-relaxed">
-                Conventional self-help instructs you to &ldquo;hustle harder&rdquo; or apply brutal discipline. Yet when your autonomic nervous system is in sympathetic overdrive and your workspace is surrounded by dopamine triggers, the prefrontal cortex burns out within hours.
+                Aggregator agents sell students on glossy campus brochures and relaxed temporary visas. But without tier-1 academic pedigree, technical differentiation, and high-agency networking, hundreds of students end up stuck in low-wage survival loops.
               </p>
               <p className="text-sm text-obsidian-300 leading-relaxed">
-                The Inner Method takes the opposite approach: we engineer cognitive friction around distractions and eliminate resistance around depth.
+                Dr. Karan Gupta’s operational frameworks remove marketing illusions and engineer a calculated pathway to high-paying international employment or lucrative reverse-brain drain GCC leadership in India.
               </p>
 
               <div className="pt-2">
@@ -351,7 +362,7 @@ export default function HomePage() {
                   href="/about"
                   className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gold-400 hover:text-gold-300"
                 >
-                  <span>Read our complete publishing manifesto</span>
+                  <span>Learn about Dr. Gupta’s 30-year counseling track record</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
@@ -363,10 +374,10 @@ export default function HomePage() {
                   <Zap className="w-5 h-5" />
                 </div>
                 <h4 className="font-serif font-bold text-white text-lg">
-                  1. Attention Baselines
+                  1. The 5 Removals Test
                 </h4>
                 <p className="text-xs text-obsidian-300 leading-relaxed">
-                  Reset down-regulated dopamine receptors through structured stimulus plateaus so quiet, deep work feels natural again.
+                  Strip away the brochure, the logo, other people’s opinions, parental expectations, and fantasy placements to verify if a degree justifies your family’s life savings.
                 </p>
               </div>
 
@@ -375,22 +386,22 @@ export default function HomePage() {
                   <Layers className="w-5 h-5" />
                 </div>
                 <h4 className="font-serif font-bold text-white text-lg">
-                  2. Somatic Grounding
+                  2. The 5 Student Personas
                 </h4>
                 <p className="text-xs text-obsidian-300 leading-relaxed">
-                  Calm the body’s threat reflex before attempting cognitive reframing. Regulate physiological state before rewriting mental stories.
+                  Map your exact profile and budget: from Rahul (who should stay in India) to Ananya (US Ivy STEM), Zara (UK-to-US hybrid hack), and the 30+ Executive Pivot.
                 </p>
               </div>
 
               <div className="p-6 rounded-2xl bg-obsidian-850 border border-white/10 shadow-soft space-y-3 hover:border-gold-500/30 transition-all">
                 <div className="w-10 h-10 rounded-xl bg-gold-500/15 text-gold-400 flex items-center justify-center">
-                  <BookOpen className="w-5 h-5" />
+                  <Globe className="w-5 h-5" />
                 </div>
                 <h4 className="font-serif font-bold text-white text-lg">
-                  3. Forensic Reflection
+                  3. India’s $100B GCC Goldmine
                 </h4>
                 <p className="text-xs text-obsidian-300 leading-relaxed">
-                  Deconstruct recurring emotional scripts without shame. Map the exact trigger sequences that lead to avoidance or burnout.
+                  Learn how 2,100+ Global Capability Centers in Bengaluru and Hyderabad hire returning international degree holders at ₹35L–₹75L+ with zero visa anxiety.
                 </p>
               </div>
 
@@ -399,10 +410,10 @@ export default function HomePage() {
                   <ShieldCheck className="w-5 h-5" />
                 </div>
                 <h4 className="font-serif font-bold text-white text-lg">
-                  4. Frictionless Architecture
+                  4. The MATCH Job Strategy
                 </h4>
                 <p className="text-xs text-obsidian-300 leading-relaxed">
-                  Shape digital and physical spaces so that deep focus requires less conscious decision-making than getting distracted.
+                  Map the market, assemble project evidence, target mid-tier ecosystems, combine AI with human networking, and hone mock interviews to bypass placement cells.
                 </p>
               </div>
             </div>
@@ -411,16 +422,16 @@ export default function HomePage() {
       </section>
 
       {/* ============================================================ */}
-      {/* 5. READER TESTIMONIALS                                       */}
+      {/* 5. READER & STUDENT TESTIMONIALS                              */}
       {/* ============================================================ */}
       <section className="py-24 bg-obsidian-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-xl mx-auto mb-16 space-y-3">
             <span className="text-xs font-mono uppercase tracking-[0.25em] text-gold-400 font-semibold">
-              Global Reader Evidence
+              Verified Admissions Evidence
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white">
-              Trusted by thinkers worldwide.
+              Guided by Dr. Karan Gupta.
             </h2>
           </div>
 
@@ -432,11 +443,11 @@ export default function HomePage() {
                 ))}
               </div>
               <p className="text-sm text-obsidian-200 italic font-serif leading-relaxed">
-                &ldquo;The Focus Reset changed how I approach my morning writing sessions. Rather than fighting distraction with sheer frustration, the 72-hour stimulus baseline protocol gave me back 3 hours of quiet thought every day.&rdquo;
+                &ldquo;The 5 Removals Test saved my family from mortgaging our house for an average university in the UK. Dr. Gupta helped me target Bath instead, where I landed an executive role in renewables.&rdquo;
               </p>
               <div className="pt-2 border-t border-white/10 text-xs">
-                <strong className="block text-white font-serif">Marcus V.</strong>
-                <span className="text-obsidian-400">Academic Researcher, London</span>
+                <strong className="block text-white font-serif">Tisha S.</strong>
+                <span className="text-obsidian-400">Master’s in Tech, University of Bath</span>
               </div>
             </div>
 
@@ -447,11 +458,11 @@ export default function HomePage() {
                 ))}
               </div>
               <p className="text-sm text-obsidian-200 italic font-serif leading-relaxed">
-                &ldquo;Understand Your Patterns felt like sitting with an extraordinarily perceptive therapist. The exercises on identifying emotional triggers before they spiral into arguments transformed my communication.&rdquo;
+                &ldquo;The 30+ Executive Pivot Playbook was pure gold. I transitioned from a stagnant ₹1.5L/month role in Mumbai to a STEM MBA in NYC. I just accepted a \$210,000 package in analytics.&rdquo;
               </p>
               <div className="pt-2 border-t border-white/10 text-xs">
-                <strong className="block text-white font-serif">Sarah T.</strong>
-                <span className="text-obsidian-400">Design Director, Toronto</span>
+                <strong className="block text-white font-serif">Vikram R.</strong>
+                <span className="text-obsidian-400">STEM MBA Graduate, New York</span>
               </div>
             </div>
 
@@ -462,11 +473,11 @@ export default function HomePage() {
                 ))}
               </div>
               <p className="text-sm text-obsidian-200 italic font-serif leading-relaxed">
-                &ldquo;The Personal Growth Toolkit was worth three times what I paid. The fillable Notion reflection templates and the audio priming tracks are now part of my daily startup ritual. Phenomenal quality.&rdquo;
+                &ldquo;As parents, we were blinded by status. The SSF framework helped us align with our daughter without anxiety. She utilized the UK-to-US hybrid hack, saving us over ₹1.5 Crores!&rdquo;
               </p>
               <div className="pt-2 border-t border-white/10 text-xs">
-                <strong className="block text-white font-serif">Daniel H.</strong>
-                <span className="text-obsidian-400">Software Engineer, Melbourne</span>
+                <strong className="block text-white font-serif">Rajesh & Sunita M.</strong>
+                <span className="text-obsidian-400">Parents, New Delhi</span>
               </div>
             </div>
           </div>
@@ -474,7 +485,7 @@ export default function HomePage() {
       </section>
 
       {/* ============================================================ */}
-      {/* 6. HIGH-CONVERTING FREE RESOURCE LEAD MAGNET                 */}
+      {/* 6. FREE FIELD GUIDE LEAD MAGNET                               */}
       {/* ============================================================ */}
       <section id="free-guide" className="py-24 bg-obsidian-900 border-t border-white/10">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -483,26 +494,26 @@ export default function HomePage() {
             <div className="lg:col-span-6 space-y-4">
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-300 text-xs font-semibold">
                 <Sparkles className="w-3.5 h-3.5 text-gold-400" />
-                <span>Complimentary 24-Page Field Guide</span>
+                <span>Complimentary Admissions Diagnostic</span>
               </div>
               <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white leading-tight">
-                7 Practical Exercises for Better Focus
+                The 5 Removals Test & Foreign University Audit Guide
               </h2>
               <p className="text-sm text-obsidian-300 leading-relaxed">
-                Download our most popular practical framework. 24 high-resolution pages outlining immediate drills you can implement today to eliminate cognitive drag and calm your nervous system.
+                Download the operational field guide used by over 100,000 students to audit prospective colleges, detect diploma mills, and evaluate true employment ROI before paying application fees.
               </p>
               <ul className="space-y-2 text-xs text-obsidian-300 pt-2">
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>The 3-minute sensory baseline reset for acute overwhelm</span>
+                  <span>The 5 Removals Diagnostic Checklist to de-bias college brochures</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>The physical phone quarantine method (backed by memory trials)</span>
+                  <span>The 4-Point Audited Outcome formula (90-day verified placement)</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>The 50/10 ultradian focus grid for high-yield creative work</span>
+                  <span>How to secure 100% free tuition via Teaching & Research Assistantships</span>
                 </li>
               </ul>
             </div>
@@ -511,9 +522,9 @@ export default function HomePage() {
             <div className="lg:col-span-6">
               <EmailLeadForm
                 source="home_lead_magnet"
-                buttonLabel="Get The Free 24-Page Guide (PDF)"
-                title="Claim Your Copy"
-                subtitle="Join 8,400+ readers receiving our weekly cognitive essays."
+                buttonLabel="Download Free Diagnostic Guide (PDF)"
+                title="Claim Your Free Field Guide"
+                subtitle="Join 12,000+ ambitious students and parents receiving our admissions frameworks."
               />
             </div>
           </div>

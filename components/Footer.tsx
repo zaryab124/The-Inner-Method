@@ -11,15 +11,15 @@ export default function Footer() {
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-full bg-gradient-to-br from-gold-400 to-gold-600 text-obsidian-950 flex items-center justify-center font-serif text-base font-bold shadow-glow-gold">
-                M
+                🎓
               </div>
               <span className="font-serif text-lg font-bold tracking-wider text-white">
-                THE INNER METHOD
+                THE STUDY ABROAD PLAYBOOK
               </span>
             </div>
 
             <p className="text-sm text-obsidian-300 max-w-sm leading-relaxed">
-              An independent digital publishing imprint dedicated to cognitive psychology, attention architecture, and actionable emotional self-investigation.
+              Strategic admissions algorithms, visa reality checks, and high-ROI career frameworks synthesized from 30 years of counseling by Dr. Karan Gupta (Harvard alumnus) & Raj Shamani.
             </p>
 
             <div className="flex items-center gap-2 text-xs text-gold-400 font-mono">
@@ -35,18 +35,18 @@ export default function Footer() {
             </h5>
             <ul className="space-y-2.5 text-xs text-obsidian-300">
               <li>
-                <Link href="/shop/the-focus-reset" className="hover:text-gold-300 transition-colors">
-                  The Focus Reset
+                <Link href="/shop/the-study-abroad-playbook" className="hover:text-gold-300 transition-colors">
+                  The Study Abroad Playbook
                 </Link>
               </li>
               <li>
-                <Link href="/shop/understand-your-patterns" className="hover:text-gold-300 transition-colors">
-                  Understand Your Patterns
+                <Link href="/shop/the-5-removals-toolkit" className="hover:text-gold-300 transition-colors">
+                  The 5 Removals Audit Toolkit
                 </Link>
               </li>
               <li>
-                <Link href="/shop/the-personal-growth-toolkit" className="hover:text-gold-300 transition-colors">
-                  The Personal Growth Toolkit
+                <Link href="/shop/global-career-masterclass-bundle" className="hover:text-gold-300 transition-colors">
+                  Global Career Master Bundle
                 </Link>
               </li>
               <li>
@@ -66,7 +66,7 @@ export default function Footer() {
             <ul className="space-y-2.5 text-xs text-obsidian-300">
               <li>
                 <Link href="/free-resources" className="hover:text-gold-300 transition-colors">
-                  Free 24-Page Guide
+                  Free Diagnostic Guide (PDF)
                 </Link>
               </li>
               <li>

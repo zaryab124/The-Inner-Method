@@ -47,10 +47,10 @@ export default function Navbar() {
   };
 
   const navLinks = [
-    { label: 'Books', href: '/shop' },
-    { label: 'Free 24-Page Guide', href: '/free-resources' },
-    { label: 'Journal', href: '/journal' },
-    { label: 'About', href: '/about' },
+    { label: 'Playbook & Editions', href: '/shop' },
+    { label: 'Free Diagnostic Guide', href: '/free-resources' },
+    { label: 'Admissions Journal', href: '/journal' },
+    { label: 'About Dr. Gupta', href: '/about' },
     { label: 'FAQ', href: '/faq' },
   ];
 
@@ -66,7 +66,7 @@ export default function Navbar() {
           <div className="flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-gold-400 animate-pulse" />
             <span className="font-mono text-gold-200">
-              ⚡ International Digital Delivery to 140+ Countries · Instant PDF, EPUB & Audio
+              ⚡ New Release: The Study Abroad Playbook by Dr. Karan Gupta is Live · Instant Master PDF Download
             </span>
           </div>
 
@@ -100,14 +100,14 @@ export default function Navbar() {
             {/* Brand Logo & Editorial Crest */}
             <Link href="/" className="flex items-center gap-3 group">
               <div className="w-9 h-9 rounded-full bg-gradient-to-br from-gold-400 to-gold-600 text-obsidian-950 flex items-center justify-center font-serif text-base font-bold shadow-glow-gold transition-transform group-hover:scale-105">
-                M
+                🎓
               </div>
               <div className="flex flex-col">
                 <span className="font-serif text-base sm:text-lg font-bold tracking-wider text-white group-hover:text-gold-300 transition-colors leading-tight">
-                  THE INNER METHOD
+                  THE STUDY ABROAD PLAYBOOK
                 </span>
                 <span className="text-[9px] uppercase tracking-[0.25em] text-gold-400/90 font-semibold font-mono">
-                  DIGITAL PUBLISHING
+                  DR. KARAN GUPTA · MASTERCLASS
                 </span>
               </div>
             </Link>

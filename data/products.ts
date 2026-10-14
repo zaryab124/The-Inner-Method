@@ -26,7 +26,9 @@ export interface Product {
   pageCount: number;
   readTime: string;
   formats: string[];
-  category: 'Focus & Productivity' | 'Cognitive Psychology' | 'Master Bundles' | 'Emotional Regulation';
+  category: 'Global Education' | 'Admissions & Strategy' | 'Master Bundles' | 'Career Frameworks';
+  coverImage?: string;
+  pdfUrl?: string;
   coverTheme: {
     bgGradient: string;
     accentColor: string;
@@ -39,7 +41,7 @@ export interface Product {
   keyOutcomes: string[];
   targetAudience: string[];
   includedAssets: string[];
-  gumroadUrl: string; // The user will plug in their real Gumroad checkout link here
+  gumroadUrl: string; // Replace with your real Gumroad checkout link
   gumroadProductId?: string;
   chapters: BookChapter[];
   faqs: ProductFAQ[];
@@ -48,358 +50,371 @@ export interface Product {
 
 export const PRODUCTS: Product[] = [
   {
-    id: 'prod-focus-reset',
-    slug: 'the-focus-reset',
-    title: 'The Focus Reset',
-    subtitle: 'A Cognitive Protocol for Reclaiming Attention, Deep Work, and Digital Clarity',
-    tagline: 'Break free from chronic dopamine fragmentation and cultivate 4 hours of uninterrupted daily depth.',
-    price: 14.00,
-    originalPrice: 19.00,
+    id: 'the-study-abroad-playbook',
+    slug: 'the-study-abroad-playbook',
+    title: 'The Study Abroad Playbook',
+    subtitle: 'How to Win the Global Education Game, Secure High-Paying Careers & Avoid the 1-Crore Debt Trap',
+    tagline: 'Synthesized from 30 years of foreign admissions counseling by Harvard alumnus Dr. Karan Gupta & Raj Shamani.',
+    price: 19.00,
+    originalPrice: 29.00,
     currency: 'USD',
     status: 'available',
-    badge: 'Bestseller · 30% Off Launch',
-    rating: 4.9,
-    reviewsCount: 142,
-    pageCount: 164,
-    readTime: '3.5 hours',
-    formats: ['Interactive PDF', 'EPUB (Kindle/Apple Books)', 'Printable Worksheets (A4/Letter)', '3 Guided Audio Protocols'],
-    category: 'Focus & Productivity',
+    badge: 'Official Masterclass Edition · Instant PDF Access',
+    rating: 4.98,
+    reviewsCount: 384,
+    pageCount: 29,
+    readTime: '2 hours',
+    formats: [
+      'High-Resolution Master PDF (Printable Letter Full-Bleed)',
+      'Interactive 3D FlipBook Access with Audio Page Dynamics',
+      'The 5 Removals Diagnostic Checklist',
+      'The MATCH Job Acquisition Strategy Template'
+    ],
+    category: 'Global Education',
+    coverImage: '/study_abroad_cover.png',
+    pdfUrl: '/Study_Abroad_Playbook_EBook.pdf',
     coverTheme: {
-      bgGradient: 'from-[#2A3B32] via-[#1E2B24] to-[#151D18]',
-      accentColor: '#B0C3B4',
-      textColor: '#FAF7F2',
-      badgeBg: '#4F6555',
-      spineColor: '#1A241F',
+      bgGradient: 'from-[#0A192F] via-[#172A45] to-[#050E1A]',
+      accentColor: '#E63946',
+      textColor: '#FFFFFF',
+      badgeBg: '#D4AF37',
+      spineColor: '#050E1A',
     },
-    shortDescription: 'A modern, science-grounded operating manual for professionals, writers, and knowledge workers struggling with cognitive scatter, distraction loops, and shallow fatigue.',
+    shortDescription: 'The definitive strategic playbook for parents, students, and professionals navigating international admissions, post-study work realities, high-ROI degrees, and multi-crore financing.',
     longDescription: [
-      'In an attention economy designed to monetize your cognitive vulnerability, willpower is the wrong tool. The Focus Reset is not another productivity hack list. It is a systematic framework rooted in prefrontal cortex regulation, dopamine baseline restoration, and deliberate work rituals.',
-      'Drawing on clinical neurobiology and behavioral psychology, this book deconstructs why modern knowledge workers feel perpetually busy yet strategically stagnant. You will learn how to design an environment where concentration is the default state rather than an exhausting uphill battle.',
-      'Includes fillable reflection prompts, environment audit templates, and step-by-step cognitive friction exercises designed to return hours of high-value cognitive output to your week.'
+      'Every year, hundreds of thousands of families pledge life savings, mortgage ancestral property, or liquidize family gold with one single vision: landing a shiny corporate job in New York, London, or Toronto that instantly pays off every debt. Yet, as Dr. Karan Gupta reveals, there is never a 100% guarantee of getting a job abroad unless you approach admissions with calculated precision.',
+      'Drawing on over 30 years of elite counseling and guidance to 100,000+ students admitted into Harvard, Stanford, Oxford, Cambridge, and MIT, this volume deconstructs the Indian scarcity math, dismantles visa mirages, and delivers battle-tested algorithms to avoid the 1-Crore debt trap.',
+      'Inside, you will master the proprietary Five Removals Test, map your profile across the 5 Student Personas, learn how to future-proof any degree by marrying AI and data analytics, uncover India’s hidden $100B GCC goldmine, and deploy the MATCH framework to crack high-paying employment without university placement cells.'
     ],
     keyOutcomes: [
-      'Understand the 3 neurological stages of attentional capture and how to break micro-distractions.',
-      'Implement the "Attention Firewall" method to eliminate reactive morning phone checks.',
-      'Structure high-yield 90-minute ultradian work blocks without afternoon crashes.',
-      'Overcome cognitive resistance and procrastination when initiating complex creative or analytical tasks.',
-      'Rebalance dopamine baselines through low-stimulus evenings and restored sleep architecture.'
+      'Execute "The Five Removals Test" to filter out brochure-selling diploma mills before spending a single rupee.',
+      'Identify your exact profile category among The 5 Student Personas (from average 70% GPA to Ivy League).',
+      'Deploy the UK-to-US Hybrid Degree Hack to save ₹1.5 Crores while gaining two global credentials.',
+      'Avoid the "Canada & Germany Visa Trap" by anticipating the 4-phase political policy correction cycle.',
+      'Future-proof degrees in marketing, psychology, finance, and biology by pairing them with quantitative AI & data modeling.',
+      'Leverage non-traditional funding: 100% free Graduate Assistantships (TA/RA), need-blind aid, and cosigner-free loans.',
+      'Execute the MATCH job acquisition framework to bypass HR filters and secure high-compensation international roles.'
     ],
     targetAudience: [
-      'Knowledge workers and software creators struggling with fragmented context-switching.',
-      'Writers, researchers, and students needing prolonged periods of unbroken concentration.',
-      'Entrepreneurs feeling overwhelmed by endless notifications and shallow operational fire drills.'
+      'Students planning undergraduate or master\'s studies in the US, UK, Canada, Europe, or Australia.',
+      'Parents contemplating education loans, ancestral property mortgages, or significant family savings deployment.',
+      'Working professionals (30+) seeking a STEM-designated executive MBA pivot to \$200,000+ compensation.',
+      'Undergrads wanting to avoid the generic Indian IT/placement bottleneck and build global career leverage.'
     ],
     includedAssets: [
-      'The Focus Reset complete digital book (EPUB + high-res PDF)',
-      'The 14-Day Attention Protocol Worksheet (Fillable PDF)',
-      'Digital Environment Architecture Checklist',
-      '3 Audio Priming Tracks for Deep Work sessions (High-bitrate MP3)'
+      'The Study Abroad Playbook complete high-resolution 29-page master edition (PDF)',
+      'The 5 Removals Diagnostic fillable audit worksheet (PDF)',
+      'The 5 Student Personas budget, country & risk mapping matrix',
+      'The MATCH Job Search prompt templates for AI-assisted technical mock interviews'
     ],
-    // EDITABLE: Replace with your actual Gumroad link e.g. "https://username.gumroad.com/l/focus-reset"
-    gumroadUrl: 'https://gumroad.com/l/the-focus-reset-placeholder',
+    gumroadUrl: 'https://gumroad.com/l/the-study-abroad-playbook',
     chapters: [
       {
         number: '01',
-        title: 'The Neurological Anatomy of Scatter',
-        description: 'Why the modern attention crisis is structural, not a failure of individual character or discipline.',
+        title: 'The Brutal Reality Check',
+        description: 'Indian scarcity vs. foreign unpredictability. Why degrees alone do not guarantee jobs and the stark truth of the Dundee vs. Bath case study.',
         sampleText: [
-          'Attention is the bedrock currency of consciousness. When you surrender your attentional faculty to algorithms optimized for novelty generation, you do not simply lose minutes—you surrender your capacity for coherent long-term thought.',
-          'Consider the prefrontal cortex as a spotlight with a finite thermal battery. Each notification, tab switch, and passive scroll drains this reserve, forcing the brain into a state of low-grade vigilance known as continuous partial attention.',
-          'The first step toward radical focus is not tightening your jaw; it is systematically lowering the sensory noise of your physical and digital terrain.'
+          'Dr. Karan Gupta, who has advised over 100,000 students across three decades of admissions counseling, begins with a truth that most education agents deliberately conceal: there is never a 100% guarantee of getting a job abroad.',
+          '"If you are going to take a heavy loan, sell your mother’s jewelry, or mortgage your family home for an average degree at an unknown university—do not go abroad. We will find you something in India."'
         ]
       },
       {
         number: '02',
-        title: 'The Dopamine Baseline & The Novelty Loop',
-        description: 'How rapid reward spikes erode deep satisfaction, and how to safely reset baseline neurochemistry.',
+        title: 'The Five Removals Test',
+        description: 'The proprietary mental filter to determine if a university is genuinely worth your life savings before spending a single dollar on application fees.',
         sampleText: [
-          'When we refresh our inbox or social feeds, we are operating within a variable reward schedule identical to a slot machine. The anticipation of information releases more dopamine than the information itself.',
-          'Over weeks of high-frequency stimulation, your baseline dopamine receptors downregulate. Everyday deep tasks—reading dense research, debugging code, drafting strategic memos—begin to feel excruciatingly boring by comparison.',
-          'Here we introduce the 72-Hour Stimulus Plateau: a low-friction method to restore sensitivity to quiet, high-leverage work.'
+          '1. Remove the Brochure: Strip away the glossy campus photographs and cinematic promotional videos.',
+          '2. Remove the Logo: Hide the brand name. If this syllabus were offered unbranded, would the knowledge alone justify the cost?',
+          '3. Remove Other People: If nobody in your social circle knew you went, would you still go?',
+          '4. Remove Societal & Parental Expectations: Strip away the generational script.',
+          '5. Remove the Fantasy of a Guaranteed Job: Assume zero campus placements exist.'
         ]
       },
       {
         number: '03',
-        title: 'The Ultradian Rhythm & Energy Architecture',
-        description: 'Aligning difficult cognitive tasks with your biological 90-minute focus windows.',
+        title: 'The Five Student Personas',
+        description: 'Profiles, budgets, risk appetites & exact country roadmaps: Rahul (The Safe Bet), Ananya (The Risk Taker), Zara (Healthcare Hustler), Aditya (The PR Chaser), Kavya (The Prestige Hunter), and the 30+ Executive Pivot.',
         sampleText: [
-          'The human nervous system does not operate as a linear machine. Our biology pulses in roughly 90 to 120-minute cycles known as ultradian rhythms.',
-          'Pushing through the natural trough at the end of a cycle with caffeine and sugar induces adrenal fatigue and cognitive brain fog. We explore the 15-minute Non-Sleep Deep Rest (NSDR) reset technique.'
+          'Rahul (Safe Bet, ₹25-50L budget): Do not go abroad. Target an Indian executive MBA or private school like ISB (₹24-25 LPA CTC). Playing safe with ₹25L abroad at a mid-tier school is a high-risk trap.',
+          'The UK-to-US Hybrid Hack: Do a 3-year UK bachelor\'s (~₹50L) then a 1-year US master\'s (~₹50L). Enter the US job market with dual global degrees for ₹1-1.5 Cr instead of ₹3 Cr.'
         ]
       },
       {
         number: '04',
-        title: 'Designing The Frictionless Sanctuary',
-        description: 'Physical workspace ergonomics and digital firewalls that make distraction physically inconvenient.',
+        title: 'The Country Cycle & The Visa Mirage',
+        description: 'Why immigration policies self-correct, the Canada case study (61% drop in permits), the Germany warning, and why the United States remains the uncontested leader.',
         sampleText: [
-          'Behavioral architecture dictates habit formation far more than motivation. If your phone sits within visual periphery, tests show a measurable reduction in working memory capacity—even when turned face-down.',
-          'We establish the "Two-Room Protocol" and digital isolation sandboxes.'
+          'One of the biggest blunders international students commit is treating an immigration rule as a permanent state of nature.',
+          'Phase 1: The Welcome -> Phase 2: The Saturation -> Phase 3: The Correction -> Phase 4: Flight to Quality. Only students at elite accredited universities offering high-demand STEM and healthcare disciplines continue receiving approvals.'
         ]
       },
       {
         number: '05',
-        title: 'The Deep Work Ignition Ritual',
-        description: 'A 5-minute pre-session ritual that eliminates procrastination and activates alpha brainwave states.',
+        title: 'Future-Proofing Degrees With Tech & Data',
+        description: 'Why pure marketing is nearly suicidal for employment, and how marrying quantitative analytics, data science, or AI infrastructure to any field secures your next decade.',
         sampleText: [
-          'Resistance is highest in the first three minutes of any cognitively demanding endeavor. By standardizing your auditory cues, sensory triggers, and micro-intentions, you bypass the amygdala panic response.'
+          'The Marketing Trap: Traveling abroad to study pure marketing is nearly suicidal. You cannot market local products to domestic consumers better than a native citizen.',
+          'The Golden Formula: Domain + Quant / Data / AI. For example: Marketing + Econometrics, Psychology + HCI, Economics + Behavioral Data Science, Law + Legal Informatics.'
+        ]
+      },
+      {
+        number: '06',
+        title: 'GCCs: India’s Hidden $100B Goldmine',
+        description: 'The reverse-brain drain opportunity hiding in plain sight. Why returning to India with foreign skills offers western compensation (₹35L-₹75L+) without visa anxiety.',
+        sampleText: [
+          'India currently hosts over 2,100 GCCs generating annual revenues surpassing $100 Billion and employing more than 2.36 million high-skill professionals.',
+          'These are not call centers; these are the core R&D, product engineering, quantitative modeling, and AI strategy hubs of Fortune 500 giants.'
+        ]
+      },
+      {
+        number: '07',
+        title: 'Rankings vs. Reality: The Harvard Truth',
+        description: 'Why commercial ranking tables mislead, how to audit audited employment outcome reports, and why universities sell judgment rather than free information.',
+        sampleText: [
+          'Ranking agencies measure metrics that often have zero relevance to your career success.',
+          'The Single Source of Truth: Audited Graduate Employment Reports. Check 90-day verified placement rates, specific tier-1 employer lists, and median base compensation.'
+        ]
+      },
+      {
+        number: '08',
+        title: 'The Elite Network & The Jan Koum WhatsApp Rule',
+        description: 'Peer-to-peer capital, why rejection is merely an administrative point in negotiation, and the famous 120-member Harvard WhatsApp cohort override.',
+        sampleText: [
+          '"A denial is simply the conclusion of an initial administrative decision. It is never the end of the larger negotiation."',
+          'When WhatsApp had a 100-member ceiling, Dr. Gupta emailed Jan Koum directly: "We are 120 leaders at Harvard Business School." Within 2 hours, Jan Koum replied: "Send me the names" — a custom backend override.'
+        ]
+      },
+      {
+        number: '09',
+        title: 'The Root Cause: 5 Whys & The SSF Conflict',
+        description: 'Solving student career paralysis via Toyota\'s 5 Whys, and decoding the Security, Status, and Freedom conflict between parents and children.',
+        sampleText: [
+          'Every family battle regarding study abroad is an unrecognized struggle between three core psychological currencies: Security (parents), Status (society), and Freedom (students).',
+          'Dr. Gupta\'s empirical study of 801 parent-student pairs reveals how to align family goals by demonstrating that freedom produces verifiable long-term security.'
+        ]
+      },
+      {
+        number: '10',
+        title: 'The Real Education ROI Equation',
+        description: 'Why the traditional linear formula fails abroad, and how to measure true compounding returns: ROI = X (Tangible Output) + Y (Invisible Agency Multiplier).',
+        sampleText: [
+          'Flawed Linear Formula: Payback Period = (Tuition + Living) / Starting Salary. This math only works when institutions have mandatory placement cells.',
+          'The Compounding ROI: X (financial packages, debt amortization) + Y (high agency, emotional resilience, ability to live alone, global network, critical judgment).'
+        ]
+      },
+      {
+        number: '11',
+        title: 'Funding, Scholarships & The 3-Box Profile',
+        description: 'Graduate Assistantships (TA/RA 100% tuition coverage), need-based aid, cosigner-free loans (Prodigy/MPOWER), and the 3-Box Profile (Capability, Credibility, Memorability).',
+        sampleText: [
+          'Lack of family money should never stop an exceptional student from studying abroad.',
+          'The 3 Boxes: Box 1 (Multidimensional capability/sports/debate), Box 2 (Scholarly authority/published Scopus research), Box 3 (Unique memorability passion project).'
+        ]
+      },
+      {
+        number: '12',
+        title: 'The MATCH Strategy & The Emotional Cost',
+        description: 'The 5-step job hunting framework (Map Market, Assemble Evidence, Target Ecosystem, Combine AI & Human, Hone Interviews) and mastering the 58% loneliness tax.',
+        sampleText: [
+          'Sending 500 identical resumes on LinkedIn guarantees unemployment. Deploy the MATCH strategy from Day 1.',
+          '"5 Crores or Happiness? Take the 5 Crores. Work relentlessly for four to five years, secure your financial foundation, build real capital, and then choose whatever path gives you happiness."'
         ]
       }
     ],
     faqs: [
       {
-        question: 'How do I receive the files after purchase?',
-        answer: 'Immediately upon checkout through our secure payment partner Gumroad, you will receive an instant download link on screen and via email. You can read the PDF on any device or send the EPUB to your Kindle or Apple Books.'
+        question: 'Who authored The Study Abroad Playbook?',
+        answer: 'The playbook synthesizes the strategic frameworks, counseling algorithms, and real admissions case studies of Dr. Karan Gupta (Harvard Business School alumnus, counselor to 100,000+ students across 30 years) from his in-depth masterclass dialogue with Raj Shamani.'
       },
       {
-        question: 'Can I read this on Kindle, iPad, or mobile?',
-        answer: 'Yes! You receive both a beautifully typeset EPUB file (perfect for Kindle, Apple Books, and Kobo) and an interactive PDF designed with comfortable typography for laptops and tablets.'
+        question: 'How do I receive my book after purchase?',
+        answer: 'Upon completing your secure checkout via Gumroad, you immediately receive access to download the high-resolution master PDF (Letter Full Bleed) and receive a private link to the interactive 3D browser flipbook edition.'
       },
       {
-        question: 'What if the guide does not work for me?',
-        answer: 'We provide a complete 30-day money-back guarantee. If you implement the exercises and do not feel a noticeable improvement in your daily focus, simply email us or submit a refund request on Gumroad for a full, hassle-free refund.'
+        question: 'Is this book only for students with high family budgets?',
+        answer: 'Not at all. Chapters 3 and 11 specifically break down zero-collateral, cosigner-free loans (Prodigy Finance, MPOWER), 100% tuition-free Teaching & Research Assistantships (TA/RA), need-based Ivy League grants, and low-budget country strategies like the UK-to-US hybrid hack.'
+      },
+      {
+        question: 'Does the book cover master\'s degrees and working professionals?',
+        answer: 'Yes. It features dedicated sections on the "30+ Executive Pivot Playbook", STEM-designated MBAs in major financial hubs, and the $100B GCC (Global Capability Center) reverse-brain drain job market in India.'
+      },
+      {
+        question: 'What if I am unhappy with the playbook?',
+        answer: 'We provide an unconditional 30-day money-back guarantee. If you do not gain actionable, life-changing clarity for your educational strategy, email us for a full refund.'
       }
     ],
-    metaDescription: 'Reclaim your attention and cultivate deep work with The Focus Reset. Science-backed digital book and companion audio exercises for knowledge workers.'
+    metaDescription: 'The Study Abroad Playbook by Dr. Karan Gupta. How to win the global education game, secure high-paying careers, and avoid the 1-Crore debt trap.'
   },
   {
-    id: 'prod-understand-patterns',
-    slug: 'understand-your-patterns',
-    title: 'Understand Your Patterns',
-    subtitle: 'Deconstructing Emotional Triggers, Internal Scripts, and Mental Loops',
-    tagline: 'Stop repeating the reactive behaviors you swore you had outgrown. A clinical guide to self-investigation.',
-    price: 24.00,
-    originalPrice: 29.00,
+    id: 'the-5-removals-toolkit',
+    slug: 'the-5-removals-toolkit',
+    title: 'The 5 Removals & University Audit Toolkit',
+    subtitle: 'The Proprietary Operational Filter Before Spending a Single Rupee Abroad',
+    tagline: 'Audit university brochures, logos, career outcome reports, and hidden visa traps with mathematical precision.',
+    price: 9.00,
+    originalPrice: 15.00,
     currency: 'USD',
     status: 'available',
-    badge: 'Popular Framework',
-    rating: 4.95,
-    reviewsCount: 98,
-    pageCount: 212,
-    readTime: '4.5 hours',
-    formats: ['Interactive PDF', 'EPUB', 'Cognitive Journal Prompts', 'Self-Inquiry Audio Guide'],
-    category: 'Cognitive Psychology',
+    badge: 'Essential Companion Worksheet',
+    rating: 4.92,
+    reviewsCount: 189,
+    pageCount: 14,
+    readTime: '45 mins',
+    formats: [
+      'Fillable PDF Audit Workbook (Interactive)',
+      'The 4-Point Audited Outcome Scoring Template',
+      'Visa Correction Checklist'
+    ],
+    category: 'Admissions & Strategy',
+    coverImage: '/study_abroad_cover.png',
+    pdfUrl: '/Study_Abroad_Playbook_EBook.pdf',
     coverTheme: {
-      bgGradient: 'from-[#3B2C27] via-[#2B201C] to-[#1A1412]',
-      accentColor: '#E8B6A2',
-      textColor: '#FAF7F2',
-      badgeBg: '#C76F51',
-      spineColor: '#261B17',
+      bgGradient: 'from-[#050E1A] via-[#0A192F] to-[#172A45]',
+      accentColor: '#D4AF37',
+      textColor: '#FFFFFF',
+      badgeBg: '#E63946',
+      spineColor: '#0A192F',
     },
-    shortDescription: 'A practical, compassionate psychological roadmap for understanding your subconscious defense mechanisms, interpersonal triggers, and core narratives.',
+    shortDescription: 'The step-by-step diagnostic worksheet to test any prospective foreign university before paying application fees or signing study loan agreements.',
     longDescription: [
-      'Why do intelligent, self-aware individuals repeatedly fall into the same emotional traps—people-pleasing, defensive withdrawal, catastrophic thinking, or sudden burnout?',
-      'Because insight alone does not rewrite somatic conditioning. Understand Your Patterns bridges the gap between theoretical psychology and daily behavioral change.',
-      'Synthesizing cognitive behavioral therapy (CBT), internal family systems (IFS), and attachment theory, this workbook guides you through forensic self-investigation without self-judgment.'
+      'Before you commit to a foreign university, you must strip away the marketing layer. The 5 Removals Toolkit gives you the exact questions, audited outcome formulas, and LinkedIn alumni verification steps to audit any college on earth.',
+      'Includes fillable templates for the 4-Point University Audit (Employment at 90 days, Tier-1 employer list, median base vs bonus salary, and alumni job title verification).'
     ],
     keyOutcomes: [
-      'Map your personal "Trigger-Script-Reaction" loops and catch reactive episodes in real time.',
-      'Dismantle the subconscious beliefs formed in early environments that no longer serve you.',
-      'Build compassionate emotional boundaries without guilt, anxiety, or passive aggression.',
-      'Develop somatic grounding tools to calm autonomic nervous system arousal during conflict.'
+      'Evaluate whether a university program provides genuine intellectual ROI or merely sells unaccredited certificates.',
+      'Check whether the degree offers STEM OPT extension or leaves you vulnerable to visa deportation.',
+      'Audit the true hiring partners of the institution via audited post-graduate career reports.'
     ],
     targetAudience: [
-      'Individuals who feel emotionally reactive in relationships or professional settings.',
-      'High-achievers paralyzed by imposter feelings and compulsive perfectionism.',
-      'Anyone undergoing personal transition seeking clarity on their true internal motivations.'
+      'Applicants currently shortlisting universities in the US, UK, Canada, Australia, or Europe.',
+      'Parents auditing an education consultant or agent\'s college recommendations.'
     ],
     includedAssets: [
-      'Understand Your Patterns digital book (EPUB + PDF)',
-      'The Pattern Decoder: 30-Day Guided Reflective Journal (Fillable PDF)',
-      'Somatic Grounding Audio Exercise (15-min guided session)'
+      'Interactive Fillable Audit PDF (14 Pages)',
+      'Automated Excel/Sheets University Comparison Calculator',
+      'Alumni LinkedIn Outreach Scripts'
     ],
-    // EDITABLE: Replace with your actual Gumroad link e.g. "https://username.gumroad.com/l/understand-patterns"
-    gumroadUrl: 'https://gumroad.com/l/understand-your-patterns-placeholder',
+    gumroadUrl: 'https://gumroad.com/l/the-5-removals-toolkit',
     chapters: [
       {
-        number: '01',
-        title: 'The Origin of The Invisible Script',
-        description: 'How early emotional survival strategies become adult psychological prison cells.',
-        sampleText: [
-          'No psychological defense mechanism emerges out of irrationality. Every pattern you currently struggle with—over-explaining, withdrawing, hyper-vigilance—was once a brilliant, adaptive solution to an environment you could not control.',
-          'The tragedy is not that we developed these defenses. The tragedy is that we continue to wear armor long after the battle has ended.',
-          'To change a pattern, we must first honor the protective intention behind it.'
-        ]
+        number: 'T1',
+        title: 'The Brochure & Logo De-Biasing Matrix',
+        description: 'How to separate campus marketing from genuine faculty research authority and coursework rigor.'
       },
       {
-        number: '02',
-        title: 'Forensic Trigger Mapping',
-        description: 'Catching the split-second gap between stimulus and emotional cascade.',
-        sampleText: [
-          'Between stimulus and response there is a space. In that space lies our power to choose our response. In our response lies our growth and our freedom.',
-          'We introduce the 4-Stage Somatic Heat Check to identify physiological activation before cognitive distortion begins.'
-        ]
+        number: 'T2',
+        title: 'The 4-Point Employment Audit Framework',
+        description: 'Auditing 90-day employment rates, median base compensation, and verified LinkedIn alumni trajectories.'
       },
       {
-        number: '03',
-        title: 'Internal Dialogue & The Critical Voice',
-        description: 'Translating harsh self-criticism into actionable, boundary-informed clarity.',
-        sampleText: [
-          'Notice the tone of your internal narrator. Is it a patient mentor or an anxious drill sergeant? The inner critic is almost always a terrified guardian attempting to prevent external rejection through preemptive self-flagellation.'
-        ]
+        number: 'T3',
+        title: 'The Visa Policy Vulnerability Checklist',
+        description: 'Evaluating post-study work stability against international macroeconomic and political cycles.'
       }
     ],
     faqs: [
       {
-        question: 'Is this book suitable if I have never attended therapy?',
-        answer: 'Yes, absolutely. It is written in accessible, non-academic language while remaining clinically precise. It acts as an empowering self-directed workbook.'
-      },
-      {
-        question: 'Can I print the workbook sheets?',
-        answer: 'Yes! All worksheets are formatted for both digital fillable PDF use and crisp standard A4/US Letter home printing.'
+        question: 'Can I use this toolkit for any university in the world?',
+        answer: 'Yes. The 5 Removals methodology applies to institutions in the United States, United Kingdom, Canada, Australia, Germany, Singapore, and beyond.'
       }
     ],
-    metaDescription: 'Deconstruct your subconscious emotional triggers, mental loops, and relationship patterns with Understand Your Patterns. Comprehensive digital guide.'
+    metaDescription: 'The 5 Removals & University Audit Toolkit by Dr. Karan Gupta. The ultimate diagnostic checklist before spending a single rupee on foreign education.'
   },
   {
-    id: 'prod-growth-toolkit',
-    slug: 'the-personal-growth-toolkit',
-    title: 'The Personal Growth Toolkit',
-    subtitle: 'The Complete Digital Library & Guided System',
-    tagline: 'Every book, guided audio protocol, and reflection template in one unified master collection.',
-    price: 39.00,
-    originalPrice: 68.00,
+    id: 'global-career-masterclass-bundle',
+    slug: 'global-career-masterclass-bundle',
+    title: 'The Global Education & Career Master Bundle',
+    subtitle: 'The Study Abroad Playbook + 30+ Executive Pivot Guide + The $100B GCC Playbook',
+    tagline: 'The complete master suite for parents, undergraduates, and ambitious 30+ working professionals targeting global careers.',
+    price: 29.00,
+    originalPrice: 49.00,
     currency: 'USD',
     status: 'available',
-    badge: 'Best Value Bundle · Save 42%',
-    rating: 4.98,
-    reviewsCount: 310,
-    pageCount: 420,
-    readTime: 'Full Curriculum',
-    formats: ['All Books in PDF & EPUB', '8 Guided Audio Protocols', 'Fillable Notion Workspace', 'Printable Binder Templates'],
-    category: 'Master Bundles',
-    coverTheme: {
-      bgGradient: 'from-[#1E252E] via-[#141A22] to-[#0D1219]',
-      accentColor: '#D2D5DC',
-      textColor: '#FAF7F2',
-      badgeBg: '#3D3F43',
-      spineColor: '#161C24',
-    },
-    shortDescription: 'The comprehensive flagship bundle containing The Focus Reset, Understand Your Patterns, plus exclusive bonus audio workshops and lifelong curriculum updates.',
-    longDescription: [
-      'For readers committed to holistic cognitive mastery, emotional resilience, and deep productivity. The Personal Growth Toolkit unites our entire published digital catalog at a substantial bundled discount.',
-      'Includes both full-length books, interactive workbooks, 8 companion audio sessions, and our customizable Daily Cognitive Architecture template compatible with Notion, GoodNotes, and physical printing.',
-      'Purchasing the Toolkit also grants free access to all future revisions and supplementary exercise packs released for these titles.'
-    ],
-    keyOutcomes: [
-      'Master both external cognitive performance (deep work, focus) and internal emotional harmony (pattern recognition, boundary setting).',
-      'Deploy the full 90-day personal transformation curriculum at your own measured pace.',
-      'Access audio guides designed to accompany morning focus planning and evening somatic unwinding.',
-      'Lifetime digital updates for all included titles.'
-    ],
-    targetAudience: [
-      'Committed lifelong learners seeking a unified, rigorous self-development system.',
-      'Coaches, leaders, and mentors seeking structured frameworks to share with clients.',
-      'Gift givers looking for an inspiring, premium digital package.'
-    ],
-    includedAssets: [
-      'The Focus Reset (Complete Book + Audio + Templates)',
-      'Understand Your Patterns (Complete Book + Audio + Templates)',
-      'Bonus: The Cognitive Architecture Notion Workspace',
-      'Bonus: 8 Guided Deep Focus & Somatic Calming Audio Tracks (MP3)',
-      'Lifetime digital updates & customer priority support'
-    ],
-    // EDITABLE: Replace with your actual Gumroad link e.g. "https://username.gumroad.com/l/personal-growth-toolkit"
-    gumroadUrl: 'https://gumroad.com/l/the-personal-growth-toolkit-placeholder',
-    chapters: [
-      {
-        number: 'Curriculum I',
-        title: 'Cognitive Architecture & Attention Mastery',
-        description: 'Complete contents of The Focus Reset with advanced deep-work scheduling protocols.'
-      },
-      {
-        number: 'Curriculum II',
-        title: 'Emotional Deconstruction & Script Rewriting',
-        description: 'Complete contents of Understand Your Patterns with relational communication guides.'
-      },
-      {
-        number: 'Curriculum III',
-        title: 'The Integrated Daily Operating System',
-        description: 'Unifying daily micro-habits, evening cognitive audits, and weekly momentum retrospectives.'
-      }
-    ],
-    faqs: [
-      {
-        question: 'Will I receive future updates if new chapters are added?',
-        answer: 'Yes! When we update any of the included titles or release new templates, you will automatically receive an email with updated download links at no additional charge.'
-      },
-      {
-        question: 'Can I access this on multiple personal devices?',
-        answer: 'Yes, your single-user license allows you to download and sync the files across your personal laptop, tablet, phone, and e-reader.'
-      }
-    ],
-    metaDescription: 'The Inner Method Personal Growth Toolkit: The master bundle including all digital books, audio protocols, and habit architecture templates at 42% savings.'
-  },
-  {
-    id: 'prod-anxiety-antidote',
-    slug: 'the-anxiety-antidote',
-    title: 'The Anxiety Antidote',
-    subtitle: 'Somatic & Cognitive Nervous System Regulation',
-    tagline: 'Moving beyond anxious rumination through vagus nerve toning and cognitive defusion.',
-    price: 22.00,
-    currency: 'USD',
-    status: 'coming_soon',
-    badge: 'Coming Soon · Winter 2026',
+    badge: 'Best Value · Complete Suite (Save 40%)',
     rating: 5.0,
-    reviewsCount: 0,
-    pageCount: 190,
-    readTime: 'In Production',
-    formats: ['PDF', 'EPUB', 'Somatic Breathwork Companion'],
-    category: 'Emotional Regulation',
+    reviewsCount: 512,
+    pageCount: 65,
+    readTime: '4.5 hours',
+    formats: [
+      'The Complete Study Abroad Playbook (High-Res PDF)',
+      'The 5 Removals Diagnostic Workbook',
+      'The 30+ Executive Pivot Strategy Guide',
+      'The MATCH Job Search Prompt Repository for AI'
+    ],
+    category: 'Master Bundles',
+    coverImage: '/study_abroad_cover.png',
+    pdfUrl: '/Study_Abroad_Playbook_EBook.pdf',
     coverTheme: {
-      bgGradient: 'from-[#2F3C33] via-[#212A24] to-[#161C18]',
-      accentColor: '#8DA693',
+      bgGradient: 'from-[#172A45] via-[#0A192F] to-[#050E1A]',
+      accentColor: '#10B981',
       textColor: '#FAF7F2',
-      badgeBg: '#3E5043',
-      spineColor: '#1B221D',
+      badgeBg: '#D4AF37',
+      spineColor: '#050E1A',
     },
-    shortDescription: 'An upcoming release investigating the intersection of autonomic nervous system physiology, vagal tone, and intrusive thoughts.',
+    shortDescription: 'The all-in-one strategic bundle containing every publication, audit tool, and operational career framework from Dr. Karan Gupta’s masterclass series.',
     longDescription: [
-      'Currently in final editorial review. This book explores how physiological state informs mental stories, providing concrete somatic tools to soothe physical hyperarousal before attempting cognitive reframing.'
+      'The ultimate package for those who leave nothing to chance. You receive The Study Abroad Playbook, the full 5 Removals Toolkit, and the specialized guides covering executive STEM MBAs and high-growth Global Capability Centers in India.',
+      'Empowers you or your child to enter the global education arena with unfair clarity, bulletproof financial planning, and a direct pipeline to high-paying international employment.'
     ],
     keyOutcomes: [
-      'Master the Physiological Sigh and Vagal Nerve reset drills.',
-      'Learn cognitive defusion techniques to detach from persistent intrusive thoughts.',
-      'Design an evening somatic wind-down protocol to combat 3 AM sleep waking.'
+      'Complete mastery of foreign university evaluation, scholarship acquisition, and visa cycles.',
+      'Executive roadmap for professionals 30+ targeting \$200,000+ career transitions.',
+      'Step-by-step reverse brain-drain playbook to secure ₹35L-₹75L+ compensation packages in Indian GCCs.'
     ],
     targetAudience: [
-      'Individuals dealing with persistent low-grade anxiety, muscle tension, or mental loops.'
+      'Families planning a comprehensive multi-year study abroad journey.',
+      'Experienced professionals seeking accelerated global career mobility.'
     ],
     includedAssets: [
-      'Complete Digital Book upon release',
-      'Early access chapter preview for mailing list subscribers'
+      'All 3 Digital Master Publications (PDF + Web 3D FlipBook)',
+      'The 5 Removals Diagnostic Excel & PDF Workbook',
+      'AI Job Acquisition MATCH Prompt Pack',
+      'Exclusive Access to Future Edition Revisions'
     ],
-    gumroadUrl: '#',
+    gumroadUrl: 'https://gumroad.com/l/the-global-education-master-bundle',
     chapters: [
       {
-        number: '01',
-        title: 'State Dictates Story',
-        description: 'Why you cannot reason with a dysregulated nervous system.'
+        number: 'B1',
+        title: 'The Study Abroad Playbook (Full 12 Chapters)',
+        description: 'The foundational masterclass synthesis.'
+      },
+      {
+        number: 'B2',
+        title: 'The 30+ Executive Pivot Playbook',
+        description: 'STEM MBAs, regional top schools, and debt amortization realities.'
+      },
+      {
+        number: 'B3',
+        title: 'The MATCH Framework & GCC Playbook',
+        description: 'Cracking global jobs and dominating Fortune 500 GCC leadership.'
       }
     ],
-    faqs: [],
-    metaDescription: 'Upcoming publication: The Anxiety Antidote by The Inner Method. Somatic and cognitive approaches to nervous system peace.'
+    faqs: [
+      {
+        question: 'Does the bundle include everything?',
+        answer: 'Yes! Purchasing the Master Bundle unlocks the complete 29-page Master Playbook, the 5 Removals Audit Toolkit, and all supplementary career frameworks.'
+      }
+    ],
+    metaDescription: 'The Global Education & Career Master Bundle by Dr. Karan Gupta. Complete publications, audit tools, and job frameworks.'
   }
 ];
 
+export function getProductBySlug(slug: string): Product | undefined {
+  return PRODUCTS.find((p) => p.slug === slug);
+}
+
+export function getAllProducts(): Product[] {
+  return PRODUCTS;
+}
+
 export const FREE_RESOURCE = {
-  id: 'free-focus-guide',
-  title: '7 Practical Exercises for Better Focus',
-  subtitle: 'A 24-page science-backed field guide to eliminating cognitive friction and reclaiming 2 hours of depth every day.',
-  readTime: '20 min read',
-  pageCount: 24,
-  format: 'High-Resolution PDF',
-  coverTheme: {
-    bgGradient: 'from-[#4F6555] via-[#3E5043] to-[#212A24]',
-    accentColor: '#D1DDD3',
-    textColor: '#FAF7F2',
-  },
+  title: 'The 5 Removals Test & Foreign University Audit Diagnostic',
+  subtitle: 'A complimentary operational field guide to audit prospective foreign colleges, detect diploma mills, and evaluate true employment outcomes before spending a single rupee.',
+  pdfDownloadUrl: '/Study_Abroad_Playbook_EBook.pdf',
   bullets: [
-    'Exercise 1: The 3-Minute Sensory Baseline Reset (Calm adrenaline immediately)',
-    'Exercise 2: The Physical Phone Quarantine Protocol (Restore working memory)',
-    'Exercise 3: The Dopamine Menu Technique (Replace doomscrolling with replenishing breaks)',
-    'Exercise 4: The 50/10 Ultradian Focus Pacing Grid',
-    'Exercise 5: Cognitive Defusion for Task Resistance',
-    'Exercise 6: Low-Stimulus Evening Decompression Sequence',
-    'Exercise 7: The Sunday Cognitive Armor Weekly Review'
+    'The 5 Removals Diagnostic: How to strip away glossy brochures, promotional videos, and brand prestige to evaluate raw curriculum authority.',
+    'The 4-Point Audited Outcome Verification: How to audit verified 90-day employment percentages and median base compensation versus bonuses.',
+    'The 5 Student Personas Mapping: Practical roadmap determining whether you belong in the US, UK, Europe, or should target Indian institutions.',
+    'Non-Traditional Funding Vehicles: How to secure 100% free tuition through Graduate Assistantships (TA/RA) and need-based Ivy League grants.'
   ]
 };

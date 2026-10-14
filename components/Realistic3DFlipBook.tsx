@@ -7,12 +7,13 @@ import {
   ChevronLeft,
   ChevronRight,
   Sparkles,
-  CheckCircle2,
   Volume2,
   VolumeX,
   Eye,
   CheckSquare,
   Square,
+  Globe,
+  Download,
 } from 'lucide-react';
 import GumroadButton from '@/components/GumroadButton';
 
@@ -26,17 +27,20 @@ export default function Realistic3DFlipBook({
   product,
   className = '',
 }: Realistic3DFlipBookProps) {
-  // Page index: 0 = Closed Cover, 1 = Spread 1 (Pages 1 & 2), 2 = Spread 2 (Pages 3 & 4), 3 = Spread 3 (Pages 5 & 6), 4 = Back Cover
+  // Page index: 0 = Closed Cover, 1 = Spread 1 (Copyright & TOC), 2 = Spread 2 (Ch 1 Scarcity & Dundee vs Bath), 3 = Spread 3 (5 Removals Test & Personas), 4 = Spread 4 (MATCH Framework & Back Cover)
   const [currentSpread, setCurrentSpread] = useState(0);
   const [soundEnabled, setSoundEnabled] = useState(true);
-  const [interactiveHabits, setInteractiveHabits] = useState([
-    { label: 'Morning Phone Quarantine (First 60 mins)', checked: true },
-    { label: '90-min Deep Work Block #1 (No Notifications)', checked: true },
-    { label: '10-min Somatic Nervous System Settling', checked: false },
-    { label: 'Low-Stimulus Evening Decompression', checked: false },
+
+  // Real interactive checklist: The Five Removals Test
+  const [removalsChecklist, setRemovalsChecklist] = useState([
+    { label: '1. Remove the Brochure (Strip glossy lawns, audit core curriculum & faculty)', checked: true },
+    { label: '2. Remove the Logo (If unbranded, does the knowledge justify ₹50L–₹1Cr?)', checked: true },
+    { label: '3. Remove Other People (Would you go if nobody in your network knew?)', checked: false },
+    { label: '4. Remove Parental Expectations (Erase generational scripts & false status)', checked: false },
+    { label: '5. Remove Fantasy of Placements (Assume 0 campus placement cells exist)', checked: false },
   ]);
 
-  const totalSpreads = 4; // 0 (Cover), 1 (Intro), 2 (Protocol), 3 (Somatic), 4 (Back / CTA)
+  const totalSpreads = 4;
 
   const handleNext = () => {
     if (currentSpread < totalSpreads) {
@@ -62,23 +66,23 @@ export default function Realistic3DFlipBook({
     }
   };
 
-  const toggleHabit = (index: number) => {
-    setInteractiveHabits((prev) =>
-      prev.map((h, i) => (i === index ? { ...h, checked: !h.checked } : h))
+  const toggleRemoval = (index: number) => {
+    setRemovalsChecklist((prev) =>
+      prev.map((item, i) => (i === index ? { ...item, checked: !item.checked } : item))
     );
   };
 
   return (
     <div className={`relative flex flex-col items-center select-none ${className}`}>
-      {/* Top Interactive Mode & Sound Bar */}
+      {/* Top Mode Bar */}
       <div className="w-full flex items-center justify-between mb-4 px-2 text-xs">
         <div className="flex items-center gap-2">
           <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-300 font-mono text-[11px]">
             <Sparkles className="w-3 h-3 text-gold-400" />
-            <span>Interactive 3D Page-Flip Book</span>
+            <span>Interactive 3D Study Abroad Playbook</span>
           </span>
           <span className="hidden sm:inline text-obsidian-300 text-[11px]">
-            Click page corners or navigation to flip
+            Click corners or tabs to turn pages with audio
           </span>
         </div>
 
@@ -103,8 +107,8 @@ export default function Realistic3DFlipBook({
       </div>
 
       {/* Main 3D Book Stage */}
-      <div className="relative w-full max-w-[760px] h-[430px] sm:h-[480px] perspective-1500 flex items-center justify-center my-2">
-        {/* Desk Volumetric Shadow */}
+      <div className="relative w-full max-w-[760px] h-[440px] sm:h-[490px] perspective-1500 flex items-center justify-center my-2">
+        {/* Volumetric Desk Shadow */}
         <div className="absolute -bottom-6 w-[85%] h-12 bg-black/70 filter blur-2xl rounded-full pointer-events-none" />
 
         {/* ============================================================ */}
@@ -113,23 +117,23 @@ export default function Realistic3DFlipBook({
         {currentSpread === 0 && (
           <div
             onClick={handleNext}
-            className="group relative w-[290px] sm:w-[330px] h-[410px] sm:h-[460px] cursor-pointer transition-transform duration-500 hover:-translate-y-2 hover:rotate-1"
+            className="group relative w-[290px] sm:w-[330px] h-[420px] sm:h-[470px] cursor-pointer transition-transform duration-500 hover:-translate-y-2 hover:rotate-1"
             style={{ transformStyle: 'preserve-3d' }}
           >
             {/* Book Spine (Left 3D side) */}
             <div
-              className="absolute top-0 left-0 w-[36px] h-full origin-left bg-obsidian-950 border-l border-gold-500/30"
+              className="absolute top-0 left-0 w-[36px] h-full origin-left bg-[#050E1A] border-l border-gold-500/30"
               style={{
                 transform: 'rotateY(-90deg) translateX(-36px)',
-                backgroundColor: product.coverTheme.spineColor,
+                backgroundColor: '#050E1A',
               }}
             >
               <div className="w-full h-full flex flex-col justify-between py-6 items-center book-spine-gradient">
                 <span className="text-[9px] uppercase tracking-widest text-gold-300/80 font-bold rotate-90">
-                  IMPRINT
+                  DR. KARAN GUPTA
                 </span>
                 <span className="text-[11px] font-serif font-bold text-white tracking-widest rotate-90 whitespace-nowrap">
-                  {product.title}
+                  THE STUDY ABROAD PLAYBOOK
                 </span>
                 <span className="text-[9px] text-gold-400 font-mono rotate-90">2026</span>
               </div>
@@ -141,8 +145,8 @@ export default function Realistic3DFlipBook({
               style={{ transform: 'rotateY(90deg) translateZ(-1px)' }}
             />
 
-            {/* Front Cover Plate */}
-            <div className="relative w-full h-full rounded-r-xl rounded-l-xs bg-gradient-to-br from-[#1A1F2B] via-[#0E121A] to-[#07090D] border border-gold-500/40 p-6 flex flex-col justify-between shadow-book overflow-hidden">
+            {/* Front Cover Plate (Exact match to uploaded book) */}
+            <div className="relative w-full h-full rounded-r-xl rounded-l-xs bg-gradient-to-br from-[#050E1A] via-[#0A192F] to-[#172A45] border border-gold-500/40 p-6 flex flex-col justify-between shadow-book overflow-hidden text-center">
               {/* Outer Golden Border & Accents */}
               <div className="absolute inset-3 border border-gold-500/30 rounded-lg pointer-events-none" />
               <div className="absolute inset-4 border border-gold-500/15 rounded pointer-events-none" />
@@ -150,45 +154,44 @@ export default function Realistic3DFlipBook({
               {/* Spine Crease Highlight */}
               <div className="absolute left-0 top-0 bottom-0 w-6 bg-gradient-to-r from-black/60 via-gold-500/10 to-transparent pointer-events-none" />
 
-              {/* Publisher Crest */}
-              <div className="text-center pt-2 relative z-10">
-                <span className="text-[10px] uppercase tracking-[0.3em] font-serif font-semibold text-gold-400">
-                  THE INNER METHOD
-                </span>
-                <div className="w-10 h-px bg-gold-500/40 mx-auto my-1.5" />
-                <span className="text-[9px] uppercase tracking-[0.2em] text-white/50 font-mono">
-                  DEFINITIVE WORKBOOK
+              {/* Top Masterclass Badge */}
+              <div className="relative z-10 pt-2">
+                <span className="inline-block px-3 py-1 text-[8.5px] uppercase tracking-[0.25em] font-sans font-bold text-gold-300 border border-gold-400/40 bg-black/40 rounded">
+                  BASED ON THE IN-DEPTH MASTERCLASS
                 </span>
               </div>
 
-              {/* Main Title & Subtitle */}
-              <div className="text-center px-2 relative z-10">
-                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white tracking-wide leading-tight drop-shadow">
-                  {product.title}
-                </h3>
-                <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-gold-400 to-transparent mx-auto my-2.5" />
-                <p className="text-xs text-gold-100/80 font-serif italic line-clamp-3 leading-relaxed">
-                  {product.subtitle}
-                </p>
-              </div>
-
-              {/* Golden Foil Geometric Medallion */}
-              <div className="relative z-10 flex justify-center py-2">
-                <div className="w-14 h-14 rounded-full border border-gold-500/50 flex items-center justify-center bg-gold-500/5 shadow-glow-gold">
-                  <div className="w-9 h-9 rotate-45 border border-gold-400/70 flex items-center justify-center">
-                    <Sparkles className="w-4 h-4 text-gold-400 -rotate-45" />
-                  </div>
+              {/* Globe Icon */}
+              <div className="relative z-10 my-1">
+                <div className="w-14 h-14 mx-auto rounded-full bg-gradient-to-br from-blue-500/20 to-teal-500/20 flex items-center justify-center border border-teal-400/40 shadow-glow-emerald">
+                  <Globe className="w-8 h-8 text-teal-400 animate-pulse" />
                 </div>
               </div>
 
-              {/* Bottom Metadata & Click to Flip prompt */}
-              <div className="relative z-10 text-center border-t border-gold-500/20 pt-3">
-                <span className="text-[10px] font-mono uppercase tracking-wider text-gold-300 block">
-                  {product.pageCount} Pages · Fillable Protocols · Audio Companion
+              {/* Title & Red Playbook Accent */}
+              <div className="relative z-10 px-2">
+                <h3 className="font-serif text-xl sm:text-2xl font-black text-white tracking-wider leading-tight">
+                  THE STUDY ABROAD
+                </h3>
+                <span className="block font-serif text-2xl sm:text-3xl font-black text-[#E63946] tracking-widest mt-0.5">
+                  PLAYBOOK
                 </span>
-                <div className="mt-2 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-500/20 text-gold-300 text-[10px] font-semibold border border-gold-500/40 animate-pulse">
+                <div className="w-16 h-0.5 bg-gold-400 mx-auto my-2" />
+                <p className="text-[11px] sm:text-xs text-white/85 font-sans leading-relaxed">
+                  How to Win the Global Education Game, Secure High-Paying Careers & Avoid the 1-Crore Debt Trap
+                </p>
+              </div>
+
+              {/* Author & Counselor Credentials */}
+              <div className="relative z-10 border-t border-gold-500/20 pt-2 text-[10px] text-white/70">
+                <p className="tracking-wider uppercase text-[8.5px]">INSIGHTS FROM</p>
+                <p className="font-bold text-white text-[11px] tracking-wide">DR. KARAN GUPTA</p>
+                <p className="text-[9px] text-gold-300/90 font-sans">
+                  HARVARD BUSINESS SCHOOL ALUMNUS · 100,000+ STUDENTS
+                </p>
+                <div className="mt-2 inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-gold-500/20 text-gold-300 text-[10px] font-semibold border border-gold-500/40">
                   <Eye className="w-3 h-3" />
-                  <span>Click Cover to Open & Flip Pages</span>
+                  <span>Click Cover to Open Sample & Flip</span>
                 </div>
               </div>
 
@@ -199,11 +202,11 @@ export default function Realistic3DFlipBook({
         )}
 
         {/* ============================================================ */}
-        {/* SPREADS 1, 2, 3, 4: OPEN TWO-PAGE SPREAD WITH 3D FLIP EFFECT */}
+        {/* SPREADS 1, 2, 3, 4: OPEN TWO-PAGE SPREADS WITH REAL PAGES    */}
         {/* ============================================================ */}
         {currentSpread > 0 && (
           <div
-            className="relative w-full max-w-[720px] h-[390px] sm:h-[450px] bg-ivory-50 rounded-xl shadow-2xl border border-stone-300 grid grid-cols-2 overflow-hidden"
+            className="relative w-full max-w-[720px] h-[400px] sm:h-[460px] bg-[#FDFBF7] rounded-xl shadow-2xl border border-stone-300 grid grid-cols-2 overflow-hidden"
             style={{ transformStyle: 'preserve-3d' }}
           >
             {/* Center Gutter Fold Shadow & Spine Stitching */}
@@ -211,7 +214,7 @@ export default function Realistic3DFlipBook({
             <div className="absolute top-0 bottom-0 left-1/2 w-px bg-stone-500/40 z-20 pointer-events-none" />
 
             {/* Silk Ribbon Bookmark */}
-            <div className="absolute top-0 left-[51%] w-3 h-32 bg-amber-700/80 rounded-b shadow-md z-30 pointer-events-none">
+            <div className="absolute top-0 left-[51%] w-3 h-32 bg-[#E63946]/90 rounded-b shadow-md z-30 pointer-events-none">
               <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-b from-transparent to-black/30" />
             </div>
 
@@ -220,137 +223,117 @@ export default function Realistic3DFlipBook({
             {/* ------------------------------------------------------------ */}
             <div
               onClick={handlePrev}
-              className="relative p-5 sm:p-7 bg-ivory-100 flex flex-col justify-between border-r border-stone-200 cursor-pointer overflow-hidden paper-texture"
+              className="relative p-5 sm:p-6 bg-[#FAF7F2] flex flex-col justify-between border-r border-stone-200 cursor-pointer overflow-hidden paper-texture"
               title="Click to Flip Back"
             >
-              {/* Subtle page curl hover hint on left */}
               <div className="absolute top-0 left-0 bottom-0 w-6 page-curl-shadow-left pointer-events-none" />
 
-              {/* SPREAD 1 LEFT: Preface */}
+              {/* SPREAD 1 LEFT: Copyright & Masterclass Origin */}
               {currentSpread === 1 && (
-                <div className="space-y-3">
-                  <div className="border-b border-stone-300 pb-2">
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-sage-700 font-bold">
-                      Preface · The Attention Dilemma
-                    </span>
-                    <h4 className="font-serif text-lg sm:text-xl font-bold text-charcoal-900 mt-1">
-                      Why Willpower Keeps Failing You
+                <div className="space-y-2.5">
+                  <div className="border-b border-stone-300 pb-1.5 text-center">
+                    <h4 className="font-serif text-base sm:text-lg font-bold text-[#0A192F]">
+                      The Study Abroad Playbook
                     </h4>
+                    <p className="text-[10px] text-stone-500">
+                      Based on the masterclass dialogue between<br />
+                      <strong className="text-stone-800">Dr. Karan Gupta</strong> and <strong className="text-stone-800">Raj Shamani</strong>
+                    </p>
                   </div>
-                  <p className="text-xs sm:text-sm text-charcoal-700 leading-relaxed font-serif italic">
-                    &ldquo;Attention is not a personality trait. It is a biological spotlight with a finite glucose budget.&rdquo;
+                  <p className="text-[11px] sm:text-xs text-stone-700 leading-relaxed text-justify">
+                    Dr. Karan Gupta is an alumnus of Harvard Business School who has guided over 100,000 students across three decades of foreign admissions counseling, maintaining a premier acceptance track record at top global institutions including Harvard, Stanford, Oxford, and Cambridge.
                   </p>
-                  <p className="text-[11px] sm:text-xs text-charcoal-600 leading-relaxed">
-                    When you sit down to write or build, modern algorithmic novelty triggers an involuntary dopamine surge. Pushing through via brute-force self-discipline triggers adrenal fatigue.
+                  <p className="text-[10px] text-stone-600 leading-relaxed text-justify">
+                    This volume synthesizes his operational frameworks, profile evaluation algorithms, visa realities, ROI metrics, and career strategies into a strategic master guide for parents, students, and ambitious professionals.
                   </p>
-                  <div className="p-2.5 rounded-lg bg-amber-50 border border-amber-200 text-[10px] sm:text-xs text-amber-900">
-                    <strong>Rule #1:</strong> Never fight a biological reflex with cognitive effort. Re-engineer the environment first.
+                  <div className="p-2 rounded bg-stone-100 border border-stone-300 text-[9.5px] text-stone-600">
+                    <strong>First Edition · 2026:</strong> Formulated for educational, strategic, and financial decision clarity before signing multi-crore education loans.
                   </div>
                 </div>
               )}
 
-              {/* SPREAD 2 LEFT: Protocol Overview */}
+              {/* SPREAD 2 LEFT: Chapter 01 - The Brutal Reality Check */}
               {currentSpread === 2 && (
-                <div className="space-y-3">
-                  <div className="border-b border-stone-300 pb-2">
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-terracotta-700 font-bold">
-                      Chapter 02 · The 72-Hour Reset
+                <div className="space-y-2.5">
+                  <div className="border-b border-stone-300 pb-1">
+                    <span className="text-[9.5px] font-mono uppercase tracking-widest text-[#E63946] font-bold">
+                      Chapter 01 · Reality Check
                     </span>
-                    <h4 className="font-serif text-lg sm:text-xl font-bold text-charcoal-900 mt-1">
-                      Recalibrating Dopamine Baselines
+                    <h4 className="font-serif text-base sm:text-lg font-bold text-[#0A192F]">
+                      The Indian Scarcity Math
                     </h4>
                   </div>
-                  <p className="text-[11px] sm:text-xs text-charcoal-600 leading-relaxed">
-                    By removing hyper-stimulating variable reward loops for just 72 hours, your prefrontal dopamine receptors begin upregulation.
+                  <p className="text-[10.5px] sm:text-xs text-stone-700 leading-relaxed text-justify">
+                    Every year, hundreds of thousands of Indian families pledge life savings or mortgage ancestral homes with one vision: a foreign corporate job that pays off every debt.
                   </p>
-                  {/* Visual 72h graph representation */}
-                  <div className="space-y-1.5 pt-1">
-                    <div className="text-[10px] font-mono font-semibold text-charcoal-700">
-                      Day 1: Acute Novelty Withdrawal (Fidgeting)
-                    </div>
-                    <div className="w-full bg-stone-200 h-2 rounded-full overflow-hidden">
-                      <div className="bg-terracotta-500 h-full w-[35%]" />
-                    </div>
-                    <div className="text-[10px] font-mono font-semibold text-charcoal-700">
-                      Day 2: Somatic Resistance Settling
-                    </div>
-                    <div className="w-full bg-stone-200 h-2 rounded-full overflow-hidden">
-                      <div className="bg-amber-500 h-full w-[70%]" />
-                    </div>
-                    <div className="text-[10px] font-mono font-semibold text-charcoal-700">
-                      Day 3: Baseline Restored (Quiet Flow Restored)
-                    </div>
-                    <div className="w-full bg-stone-200 h-2 rounded-full overflow-hidden">
-                      <div className="bg-sage-600 h-full w-[100%]" />
-                    </div>
+                  <div className="p-2 rounded bg-amber-50 border-l-2 border-[#E63946] text-[10px] text-stone-800 italic">
+                    &ldquo;If you are going to take a heavy loan or mortgage your family home for an average degree at an unknown university—do not go abroad.&rdquo;
+                    <span className="block text-[9px] font-semibold text-[#E63946] not-italic mt-1">— Dr. Karan Gupta</span>
+                  </div>
+                  <div className="space-y-1 text-[9.5px] text-stone-700">
+                    <p><strong>• IIT JEE:</strong> 14.75 Lakh candidates fight for ~18,160 seats.</p>
+                    <p><strong>• IIM CAT:</strong> 2.58 Lakh fight for &lt;0.2% acceptance.</p>
+                    <p><strong>• Undergrad Reality:</strong> Generic salaries start at ₹20k–₹30k/mo.</p>
                   </div>
                 </div>
               )}
 
-              {/* SPREAD 3 LEFT: Somatic Nervous System */}
+              {/* SPREAD 3 LEFT: Chapter 03 - The 5 Personas & GCC Goldmine */}
               {currentSpread === 3 && (
-                <div className="space-y-3">
-                  <div className="border-b border-stone-300 pb-2">
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-emerald-800 font-bold">
-                      Chapter 04 · Somatic Stability
+                <div className="space-y-2.5">
+                  <div className="border-b border-stone-300 pb-1">
+                    <span className="text-[9.5px] font-mono uppercase tracking-widest text-teal-800 font-bold">
+                      Chapter 03 & 06 · Strategy Matrix
                     </span>
-                    <h4 className="font-serif text-lg sm:text-xl font-bold text-charcoal-900 mt-1">
-                      The Vagal Nerve Calming Drill
+                    <h4 className="font-serif text-base sm:text-lg font-bold text-[#0A192F]">
+                      The 5 Personas & $100B GCCs
                     </h4>
                   </div>
-                  <p className="text-[11px] sm:text-xs text-charcoal-600 leading-relaxed">
-                    You cannot reason your way out of sympathetic overdrive. Use the double-inhale physiological sigh to activate acetylcholine release:
+                  <p className="text-[10px] sm:text-[11px] text-stone-700">
+                    Education advice cannot be one-size-fits-all:
                   </p>
-                  {/* Interactive breathing widget preview */}
-                  <div className="flex items-center gap-3 p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-950">
-                    <div className="w-10 h-10 rounded-full border-2 border-emerald-600 animate-ping shrink-0 flex items-center justify-center opacity-75">
-                      <div className="w-4 h-4 rounded-full bg-emerald-600" />
-                    </div>
-                    <div className="text-[11px]">
-                      <strong>Physiological Sigh:</strong> Two rapid inhales through nose, slow 6-second exhale through mouth. Repeat 3 times.
-                    </div>
+                  <div className="space-y-1 text-[9.5px] text-stone-800">
+                    <p className="bg-stone-100 p-1 rounded"><strong>1. Rahul (Safe Bet, ₹25–50L):</strong> Do not go abroad. Target ISB (₹24-25L CTC) in India.</p>
+                    <p className="bg-stone-100 p-1 rounded"><strong>2. Ananya (Risk Taker, ₹1Cr+):</strong> US Top Tier (MIT/Stanford), 3-yr STEM OPT.</p>
+                    <p className="bg-stone-100 p-1 rounded"><strong>3. Zara (Healthcare):</strong> UK-to-US Hybrid hack (save ₹1.5 Cr).</p>
+                  </div>
+                  <div className="p-2 rounded bg-teal-50 border border-teal-200 text-[9.5px] text-teal-900">
+                    <strong>India’s $100B GCC Goldmine:</strong> 2,100+ GCCs employ 2.36M pros. Returning graduates earn ₹35L–₹75L+ with 0 visa anxiety!
                   </div>
                 </div>
               )}
 
-              {/* SPREAD 4 LEFT: Summary of Full Edition */}
+              {/* SPREAD 4 LEFT: Chapter 10 & 11 - The Compounding ROI Equation */}
               {currentSpread === 4 && (
-                <div className="space-y-3">
-                  <div className="border-b border-stone-300 pb-2">
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-gold-700 font-bold">
-                      Mastery · Complete Edition
+                <div className="space-y-2.5">
+                  <div className="border-b border-stone-300 pb-1">
+                    <span className="text-[9.5px] font-mono uppercase tracking-widest text-[#0A192F] font-bold">
+                      Chapter 10 & 11 · True ROI
                     </span>
-                    <h4 className="font-serif text-lg sm:text-xl font-bold text-charcoal-900 mt-1">
-                      Everything Included in Full Access
+                    <h4 className="font-serif text-base sm:text-lg font-bold text-[#0A192F]">
+                      ROI = X (Financial) + Y (Agency)
                     </h4>
                   </div>
-                  <ul className="space-y-2 text-[11px] sm:text-xs text-charcoal-700">
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-sage-600 shrink-0" />
-                      <span>{product.pageCount}-page comprehensive workbook (PDF & EPUB)</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-sage-600 shrink-0" />
-                      <span>14-Day Fillable Habit & Attention Architecture</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-sage-600 shrink-0" />
-                      <span>3 Guided Deep Work Audio Priming Protocols (MP3)</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-sage-600 shrink-0" />
-                      <span>Lifetime updates and revised editions</span>
-                    </li>
-                  </ul>
+                  <div className="p-2 bg-stone-100 rounded border border-stone-300 font-mono text-[9.5px] text-[#0A192F]">
+                    ROI = X (Starting Salary & Debt Amortization) + Y (Critical Judgment & Global Network)
+                  </div>
+                  <p className="text-[10px] text-stone-700 leading-relaxed text-justify">
+                    Outside India, placement cells do not exist. You are buying judgment, sovereignty, and high-agency networks.
+                  </p>
+                  <div className="space-y-1 text-[9.5px] text-stone-700">
+                    <p><strong>• 100% Free Tuition:</strong> Graduate Teaching & Research Assistantships (TA/RA).</p>
+                    <p><strong>• Cosigner-Free Loans:</strong> Up to ₹1 Crore+ via Prodigy & MPOWER.</p>
+                    <p><strong>• Need-Based Aid:</strong> Harvard/Princeton covers up to 98% of costs.</p>
+                  </div>
                 </div>
               )}
 
               {/* Page Number Footer */}
-              <div className="flex items-center justify-between pt-2 border-t border-stone-200 text-[10px] text-charcoal-400 font-mono">
+              <div className="flex items-center justify-between pt-1 border-t border-stone-200 text-[9.5px] text-stone-400 font-mono">
                 <span>Page {currentSpread * 2 - 1}</span>
-                <span className="flex items-center gap-1 text-sage-700 font-sans font-semibold">
+                <span className="flex items-center gap-1 text-stone-600 font-sans font-semibold">
                   <ChevronLeft className="w-3 h-3" />
-                  Flip Back
+                  Previous
                 </span>
               </div>
             </div>
@@ -360,130 +343,129 @@ export default function Realistic3DFlipBook({
             {/* ------------------------------------------------------------ */}
             <div
               onClick={handleNext}
-              className="relative p-5 sm:p-7 bg-ivory-50 flex flex-col justify-between cursor-pointer overflow-hidden paper-texture"
+              className="relative p-5 sm:p-6 bg-[#FDFBF7] flex flex-col justify-between cursor-pointer overflow-hidden paper-texture"
               title="Click to Flip Next"
             >
-              {/* Subtle page curl hover hint on right */}
               <div className="absolute top-0 right-0 bottom-0 w-6 page-curl-shadow-right pointer-events-none" />
 
-              {/* SPREAD 1 RIGHT: Excerpt */}
+              {/* SPREAD 1 RIGHT: Complete Table of Contents */}
               {currentSpread === 1 && (
-                <div className="space-y-3">
-                  <div className="border-b border-stone-300 pb-2">
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-sage-700 font-bold">
-                      Protocol 01 · Attentional Firewall
-                    </span>
-                    <h4 className="font-serif text-lg sm:text-xl font-bold text-charcoal-900 mt-1">
-                      The First 60 Minutes of Consciousness
+                <div className="space-y-1.5">
+                  <div className="border-b border-stone-300 pb-1">
+                    <h4 className="font-serif text-base sm:text-lg font-bold text-[#0A192F]">
+                      Table of Contents
                     </h4>
+                    <div className="w-8 h-0.5 bg-[#E63946]" />
                   </div>
-                  <p className="text-[11px] sm:text-xs text-charcoal-700 leading-relaxed">
-                    Checking your notifications within 30 minutes of waking forces your brain to bypass its natural hypnopompic alpha state, immediately dumping you into high-frequency beta anxiety.
-                  </p>
-                  <blockquote className="border-l-2 border-sage-500 pl-2.5 py-1 text-[11px] sm:text-xs italic text-charcoal-700 bg-sage-50/50 rounded-r">
-                    &ldquo;When you protect your morning window, you claim sovereignty over the cognitive direction of your entire day.&rdquo;
-                  </blockquote>
-                  <p className="text-[10px] text-charcoal-500 font-mono">
-                    👉 Click this page to flip to the interactive 14-day protocol worksheet.
+                  <ul className="text-[9px] sm:text-[9.5px] text-stone-700 space-y-0.5 font-sans">
+                    <li><strong className="text-[#E63946]">01</strong> The Brutal Reality Check</li>
+                    <li><strong className="text-[#E63946]">02</strong> The Five Removals Test</li>
+                    <li><strong className="text-[#E63946]">03</strong> The Five Student Personas</li>
+                    <li><strong className="text-[#E63946]">04</strong> The Country Cycle & Visa Mirage</li>
+                    <li><strong className="text-[#E63946]">05</strong> Future-Proofing Degrees With Tech</li>
+                    <li><strong className="text-[#E63946]">06</strong> GCCs: India’s Hidden $100B Goldmine</li>
+                    <li><strong className="text-[#E63946]">07</strong> Rankings vs. Reality: The Harvard Truth</li>
+                    <li><strong className="text-[#E63946]">08</strong> The Elite Network & Jan Koum Rule</li>
+                    <li><strong className="text-[#E63946]">09</strong> 5 Whys & The SSF Conflict</li>
+                    <li><strong className="text-[#E63946]">10</strong> The Real Education ROI Equation</li>
+                    <li><strong className="text-[#E63946]">11</strong> Funding, Scholarships & 3-Box Profile</li>
+                    <li><strong className="text-[#E63946]">12</strong> The MATCH Strategy & Emotional Cost</li>
+                  </ul>
+                  <p className="text-[9px] text-[#E63946] font-semibold pt-1">
+                    👉 Click to turn to Chapter 01
                   </p>
                 </div>
               )}
 
-              {/* SPREAD 2 RIGHT: Interactive Habit Checklist */}
+              {/* SPREAD 2 RIGHT: Case Study Dundee vs. Bath */}
               {currentSpread === 2 && (
-                <div className="space-y-2.5">
-                  <div className="border-b border-stone-300 pb-1.5">
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-terracotta-700 font-bold">
-                      Interactive Worksheet · Try It Now
+                <div className="space-y-2">
+                  <div className="border-b border-stone-300 pb-1">
+                    <span className="text-[9.5px] font-mono uppercase tracking-widest text-[#E63946] font-bold">
+                      Case Comparison
                     </span>
-                    <h4 className="font-serif text-base sm:text-lg font-bold text-charcoal-900 mt-0.5">
-                      Your Daily Attention Audit
+                    <h4 className="font-serif text-base sm:text-lg font-bold text-[#0A192F]">
+                      A Tale of Two Outcomes
                     </h4>
                   </div>
-                  <p className="text-[10px] sm:text-[11px] text-charcoal-600">
-                    Click each item to test your daily checklist (included fillable in full PDF):
+                  <div className="space-y-1.5 text-[9.5px] text-stone-700">
+                    <div className="p-2 rounded bg-red-50 border-l-2 border-[#E63946]">
+                      <strong className="text-[#E63946] block text-[10px]">CASE A: DUNDEE (£25,000 Loan)</strong>
+                      Took a generic Finance Master’s in Dundee. No jobs materialized. Spent an entire year washing vegetables to survive before returning to India in heavy debt.
+                    </div>
+                    <div className="p-2 rounded bg-teal-50 border-l-2 border-teal-600">
+                      <strong className="text-teal-800 block text-[10px]">CASE B: BATH & NOTTINGHAM</strong>
+                      Targeted Bath, interned strategically with King Cobra and House of Lords, networked in renewables, and secured high-growth UK tech career.
+                    </div>
+                  </div>
+                  <p className="text-[9px] text-stone-600 font-sans italic">
+                    The difference wasn’t luck: it was pedigree, specialization, and networking initiative.
                   </p>
+                </div>
+              )}
 
-                  <div className="space-y-2" onClick={(e) => e.stopPropagation()}>
-                    {interactiveHabits.map((item, idx) => (
+              {/* SPREAD 3 RIGHT: Interactive 5 Removals Test */}
+              {currentSpread === 3 && (
+                <div className="space-y-2">
+                  <div className="border-b border-stone-300 pb-1">
+                    <span className="text-[9.5px] font-mono uppercase tracking-widest text-[#E63946] font-bold">
+                      Interactive Diagnostic
+                    </span>
+                    <h4 className="font-serif text-base sm:text-lg font-bold text-[#0A192F]">
+                      The Five Removals Test
+                    </h4>
+                  </div>
+                  <p className="text-[9.5px] text-stone-600">
+                    Click each filter to test your candidate university:
+                  </p>
+                  <div className="space-y-1.5" onClick={(e) => e.stopPropagation()}>
+                    {removalsChecklist.map((item, idx) => (
                       <div
                         key={idx}
-                        onClick={() => toggleHabit(idx)}
-                        className="flex items-center gap-2 p-2 rounded-lg bg-sand-100 hover:bg-sand-200/80 transition-colors cursor-pointer border border-stone-200 text-[11px]"
+                        onClick={() => toggleRemoval(idx)}
+                        className="flex items-start gap-1.5 p-1.5 rounded bg-stone-100 hover:bg-stone-200 transition-colors cursor-pointer border border-stone-200 text-[9.5px]"
                       >
                         {item.checked ? (
-                          <CheckSquare className="w-4 h-4 text-sage-600 shrink-0" />
+                          <CheckSquare className="w-3.5 h-3.5 text-[#E63946] shrink-0 mt-0.5" />
                         ) : (
-                          <Square className="w-4 h-4 text-stone-400 shrink-0" />
+                          <Square className="w-3.5 h-3.5 text-stone-400 shrink-0 mt-0.5" />
                         )}
-                        <span className={item.checked ? 'line-through text-charcoal-400' : 'text-charcoal-800'}>
+                        <span className={item.checked ? 'text-stone-900 font-medium' : 'text-stone-500'}>
                           {item.label}
                         </span>
                       </div>
                     ))}
                   </div>
-
-                  <div className="text-[10px] text-sage-700 font-mono font-medium">
-                    ✓ All worksheets formatted for both digital PDF and home printing.
-                  </div>
-                </div>
-              )}
-
-              {/* SPREAD 3 RIGHT: Somatic Grounding Checklist */}
-              {currentSpread === 3 && (
-                <div className="space-y-3">
-                  <div className="border-b border-stone-300 pb-2">
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-emerald-800 font-bold">
-                      Exercise 04 · The Emergency Reset
-                    </span>
-                    <h4 className="font-serif text-lg sm:text-xl font-bold text-charcoal-900 mt-1">
-                      Breaking an Emotional Spiral
-                    </h4>
-                  </div>
-                  <p className="text-[11px] sm:text-xs text-charcoal-700 leading-relaxed">
-                    When feeling defensive or anxious, do not attempt to speak or make decisions:
+                  <p className="text-[9px] text-stone-500">
+                    If the curriculum still seduces you after all 5 removals—only then go!
                   </p>
-                  <div className="space-y-1.5 text-[11px] text-charcoal-700">
-                    <div className="flex items-start gap-2">
-                      <span className="font-mono text-emerald-700 font-bold">1.</span>
-                      <span>Feel your feet pressed firmly against the solid floor.</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="font-mono text-emerald-700 font-bold">2.</span>
-                      <span>Drop your tongue from the roof of your mouth.</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="font-mono text-emerald-700 font-bold">3.</span>
-                      <span>Expand your visual peripheral gaze to reduce amygdala activation.</span>
-                    </div>
-                  </div>
                 </div>
               )}
 
-              {/* SPREAD 4 RIGHT: Direct Gumroad Checkout CTA */}
+              {/* SPREAD 4 RIGHT: The MATCH Framework & Instant PDF Unlock */}
               {currentSpread === 4 && (
-                <div className="space-y-3 text-center flex flex-col justify-between h-full py-1">
+                <div className="space-y-2 text-center flex flex-col justify-between h-full py-1">
                   <div>
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-gold-700 font-bold block">
-                      Immediate Worldwide Access
+                    <span className="text-[9.5px] font-mono uppercase tracking-widest text-[#E63946] font-bold block">
+                      Chapter 12 · Job Acquisition
                     </span>
-                    <h4 className="font-serif text-xl sm:text-2xl font-bold text-charcoal-900 mt-1">
-                      Unlock Full Edition
+                    <h4 className="font-serif text-base sm:text-lg font-bold text-[#0A192F] mt-0.5">
+                      The MATCH Strategy
                     </h4>
-                    <p className="text-xs text-charcoal-600 mt-1">
-                      Instant secure download via Gumroad.
+                    <p className="text-[9.5px] text-stone-600">
+                      <strong>M</strong>ap Market · <strong>A</strong>ssemble Evidence · <strong>T</strong>arget Ecosystem · <strong>C</strong>ombine AI & Humans · <strong>H</strong>one Mock Interviews
                     </p>
                   </div>
 
-                  {/* Price & Purchase Trigger */}
-                  <div className="p-3 rounded-xl bg-sand-100 border border-stone-300" onClick={(e) => e.stopPropagation()}>
-                    <div className="flex items-baseline justify-center gap-2 mb-2">
-                      <span className="text-2xl font-serif font-bold text-charcoal-900">
+                  {/* Immediate Download & Purchase Box */}
+                  <div className="p-3 rounded-xl bg-amber-50/70 border border-stone-300" onClick={(e) => e.stopPropagation()}>
+                    <div className="flex items-baseline justify-center gap-2 mb-1">
+                      <span className="text-2xl font-serif font-black text-[#0A192F]">
                         ${product.price.toFixed(2)}
                       </span>
-                      <span className="text-xs text-charcoal-500">USD</span>
+                      <span className="text-xs text-stone-500">USD</span>
                       {product.originalPrice && (
-                        <span className="text-xs text-charcoal-400 line-through">
+                        <span className="text-xs text-stone-400 line-through">
                           ${product.originalPrice.toFixed(2)}
                         </span>
                       )}
@@ -492,20 +474,28 @@ export default function Realistic3DFlipBook({
                       product={product}
                       variant="primary"
                       size="sm"
-                      label={`Unlock ${product.title}`}
+                      label="Unlock The Complete Playbook"
                     />
+                    <a
+                      href="/Study_Abroad_Playbook_EBook.pdf"
+                      download="The_Study_Abroad_Playbook_EBook.pdf"
+                      className="mt-2 inline-flex items-center gap-1.5 text-[10px] text-stone-700 hover:text-[#E63946] font-semibold underline underline-offset-2"
+                    >
+                      <Download className="w-3 h-3" />
+                      <span>Download Sample PDF Instantly</span>
+                    </a>
                   </div>
 
-                  <p className="text-[10px] text-charcoal-400">
-                    30-Day Money-Back Guarantee · No Questions Asked
+                  <p className="text-[9px] text-stone-500">
+                    &ldquo;Information will expire. Judgment travels forever.&rdquo;
                   </p>
                 </div>
               )}
 
               {/* Page Number Footer */}
-              <div className="flex items-center justify-between pt-2 border-t border-stone-200 text-[10px] text-charcoal-400 font-mono">
-                <span className="flex items-center gap-1 text-sage-700 font-sans font-semibold">
-                  Flip Next
+              <div className="flex items-center justify-between pt-1 border-t border-stone-200 text-[9.5px] text-stone-400 font-mono">
+                <span className="flex items-center gap-1 text-stone-600 font-sans font-semibold">
+                  Next
                   <ChevronRight className="w-3 h-3" />
                 </span>
                 <span>Page {currentSpread * 2}</span>
@@ -521,51 +511,51 @@ export default function Realistic3DFlipBook({
           onClick={() => jumpToSpread(0)}
           className={`px-3 py-1.5 rounded-full font-semibold transition-all ${
             currentSpread === 0
-              ? 'bg-gold-500 text-obsidian-950 shadow-md font-bold'
+              ? 'bg-[#E63946] text-white shadow-md font-bold'
               : 'bg-obsidian-800 text-obsidian-300 hover:text-white border border-white/10'
           }`}
         >
-          Cover
+          Book Cover
         </button>
         <button
           onClick={() => jumpToSpread(1)}
           className={`px-3 py-1.5 rounded-full font-semibold transition-all ${
             currentSpread === 1
-              ? 'bg-gold-500 text-obsidian-950 shadow-md font-bold'
+              ? 'bg-[#E63946] text-white shadow-md font-bold'
               : 'bg-obsidian-800 text-obsidian-300 hover:text-white border border-white/10'
           }`}
         >
-          Preface & Neuroscience
+          TOC & Credentials
         </button>
         <button
           onClick={() => jumpToSpread(2)}
           className={`px-3 py-1.5 rounded-full font-semibold transition-all ${
             currentSpread === 2
-              ? 'bg-gold-500 text-obsidian-950 shadow-md font-bold'
+              ? 'bg-[#E63946] text-white shadow-md font-bold'
               : 'bg-obsidian-800 text-obsidian-300 hover:text-white border border-white/10'
           }`}
         >
-          14-Day Protocol
+          Ch 01 Scarcity & Dundee vs Bath
         </button>
         <button
           onClick={() => jumpToSpread(3)}
           className={`px-3 py-1.5 rounded-full font-semibold transition-all ${
             currentSpread === 3
-              ? 'bg-gold-500 text-obsidian-950 shadow-md font-bold'
+              ? 'bg-[#E63946] text-white shadow-md font-bold'
               : 'bg-obsidian-800 text-obsidian-300 hover:text-white border border-white/10'
           }`}
         >
-          Somatic Reset
+          The 5 Removals Diagnostic
         </button>
         <button
           onClick={() => jumpToSpread(4)}
           className={`px-3 py-1.5 rounded-full font-semibold transition-all ${
             currentSpread === 4
-              ? 'bg-gold-500 text-obsidian-950 shadow-md font-bold'
+              ? 'bg-[#E63946] text-white shadow-md font-bold'
               : 'bg-obsidian-800 text-obsidian-300 hover:text-white border border-white/10'
           }`}
         >
-          Unlock Full Book
+          Unlock Full Playbook
         </button>
       </div>
     </div>

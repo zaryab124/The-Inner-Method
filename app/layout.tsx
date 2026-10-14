@@ -18,46 +18,49 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://theinnermethod.com'),
+  metadataBase: new URL('https://thestudyabroadplaybook.com'),
   title: {
-    default: 'The Inner Method — International Digital Publishing Store',
-    template: '%s | The Inner Method',
+    default: 'The Study Abroad Playbook — Dr. Karan Gupta | Avoid the 1-Crore Debt Trap',
+    template: '%s | The Study Abroad Playbook',
   },
   description:
-    'Original cognitive psychology e-books, deep work workbooks, and self-investigation journals for high-leverage thinkers and lifelong learners worldwide.',
+    'How to Win the Global Education Game, Secure High-Paying Careers & Avoid the 1-Crore Debt Trap. Strategic masterclass frameworks from Harvard Business School alumnus Dr. Karan Gupta & Raj Shamani.',
   keywords: [
-    'psychology ebooks',
-    'deep work guide',
-    'the focus reset',
-    'understand your patterns',
-    'cognitive habits',
-    'self development workbooks',
-    'digital publishing',
+    'The Study Abroad Playbook',
+    'Dr Karan Gupta',
+    'Raj Shamani study abroad',
+    'how to study abroad from India',
+    'avoid 1 crore debt trap',
+    'study abroad scholarships',
+    'the five removals test',
+    'STEM OPT jobs',
+    'GCC reverse brain drain',
   ],
-  authors: [{ name: 'The Inner Method Editorial Team' }],
-  creator: 'The Inner Method Publishing',
+  authors: [{ name: 'Dr. Karan Gupta' }, { name: 'Raj Shamani' }],
+  creator: 'The Study Abroad Playbook Publishing',
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://theinnermethod.com',
-    siteName: 'The Inner Method',
-    title: 'The Inner Method — Digital Publishing Store',
+    url: 'https://thestudyabroadplaybook.com',
+    siteName: 'The Study Abroad Playbook',
+    title: 'The Study Abroad Playbook — Dr. Karan Gupta',
     description:
-      'Rigorous cognitive psychology e-books, deep work protocols, and emotional pattern workbooks.',
+      'How to Win the Global Education Game, Secure High-Paying Careers & Avoid the 1-Crore Debt Trap.',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/study_abroad_cover.png',
         width: 1200,
         height: 630,
-        alt: 'The Inner Method Publishing Store',
+        alt: 'The Study Abroad Playbook Book Cover',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'The Inner Method — Digital Publishing Store',
+    title: 'The Study Abroad Playbook — Dr. Karan Gupta',
     description:
-      'Original cognitive psychology e-books, attention workbooks, and self-investigation journals.',
+      'How to Win the Global Education Game, Secure High-Paying Careers & Avoid the 1-Crore Debt Trap.',
+    images: ['/study_abroad_cover.png'],
   },
   robots: {
     index: true,

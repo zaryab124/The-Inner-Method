@@ -1,12 +1,12 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { BookOpen, ArrowRight } from 'lucide-react';
+import { ArrowRight, Award, ShieldCheck, CheckCircle2 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'About Our Publishing Standards & Mission',
+  title: 'About Dr. Karan Gupta & The Study Abroad Playbook Mission',
   description:
-    'Learn about The Inner Method, our cognitive psychology publishing standards, and our mission to provide accessible, rigorous self-development tools to readers worldwide.',
+    'Learn about Dr. Karan Gupta (Harvard Business School alumnus), our 30-year counseling track record, and our mission to help students win the global education game and avoid the 1-Crore debt trap.',
 };
 
 export default function AboutPage() {
@@ -16,90 +16,91 @@ export default function AboutPage() {
         {/* Monogram Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-300 text-xs font-semibold">
-            <BookOpen className="w-3.5 h-3.5 text-gold-400" />
-            <span>Publishing Manifesto</span>
+            <Award className="w-3.5 h-3.5 text-gold-400" />
+            <span>Admissions Counsel & Publishing Mission</span>
           </div>
 
           <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white leading-tight">
-            Publishing for the Quietly Ambitious.
+            Protecting Families from the 1-Crore Debt Trap.
           </h1>
 
           <p className="text-base sm:text-lg text-gold-200/80 leading-relaxed font-serif italic">
-            &ldquo;We do not need more breathless motivation. We need calm, rigorous systems to understand our minds and protect our focus.&rdquo;
+            &ldquo;If you are going to take a heavy loan, sell your mother’s jewelry, or mortgage your family home for an average degree at an unknown university—do not go abroad. We will find you something in India.&rdquo;
           </p>
+          <span className="text-xs font-bold text-[#E63946] tracking-wider uppercase">— DR. KARAN GUPTA</span>
         </div>
 
         {/* Story Section */}
         <div className="bg-obsidian-900 rounded-3xl border border-gold-500/30 p-8 sm:p-12 shadow-2xl space-y-8 text-obsidian-200 text-sm sm:text-base leading-relaxed border-glow-gold">
           <section className="space-y-4">
             <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white">
-              The Origin of The Inner Method
+              The Authority Behind The Playbook
             </h2>
             <p>
-              The Inner Method began with a simple observation: modern digital culture has weaponized novelty against human consciousness. Every day, knowledge workers, creators, and students sit down intending to do meaningful work, only to find their attentional bandwidth fractured by continuous partial attention and algorithmic dopamine triggers.
+              <strong className="text-white">Dr. Karan Gupta</strong> is an alumnus of Harvard Business School who has guided over <strong className="text-gold-300">100,000 students across three decades</strong> of foreign admissions counseling. His candidates maintain a premier acceptance record at the world’s most selective academic institutions, including Harvard, Stanford, Oxford, Cambridge, and MIT.
             </p>
             <p>
-              When people struggle to focus or find themselves trapped in recurring emotional loops, mainstream advice usually offers one of two extremes: toxic hustle culture that demands brutal willpower, or superficial affirmations that ignore human neurobiology.
+              In his widely celebrated in-depth masterclass dialogue with <strong className="text-white">Raj Shamani</strong>, Dr. Gupta stripped away the promotional illusions peddled by education agents and aggregators. He revealed the objective mathematical realities behind the Indian seat scarcity equation, temporary visa cycles, and the real cost of studying abroad.
             </p>
             <p>
-              We founded <strong className="text-gold-300">The Inner Method</strong> as an independent publishing imprint to offer a third way: calm, science-grounded frameworks that respect both autonomic nervous system physiology and executive cognitive architecture.
+              <strong className="text-gold-300">The Study Abroad Playbook</strong> synthesizes his operational algorithms, profile evaluation architectures, and career acquisition strategies into an indispensable manual for ambitious candidates and their families.
             </p>
           </section>
 
           <div className="w-full h-px bg-white/10" />
 
-          {/* Our 4 Editorial Commitments */}
+          {/* Our 4 Admissions Principles */}
           <section className="space-y-6">
             <h3 className="font-serif text-2xl font-bold text-white">
-              Our 4 Editorial Commitments
+              Our 4 Strategic Principles
             </h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="space-y-2 p-5 rounded-2xl bg-obsidian-850 border border-white/10">
                 <span className="font-mono text-xs text-gold-400 font-bold uppercase tracking-wider">
-                  01 · Biological Grounding
+                  01 · Mathematical Reality
                 </span>
                 <h4 className="font-serif font-bold text-white text-base">
-                  Physiology Before Logic
+                  No False Promises
                 </h4>
                 <p className="text-xs text-obsidian-300 leading-relaxed">
-                  We recognize that a dysregulated nervous system cannot sustain rational focus. Every workbook integrates somatic settling and nervous system pacing.
+                  We state the truth that agents conceal: there is never a 100% guarantee of getting a job abroad. Every move must be a calculated financial deployment with verified ROI.
                 </p>
               </div>
 
               <div className="space-y-2 p-5 rounded-2xl bg-obsidian-850 border border-white/10">
                 <span className="font-mono text-xs text-gold-400 font-bold uppercase tracking-wider">
-                  02 · Zero Filler
+                  02 · The Five Removals
                 </span>
                 <h4 className="font-serif font-bold text-white text-base">
-                  Concise, High-Leverage Depth
+                  De-Biasing Marketing
                 </h4>
                 <p className="text-xs text-obsidian-300 leading-relaxed">
-                  We reject the standard publishing convention of padding a 30-page insight into 300 pages of repetition. Our editions are dense, actionable, and respect your time.
+                  We strip away the brochure lawns, prestige logos, social bragging rights, and generational scripts to evaluate if a syllabus genuinely offers career leverage.
                 </p>
               </div>
 
               <div className="space-y-2 p-5 rounded-2xl bg-obsidian-850 border border-white/10">
                 <span className="font-mono text-xs text-gold-400 font-bold uppercase tracking-wider">
-                  03 · Practical Implementation
+                  03 · Non-Traditional Funding
                 </span>
                 <h4 className="font-serif font-bold text-white text-base">
-                  Workbooks, Not Just Theories
+                  Zero Family Ruin
                 </h4>
                 <p className="text-xs text-obsidian-300 leading-relaxed">
-                  Every book includes fillable worksheets, daily tracking architecture, reflection prompts, and audio guidance so ideas become actual habits.
+                  We show exceptional students how to fund degrees for free via 100% tuition-paid Graduate Assistantships (TA/RA), need-based grants, and cosigner-free loans.
                 </p>
               </div>
 
               <div className="space-y-2 p-5 rounded-2xl bg-obsidian-850 border border-white/10">
                 <span className="font-mono text-xs text-gold-400 font-bold uppercase tracking-wider">
-                  04 · Global Accessibility
+                  04 · High-Agency Career Match
                 </span>
                 <h4 className="font-serif font-bold text-white text-base">
-                  International Digital Distribution
+                  The MATCH Framework
                 </h4>
                 <p className="text-xs text-obsidian-300 leading-relaxed">
-                  Operating with a digital-first publishing model, we distribute directly to readers in 140+ countries without prohibitive shipping costs or international import tariffs.
+                  Outside India, placement cells do not exist. We equip students with the 5-step MATCH system to target mid-tier ecosystems and crack global employment from Day 1.
                 </p>
               </div>
             </div>
@@ -107,35 +108,41 @@ export default function AboutPage() {
 
           <div className="w-full h-px bg-white/10" />
 
-          {/* Operational Transparency & Technology */}
+          {/* Secure Digital Publishing Standards */}
           <section className="space-y-4">
             <h3 className="font-serif text-2xl font-bold text-white">
-              Technology & Secure Distribution
+              Secure Global Distribution
             </h3>
             <p>
-              Operating an independent publishing house across borders requires complete trust and transparency. To guarantee bank-grade security for our international readers, all transactions and digital fulfillment are hosted via <strong className="text-gold-300">Gumroad</strong>.
+              All publications are distributed globally through Gumroad’s secure checkout architecture. We do not store card numbers, bank credentials, or private payment data on our servers.
             </p>
-            <p>
-              This ensures that your sensitive payment information is never stored or processed on our private servers, while providing instantaneous file delivery and a transparent 30-day money-back guarantee.
-            </p>
+            <div className="pt-2 flex items-center gap-4 text-xs font-mono text-emerald-400">
+              <span className="flex items-center gap-1.5">
+                <ShieldCheck className="w-4 h-4" />
+                <span>Gumroad Hosted Checkout</span>
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4" />
+                <span>30-Day Money-Back Guarantee</span>
+              </span>
+            </div>
           </section>
 
-          {/* Next steps CTA */}
+          {/* Action Link */}
           <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div>
-              <h4 className="font-serif font-bold text-white">
-                Ready to explore the library?
-              </h4>
-              <p className="text-xs text-obsidian-400">
-                Inspect our digital editions in full 3D with interactive page turns.
-              </p>
-            </div>
             <Link
               href="/shop"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-gold-500 to-gold-600 text-obsidian-950 text-xs font-bold hover:brightness-110 transition-all shadow-glow-gold"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-gold-400 hover:text-gold-300 transition-colors"
             >
-              <span>Browse All Books</span>
+              <span>Explore The Complete Study Abroad Playbook</span>
               <ArrowRight className="w-4 h-4" />
+            </Link>
+
+            <Link
+              href="/free-resources"
+              className="text-xs text-obsidian-400 hover:text-white transition-colors"
+            >
+              Download The Free 5 Removals Diagnostic Guide →
             </Link>
           </div>
         </div>

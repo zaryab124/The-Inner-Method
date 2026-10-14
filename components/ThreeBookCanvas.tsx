@@ -42,21 +42,12 @@ export default function ThreeBookCanvas({
     const ctx = canvas.getContext('2d');
     if (!ctx) return new THREE.CanvasTexture(canvas);
 
-    // Background gradient
+    // Background gradient: Deep Navy/Obsidian
     const gradient = ctx.createLinearGradient(0, 0, 1024, 1480);
-    if (product.slug === 'the-focus-reset') {
-      gradient.addColorStop(0, '#1E2D24');
-      gradient.addColorStop(0.5, '#17221C');
-      gradient.addColorStop(1, '#0F1612');
-    } else if (product.slug === 'understand-your-patterns') {
-      gradient.addColorStop(0, '#35241E');
-      gradient.addColorStop(0.5, '#281B16');
-      gradient.addColorStop(1, '#18100D');
-    } else {
-      gradient.addColorStop(0, '#1B212A');
-      gradient.addColorStop(0.5, '#131820');
-      gradient.addColorStop(1, '#0B0E13');
-    }
+    gradient.addColorStop(0, '#050E1A');
+    gradient.addColorStop(0.35, '#0A192F');
+    gradient.addColorStop(0.7, '#172A45');
+    gradient.addColorStop(1, '#050E1A');
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, 1024, 1480);
 
@@ -70,11 +61,11 @@ export default function ThreeBookCanvas({
       ctx.stroke();
     }
 
-    // Outer subtle gold foil border frame
-    ctx.strokeStyle = 'rgba(215, 185, 142, 0.45)';
+    // Outer gold foil frame
+    ctx.strokeStyle = 'rgba(212, 175, 55, 0.55)';
     ctx.lineWidth = 3;
     ctx.strokeRect(50, 50, 924, 1380);
-    ctx.strokeStyle = 'rgba(215, 185, 142, 0.2)';
+    ctx.strokeStyle = 'rgba(212, 175, 55, 0.25)';
     ctx.lineWidth = 1;
     ctx.strokeRect(62, 62, 900, 1356);
 
@@ -83,12 +74,12 @@ export default function ThreeBookCanvas({
       ctx.save();
       ctx.translate(x, y);
       ctx.rotate(angle);
-      ctx.strokeStyle = 'rgba(215, 185, 142, 0.7)';
+      ctx.strokeStyle = 'rgba(212, 175, 55, 0.8)';
       ctx.lineWidth = 2;
       ctx.beginPath();
-      ctx.moveTo(0, 15);
+      ctx.moveTo(0, 20);
       ctx.lineTo(0, 0);
-      ctx.lineTo(15, 0);
+      ctx.lineTo(20, 0);
       ctx.stroke();
       ctx.restore();
     };
@@ -98,120 +89,86 @@ export default function ThreeBookCanvas({
     drawCorner(75, 1405, (3 * Math.PI) / 2);
 
     if (isFront) {
-      // Publisher Masthead
-      ctx.fillStyle = 'rgba(215, 185, 142, 0.85)';
-      ctx.font = '600 24px -apple-system, sans-serif';
-      ctx.textAlign = 'center';
-      ctx.letterSpacing = '6px';
-      ctx.fillText('THE INNER METHOD', 512, 180);
-
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
-      ctx.font = '14px -apple-system, sans-serif';
-      ctx.letterSpacing = '3px';
-      ctx.fillText('INTERNATIONAL DIGITAL EDITIONS', 512, 215);
-
-      // Decorative divider
-      ctx.beginPath();
-      ctx.moveTo(412, 245);
-      ctx.lineTo(612, 245);
-      ctx.strokeStyle = 'rgba(215, 185, 142, 0.4)';
+      // Top Masterclass Pill
+      ctx.fillStyle = 'rgba(10, 25, 47, 0.85)';
+      ctx.strokeStyle = 'rgba(212, 175, 55, 0.6)';
       ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.roundRect(260, 150, 504, 48, 8);
+      ctx.fill();
       ctx.stroke();
 
-      // Diamond icon
-      ctx.fillStyle = 'rgba(215, 185, 142, 0.8)';
+      ctx.fillStyle = '#D4AF37';
+      ctx.font = 'bold 18px -apple-system, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.letterSpacing = '4px';
+      ctx.fillText('BASED ON THE IN-DEPTH MASTERCLASS', 512, 180);
+
+      // Globe Emblem
+      ctx.save();
+      ctx.translate(512, 330);
+      const globeGlow = ctx.createRadialGradient(0, 0, 10, 0, 0, 80);
+      globeGlow.addColorStop(0, 'rgba(45, 212, 191, 0.35)');
+      globeGlow.addColorStop(0.7, 'rgba(14, 165, 233, 0.15)');
+      globeGlow.addColorStop(1, 'rgba(0, 0, 0, 0)');
+      ctx.fillStyle = globeGlow;
       ctx.beginPath();
-      ctx.moveTo(512, 238);
-      ctx.lineTo(519, 245);
-      ctx.lineTo(512, 252);
-      ctx.lineTo(505, 245);
+      ctx.arc(0, 0, 80, 0, Math.PI * 2);
       ctx.fill();
 
-      // Main Book Title (Serif typography)
-      ctx.fillStyle = '#FFFFFF';
-      ctx.font = 'bold 74px "Playfair Display", Georgia, serif';
-      ctx.textAlign = 'center';
-      ctx.letterSpacing = '1px';
-
-      const titleLines = product.title.toUpperCase().split(' ');
-      if (titleLines.length > 2) {
-        ctx.fillText(titleLines.slice(0, 2).join(' '), 512, 540);
-        ctx.fillText(titleLines.slice(2).join(' '), 512, 625);
-      } else {
-        ctx.fillText(product.title.toUpperCase(), 512, 580);
-      }
-
-      // Golden accent underline
-      const gradientUnderline = ctx.createLinearGradient(300, 680, 724, 680);
-      gradientUnderline.addColorStop(0, 'rgba(215, 185, 142, 0)');
-      gradientUnderline.addColorStop(0.5, 'rgba(215, 185, 142, 0.9)');
-      gradientUnderline.addColorStop(1, 'rgba(215, 185, 142, 0)');
-      ctx.fillStyle = gradientUnderline;
-      ctx.fillRect(312, 675, 400, 3);
-
-      // Subtitle
-      ctx.fillStyle = 'rgba(245, 245, 245, 0.8)';
-      ctx.font = '300 28px -apple-system, sans-serif';
-      ctx.textAlign = 'center';
-      
-      const words = product.subtitle.split(' ');
-      let line = '';
-      let y = 740;
-      for (let n = 0; n < words.length; n++) {
-        const testLine = line + words[n] + ' ';
-        const metrics = ctx.measureText(testLine);
-        if (metrics.width > 700 && n > 0) {
-          ctx.fillText(line.trim(), 512, y);
-          line = words[n] + ' ';
-          y += 42;
-        } else {
-          line = testLine;
-        }
-      }
-      ctx.fillText(line.trim(), 512, y);
-
-      // Central Embossed Emblem / Geometry
-      ctx.save();
-      ctx.translate(512, 1020);
-      ctx.strokeStyle = 'rgba(215, 185, 142, 0.35)';
-      ctx.lineWidth = 2;
+      const sphereGrad = ctx.createLinearGradient(-45, -45, 45, 45);
+      sphereGrad.addColorStop(0, '#38BDF8');
+      sphereGrad.addColorStop(0.5, '#0D9488');
+      sphereGrad.addColorStop(1, '#0369A1');
+      ctx.fillStyle = sphereGrad;
       ctx.beginPath();
-      ctx.arc(0, 0, 95, 0, Math.PI * 2);
-      ctx.stroke();
-
-      ctx.beginPath();
-      ctx.arc(0, 0, 75, 0, Math.PI * 2);
-      ctx.stroke();
-
-      // Nested geometric star
-      ctx.strokeStyle = 'rgba(215, 185, 142, 0.6)';
-      ctx.beginPath();
-      for (let i = 0; i < 8; i++) {
-        const r = i % 2 === 0 ? 65 : 30;
-        const ang = (i * Math.PI) / 4;
-        const px = Math.cos(ang) * r;
-        const py = Math.sin(ang) * r;
-        if (i === 0) ctx.moveTo(px, py);
-        else ctx.lineTo(px, py);
-      }
-      ctx.closePath();
-      ctx.stroke();
+      ctx.arc(0, 0, 52, 0, Math.PI * 2);
+      ctx.fill();
       ctx.restore();
 
-      // Bottom Badge / Format
-      ctx.fillStyle = 'rgba(215, 185, 142, 0.9)';
-      ctx.font = '600 20px -apple-system, sans-serif';
-      ctx.letterSpacing = '4px';
-      ctx.fillText('DEFINITIVE DIGITAL WORKBOOK & AUDIO COMPANION', 512, 1280);
+      // Main Book Title
+      ctx.fillStyle = '#FFFFFF';
+      ctx.font = 'bold 64px "Playfair Display", Georgia, serif';
+      ctx.textAlign = 'center';
+      ctx.letterSpacing = '3px';
+      ctx.fillText('THE STUDY ABROAD', 512, 530);
+
+      // Accent Word: PLAYBOOK
+      ctx.fillStyle = '#E63946';
+      ctx.font = 'bold 84px "Playfair Display", Georgia, serif';
+      ctx.letterSpacing = '5px';
+      ctx.fillText('PLAYBOOK', 512, 620);
+
+      // Gold divider line
+      ctx.fillStyle = '#D4AF37';
+      ctx.fillRect(432, 665, 160, 4);
+
+      // Subtitle
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+      ctx.font = '400 27px -apple-system, sans-serif';
+      ctx.letterSpacing = '0.5px';
+      ctx.fillText('How to Win the Global Education Game,', 512, 730);
+      ctx.fillText('Secure High-Paying Careers & Avoid the 1-Crore Debt Trap', 512, 775);
+
+      // Counselor Credentials Section
+      ctx.fillStyle = 'rgba(212, 175, 55, 0.95)';
+      ctx.font = 'bold 22px -apple-system, sans-serif';
+      ctx.letterSpacing = '3px';
+      ctx.fillText('INSIGHTS FROM DR. KARAN GUPTA', 512, 1220);
+
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.75)';
+      ctx.font = '500 18px -apple-system, sans-serif';
+      ctx.letterSpacing = '2px';
+      ctx.fillText('HARVARD BUSINESS SCHOOL ALUMNUS · COUNSELOR TO 100,000+ STUDENTS', 512, 1260);
 
       ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
       ctx.font = '16px -apple-system, sans-serif';
       ctx.letterSpacing = '2px';
-      ctx.fillText('INCLUDES INTERACTIVE PDF · EPUB · WORKSHEETS', 512, 1320);
+      ctx.fillText('WITH RAJ SHAMANI · FIRST EDITION 2026', 512, 1300);
 
       // Left spine crease gradient highlight
       const spineGlow = ctx.createLinearGradient(0, 0, 80, 0);
-      spineGlow.addColorStop(0, 'rgba(0, 0, 0, 0.5)');
+      spineGlow.addColorStop(0, 'rgba(0, 0, 0, 0.55)');
       spineGlow.addColorStop(0.3, 'rgba(255, 255, 255, 0.12)');
       spineGlow.addColorStop(0.6, 'rgba(0, 0, 0, 0.35)');
       spineGlow.addColorStop(1, 'rgba(0, 0, 0, 0)');
@@ -222,38 +179,35 @@ export default function ThreeBookCanvas({
       ctx.fillStyle = '#FAF7F2';
       ctx.fillRect(50, 50, 924, 1380);
 
-      ctx.fillStyle = '#1A1B1D';
-      ctx.font = 'bold 36px "Playfair Display", Georgia, serif';
+      ctx.fillStyle = '#0A192F';
+      ctx.font = 'bold 44px "Playfair Display", Georgia, serif';
       ctx.textAlign = 'center';
-      ctx.fillText(product.title, 512, 300);
+      ctx.fillText('The Study Abroad Playbook', 512, 280);
 
-      ctx.fillStyle = '#5A5D63';
-      ctx.font = '22px -apple-system, sans-serif';
-      ctx.fillText(product.subtitle, 512, 360);
+      ctx.fillStyle = '#E63946';
+      ctx.font = 'bold 24px -apple-system, sans-serif';
+      ctx.fillText('By Dr. Karan Gupta & Raj Shamani', 512, 340);
 
-      ctx.strokeStyle = '#D1DDD3';
-      ctx.lineWidth = 1;
+      ctx.strokeStyle = '#D4AF37';
+      ctx.lineWidth = 2;
       ctx.beginPath();
-      ctx.moveTo(350, 420);
-      ctx.lineTo(674, 420);
+      ctx.moveTo(350, 390);
+      ctx.lineTo(674, 390);
       ctx.stroke();
 
-      ctx.fillStyle = '#2A2B2E';
-      ctx.font = '20px Georgia, serif';
-      ctx.textAlign = 'left';
-      const sampleLines = product.chapters[0]?.sampleText || [
-        'Attention is the bedrock currency of consciousness.',
-        'When you reclaim your capacity for sustained depth,',
-        'you transform the caliber of your entire life.'
-      ];
-      sampleLines.forEach((text, idx) => {
-        ctx.fillText(`"${text}"`, 140, 520 + (idx * 80), 744);
-      });
-
-      ctx.fillStyle = '#647D6B';
-      ctx.font = 'italic 20px Georgia, serif';
+      ctx.fillStyle = '#1E293B';
+      ctx.font = '24px Georgia, serif';
       ctx.textAlign = 'center';
-      ctx.fillText('— Chapter 01: Attention Architecture', 512, 850);
+      ctx.fillText('"If you take a heavy loan for an average degree abroad,', 512, 520);
+      ctx.fillText('do not go. We will find you something in India."', 512, 565);
+
+      ctx.fillStyle = '#E63946';
+      ctx.font = 'bold 20px -apple-system, sans-serif';
+      ctx.fillText('— DR. KARAN GUPTA (HARVARD ALUMNUS)', 512, 620);
+
+      ctx.fillStyle = '#475569';
+      ctx.font = '22px -apple-system, sans-serif';
+      ctx.fillText('Full 12-Chapter Master Edition · Instant PDF Access', 512, 750);
     }
 
     const texture = new THREE.CanvasTexture(canvas);
@@ -269,7 +223,7 @@ export default function ThreeBookCanvas({
     const ctx = canvas.getContext('2d');
     if (!ctx) return new THREE.CanvasTexture(canvas);
 
-    ctx.fillStyle = product.slug === 'the-focus-reset' ? '#141E18' : product.slug === 'understand-your-patterns' ? '#211511' : '#11151A';
+    ctx.fillStyle = '#050E1A';
     ctx.fillRect(0, 0, 160, 1480);
 
     // Spine shading
@@ -286,19 +240,19 @@ export default function ThreeBookCanvas({
     ctx.translate(80, 740);
     ctx.rotate(Math.PI / 2);
     ctx.fillStyle = '#FFFFFF';
-    ctx.font = 'bold 38px "Playfair Display", Georgia, serif';
+    ctx.font = 'bold 36px "Playfair Display", Georgia, serif';
     ctx.textAlign = 'center';
     ctx.letterSpacing = '3px';
     ctx.fillText(product.title.toUpperCase(), 0, 10);
 
-    ctx.fillStyle = 'rgba(215, 185, 142, 0.85)';
-    ctx.font = '22px -apple-system, sans-serif';
+    ctx.fillStyle = '#D4AF37';
+    ctx.font = 'bold 20px -apple-system, sans-serif';
     ctx.letterSpacing = '4px';
-    ctx.fillText('THE INNER METHOD', 0, 50);
+    ctx.fillText('DR. KARAN GUPTA', 0, 50);
     ctx.restore();
 
     // Top & bottom golden bands
-    ctx.fillStyle = 'rgba(215, 185, 142, 0.6)';
+    ctx.fillStyle = '#D4AF37';
     ctx.fillRect(20, 50, 120, 6);
     ctx.fillRect(20, 1420, 120, 6);
 

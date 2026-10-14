@@ -75,10 +75,10 @@ export default function BookReaderModal({
             {/* Page 0: Cover & Front Matter */}
             {currentPageIndex === 0 && (
               <div className="text-center py-6">
-                <span className="text-xs uppercase tracking-[0.3em] text-sage-700 font-semibold">
-                  THE INNER METHOD PUBLISHING
+                <span className="text-xs uppercase tracking-[0.3em] text-[#E63946] font-semibold">
+                  THE STUDY ABROAD PLAYBOOK
                 </span>
-                <div className="w-12 h-px bg-sage-400 mx-auto my-4" />
+                <div className="w-12 h-px bg-gold-400 mx-auto my-4" />
                 <h2 className="font-serif text-3xl sm:text-4xl font-bold text-charcoal-900 mt-2">
                   {product.title}
                 </h2>
@@ -90,7 +90,7 @@ export default function BookReaderModal({
                   <p className="font-medium text-charcoal-900 uppercase tracking-wider text-[11px]">
                     Table of Selected Chapters in Sample:
                   </p>
-                  {chapters.slice(0, 4).map((ch, idx) => (
+                  {chapters.slice(0, 6).map((ch, idx) => (
                     <div key={idx} className="flex justify-between items-baseline border-b border-dotted border-stone-300 pb-1">
                       <span className="font-serif">Chapter {ch.number}: {ch.title}</span>
                       <span className="text-charcoal-400 text-xs font-mono">Excerpt</span>
@@ -108,28 +108,28 @@ export default function BookReaderModal({
             {currentPageIndex === 1 && (
               <div className="space-y-5 text-charcoal-800 leading-relaxed text-sm sm:text-base">
                 <div className="border-b border-stone-200 pb-3">
-                  <span className="text-xs uppercase font-mono tracking-wider text-sage-700">
-                    Publisher&apos;s Note
+                  <span className="text-xs uppercase font-mono tracking-wider text-[#E63946] font-bold">
+                    Masterclass Dialogue · Dr. Karan Gupta & Raj Shamani
                   </span>
                   <h3 className="font-serif text-2xl font-bold text-charcoal-900 mt-1">
-                    On Depth, Willpower, and Neural Architecture
+                    On Scarcity Math, Visa Mirages & Real Education ROI
                   </h3>
                 </div>
 
                 <p className="first-letter:text-4xl first-letter:font-serif first-letter:font-bold first-letter:float-left first-letter:mr-2 first-letter:text-charcoal-900">
-                  We live in an age where distraction is not an accidental byproduct of modern life; it is the deliberate objective of multi-billion-dollar algorithms engineered to monetize human attention scatter.
+                  Dr. Karan Gupta, an alumnus of Harvard Business School who has guided over 100,000 students across three decades of admissions counseling, begins with a truth that most education agents conceal: there is never a 100% guarantee of getting a job abroad unless you approach admissions with calculated precision.
                 </p>
 
                 <p>
-                  For years, mainstream self-help urged individuals to cultivate more willpower, to force themselves into discipline through harsh inner reprimands. Yet modern neuroimaging reveals that the prefrontal cortex—the biological seat of executive focus—has a strict metabolic limit.
+                  Every year, hundreds of thousands of Indian families pledge their life savings or mortgage ancestral homes with a singular vision. But degrees alone do not guarantee outcomes outside India where campus placement cells do not exist.
                 </p>
 
-                <blockquote className="border-l-2 border-sage-500 pl-4 py-1 italic font-serif text-charcoal-700 bg-sage-50/60 rounded-r-md">
-                  &ldquo;When you change the architecture of your environment and somatic baseline, deep focus stops feeling like an exhausting battle and returns as your organic state.&rdquo;
+                <blockquote className="border-l-2 border-[#E63946] pl-4 py-1 italic font-serif text-charcoal-700 bg-red-50/60 rounded-r-md">
+                  &ldquo;If you are going to take a heavy loan, sell your mother’s jewelry, or mortgage your family home for an average degree at an unknown university—do not go abroad. We will find you something in India.&rdquo;
                 </blockquote>
 
                 <p>
-                  Every workbook and audio protocol from The Inner Method is built around this single premise: <span className="font-medium text-charcoal-900">sustainable cognitive sovereignty requires changing your system, not your self-worth.</span>
+                  This playbook synthesizes operational algorithms, profile evaluation architectures, and the MATCH framework to ensure your foreign education compounds for life.
                 </p>
               </div>
             )}

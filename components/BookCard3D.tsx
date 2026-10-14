@@ -94,12 +94,12 @@ export default function BookCard3D({
           >
             <div className="w-full h-full flex flex-col justify-between py-4 items-center book-spine-gradient">
               <span className="text-[9px] uppercase tracking-widest text-gold-300/80 font-semibold rotate-90">
-                METHOD
+                DR. GUPTA
               </span>
               <span className="text-[10px] font-serif font-bold text-white tracking-wider rotate-90 whitespace-nowrap">
                 {product.title}
               </span>
-              <span className="text-[8px] text-gold-400 rotate-90 font-mono">EDITION</span>
+              <span className="text-[8px] text-gold-400 rotate-90 font-mono">2026</span>
             </div>
           </div>
 
@@ -123,45 +123,59 @@ export default function BookCard3D({
           <div
             className={`absolute inset-0 rounded-r-md rounded-l-xs bg-gradient-to-br ${product.coverTheme.bgGradient} p-4 flex flex-col justify-between border border-gold-500/40 shadow-book overflow-hidden`}
           >
+            {/* If product has cover image, show it as background */}
+            {product.coverImage && (
+              /* eslint-disable-next-line @next/next/no-img-element */
+              <img
+                src={product.coverImage}
+                alt={product.title}
+                className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+              />
+            )}
+
             {/* Spine Crease visual highlight */}
-            <div className="absolute left-0 top-0 bottom-0 w-4 bg-gradient-to-r from-black/60 via-gold-500/10 to-transparent pointer-events-none" />
+            <div className="absolute left-0 top-0 bottom-0 w-4 bg-gradient-to-r from-black/70 via-gold-500/10 to-transparent pointer-events-none z-10" />
 
             {/* Foil Border Accent */}
-            <div className="absolute inset-2 border border-gold-500/30 rounded pointer-events-none" />
+            <div className="absolute inset-2 border border-gold-500/30 rounded pointer-events-none z-10" />
 
-            {/* Top publisher emblem */}
-            <div className="relative z-10 flex flex-col items-center text-center pt-2">
-              <span className="text-[9px] uppercase tracking-[0.25em] text-gold-300/90 font-medium">
-                THE INNER METHOD
-              </span>
-              <div className="w-8 h-px bg-gold-500/40 my-1.5" />
-            </div>
-
-            {/* Center Book Title */}
-            <div className="relative z-10 text-center px-1">
-              <h3 className="font-serif text-lg font-bold text-white leading-snug drop-shadow-sm">
-                {product.title}
-              </h3>
-              <p className="text-[10px] text-gold-100/80 mt-1 line-clamp-2 leading-relaxed">
-                {product.subtitle}
-              </p>
-            </div>
-
-            {/* Center Foil Geometry Badge */}
-            <div className="relative z-10 flex justify-center py-1">
-              <div className="w-10 h-10 rounded-full border border-gold-500/50 flex items-center justify-center bg-gold-500/10 shadow-glow-gold">
-                <div className="w-6 h-6 rotate-45 border border-gold-400/70 flex items-center justify-center">
-                  <div className="w-2 h-2 rounded-full bg-gold-300" />
+            {!product.coverImage && (
+              <>
+                {/* Top publisher emblem */}
+                <div className="relative z-10 flex flex-col items-center text-center pt-2">
+                  <span className="text-[9px] uppercase tracking-[0.25em] text-gold-300/90 font-medium">
+                    MASTERCLASS EDITION
+                  </span>
+                  <div className="w-8 h-px bg-gold-500/40 my-1.5" />
                 </div>
-              </div>
-            </div>
 
-            {/* Bottom Format & Pages */}
-            <div className="relative z-10 text-center border-t border-gold-500/20 pt-2 pb-1">
-              <span className="text-[9px] uppercase tracking-wider text-gold-300/90 font-mono">
-                {product.pageCount > 0 ? `${product.pageCount} Pages · Digital Edition` : 'Coming Soon'}
-              </span>
-            </div>
+                {/* Center Book Title */}
+                <div className="relative z-10 text-center px-1">
+                  <h3 className="font-serif text-lg font-bold text-white leading-snug drop-shadow-sm">
+                    {product.title}
+                  </h3>
+                  <p className="text-[10px] text-gold-100/80 mt-1 line-clamp-2 leading-relaxed">
+                    {product.subtitle}
+                  </p>
+                </div>
+
+                {/* Center Foil Geometry Badge */}
+                <div className="relative z-10 flex justify-center py-1">
+                  <div className="w-10 h-10 rounded-full border border-gold-500/50 flex items-center justify-center bg-gold-500/10 shadow-glow-gold">
+                    <div className="w-6 h-6 rotate-45 border border-gold-400/70 flex items-center justify-center">
+                      <div className="w-2 h-2 rounded-full bg-gold-300" />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Bottom Format & Pages */}
+                <div className="relative z-10 text-center border-t border-gold-500/20 pt-2 pb-1">
+                  <span className="text-[9px] uppercase tracking-wider text-gold-300/90 font-mono">
+                    {product.pageCount > 0 ? `${product.pageCount} Pages · Master Edition` : 'Coming Soon'}
+                  </span>
+                </div>
+              </>
+            )}
 
             {/* Dynamic Hover Specular Sheen */}
             {isHovered && (

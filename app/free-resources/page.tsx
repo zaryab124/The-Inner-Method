@@ -2,12 +2,12 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { FREE_RESOURCE } from '@/data/products';
 import EmailLeadForm from '@/components/EmailLeadForm';
-import { Sparkles, ShieldCheck, FileCheck } from 'lucide-react';
+import { Sparkles, ShieldCheck, FileCheck, Download } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Free Guide: 7 Practical Exercises for Better Focus (24-Page PDF)',
+  title: 'Free Diagnostic: The 5 Removals Test & Foreign University Audit Guide',
   description:
-    'Download our free 24-page guide to cognitive depth, attention architecture, and overcoming modern dopamine scatter.',
+    'Download our free operational field guide to audit prospective foreign colleges, detect diploma mills, and evaluate true employment ROI before spending a single rupee.',
 };
 
 export default function FreeResourcesPage() {
@@ -18,15 +18,15 @@ export default function FreeResourcesPage() {
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-300 text-xs font-semibold">
             <Sparkles className="w-3.5 h-3.5 text-gold-400" />
-            <span>Complimentary Cognitive Protocol</span>
+            <span>Complimentary Admissions Diagnostic Guide</span>
           </div>
 
-          <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
-            7 Practical Exercises for Better Focus
+          <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
+            {FREE_RESOURCE.title}
           </h1>
 
           <p className="text-base sm:text-lg text-obsidian-300 max-w-2xl mx-auto leading-relaxed">
-            A 24-page science-backed field guide designed to dismantle attention fragmentation, soothe mental scatter, and reclaim 2+ hours of unbroken depth every day.
+            {FREE_RESOURCE.subtitle}
           </p>
         </div>
 
@@ -36,9 +36,9 @@ export default function FreeResourcesPage() {
           <div className="lg:col-span-6">
             <EmailLeadForm
               source="free_resources_page"
-              buttonLabel="Send My Free 24-Page Guide"
-              title="Instant Download Access"
-              subtitle="Enter your email to receive the direct download link and weekly mindful insights."
+              buttonLabel="Download Free Diagnostic Guide (PDF)"
+              title="Instant PDF Download"
+              subtitle="Enter your email to immediately unlock the field guide and receive strategic admissions insights."
               showWelcomeEmailCopy={true}
             />
           </div>
@@ -49,13 +49,13 @@ export default function FreeResourcesPage() {
               <div className="flex items-center justify-between pb-4 border-b border-white/10 text-xs text-obsidian-400 font-mono">
                 <span className="flex items-center gap-1.5 font-sans font-bold text-white">
                   <FileCheck className="w-4 h-4 text-emerald-400" />
-                  Format: High-Res Interactive PDF
+                  Format: Printable High-Res PDF
                 </span>
-                <span>24 Pages · 20 Min Read</span>
+                <span>Direct Master PDF Download</span>
               </div>
 
               <h3 className="font-serif text-2xl font-bold text-white">
-                What Is Inside This Field Guide:
+                What You Will Master Inside This Guide:
               </h3>
 
               <div className="space-y-4">
@@ -76,9 +76,21 @@ export default function FreeResourcesPage() {
                 ))}
               </div>
 
+              {/* Instant direct download option */}
+              <div className="pt-2">
+                <a
+                  href="/Study_Abroad_Playbook_EBook.pdf"
+                  download="The_Study_Abroad_Playbook_EBook.pdf"
+                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-obsidian-800 hover:bg-obsidian-750 border border-gold-500/40 text-gold-300 font-semibold text-xs transition-all shadow-md"
+                >
+                  <Download className="w-4 h-4 text-gold-400" />
+                  <span>Direct Download (No Email Required)</span>
+                </a>
+              </div>
+
               <div className="pt-4 border-t border-white/10 text-xs text-obsidian-400 flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Zero cost. No credit card required. Pure actionable value.</span>
+                <span>Zero cost. No credit card required. Pure strategic clarity.</span>
               </div>
             </div>
           </div>
@@ -87,13 +99,13 @@ export default function FreeResourcesPage() {
         {/* Why We Give This Away Free */}
         <div className="max-w-3xl mx-auto p-8 sm:p-10 rounded-3xl bg-obsidian-900 border border-white/10 text-center space-y-4">
           <h3 className="font-serif text-2xl font-bold text-white">
-            Why We Distribute This Guide For Free
+            Why We Distribute This Diagnostic For Free
           </h3>
           <p className="text-sm text-obsidian-300 leading-relaxed">
-            We believe that attention is the foundational asset of modern human sovereignty. When you experience the immediate relief that comes from calming sensory overload and structuring your focus, you will see the power of our deeper workbooks.
+            Every year, honest families take multi-crore loans for unaccredited foreign colleges based solely on agent hype and photos of manicured lawns. We publish this framework openly so students and parents can independently verify college outcomes before signing loan documents.
           </p>
           <p className="text-xs text-obsidian-400">
-            If you ever find our weekly notes unhelpful, every email includes a one-click unsubscribe link that permanently removes your address from our list.
+            If you ever wish to unsubscribe from our weekly admissions insights, every email contains an instantaneous one-click unsubscribe link.
           </p>
         </div>
       </div>

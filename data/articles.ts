@@ -12,63 +12,98 @@ export interface Article {
 
 export const ARTICLES: Article[] = [
   {
-    slug: 'the-myth-of-multitasking-and-attention-residue',
-    title: 'The Myth of Multitasking: Why Context Switching Decimates Deep Thought',
-    subtitle: 'Understanding attention residue and how micro-distractions cost up to 40% of cognitive bandwidth.',
-    publishedAt: 'October 8, 2026',
-    readTime: '6 min read',
-    category: 'Cognitive Science',
-    summary: 'When you quickly glance at an email while drafting a memo, your brain does not instantaneously switch tasks. A shadow of your working memory remains anchored to the previous context.',
-    content: [
-      'Modern digital interfaces have convinced us that consciousness is like a computer operating system—capable of smoothly running dozens of background processes in parallel. But neurobiology reveals a starkly different reality.',
-      'Dr. Sophie Leroy coined the term "attention residue" to describe the cognitive drag that occurs when you switch from Task A to Task B. Even if you only glanced at an incoming Slack message for four seconds, a portion of your executive prefrontal network remains locked in thinking about that message.',
-      'The result is a subtle, insidious mental exhaustion. At the end of an eight-hour workday spent toggling between browser tabs, you feel deeply drained, yet struggle to point to any singular, high-leverage accomplishment.',
-      'To counter attention residue, we must transition from continuous reactive availability to "batched asynchronous sprints". In this article, we outline the exact boundaries required to reclaim unbroken cognitive depth.'
-    ],
-    keyTakeaways: [
-      'Switching between tasks leaves residual mental activation that degrades working memory.',
-      'The sensation of being productive while multitasking is a dopamine illusion.',
-      'Structuring work into 90-minute isolated intervals yields 3x higher cognitive synthesis.'
-    ]
-  },
-  {
-    slug: 'the-neurobiology-of-dopamine-fasting',
-    title: 'Dopamine Baselines: Why Modern Convenience Has Made Effort Feel Painful',
-    subtitle: 'A clinical perspective on why our thresholds for boredom have collapsed and how to safely recalibrate.',
-    publishedAt: 'September 24, 2026',
-    readTime: '8 min read',
-    category: 'Neuroscience',
-    summary: 'Dopamine is not the molecule of pleasure; it is the molecule of pursuit. When endless novelty is available at zero friction, deep work becomes physiologically intolerable.',
-    content: [
-      'In hunter-gatherer environments, high-dopamine rewards (dense calories, social validation, novel tools) required substantial physical and cognitive investment. The brain was calibrated for friction.',
-      'Today, high-stimulation algorithms deliver continuous micro-peaks of dopamine with zero metabolic effort. In response, your neuroreceptors downregulate to protect against over-stimulation.',
-      'When your dopamine receptors downregulate, your baseline drops. Activities that naturally produce moderate dopamine—such as reading a complex monograph, practicing an instrument, or drafting an essay—suddenly feel excruciatingly boring.',
-      'We do not recommend extreme, monastic isolation. Instead, we advocate for "Stimulus Sanctuaries": deliberate daily periods where the nervous system is allowed to experience silence and boredom.'
-    ],
-    keyTakeaways: [
-      'Constant novelty induces receptor downregulation, increasing subjective boredom.',
-      'Boredom is not a void; it is the fertile soil where independent creativity germinates.',
-      'A 48-hour digital friction protocol can restore sensitivity to deep intellectual pursuits.'
-    ]
-  },
-  {
-    slug: 'rewriting-internal-scripts-through-somatic-awareness',
-    title: 'Why Rational Insight Alone Fails to Break Deep Behavioral Loops',
-    subtitle: 'Connecting cognitive reframing with nervous system safety to dissolve chronic stress patterns.',
-    publishedAt: 'September 12, 2026',
+    slug: 'the-visa-mirage-and-country-cycles',
+    title: 'The Country Cycle & The Visa Mirage: Why Basing Life Decisions on Policy Rules Is Financial Suicide',
+    subtitle: 'From Canada’s 61% permit collapse to Germany’s looming language bottleneck—how political-demographic cycles work.',
+    publishedAt: 'October 12, 2026',
     readTime: '7 min read',
-    category: 'Emotional Regulation',
-    summary: 'You can read ten books on emotional regulation and still snap during an argument. Here is why the body must feel safe before the rational mind can make new choices.',
+    category: 'Immigration & Policy',
+    summary: 'One of the biggest blunders international students commit is treating a visa rule as a permanent state of nature. Dr. Karan Gupta decodes the 4-phase political cycle that governs foreign student flows.',
     content: [
-      'Most personal development advice operates exclusively from the "top down": it assumes that by thinking better thoughts or repeating affirmations, your behavior will follow. Yet when triggered, the sympathetic nervous system activates faster than conscious cognition.',
-      'The amygdala perceives social vulnerability or conflict as a threat to physical survival. Blood flow shifts away from the prefrontal cortex toward survival motor centers. In this hyper-aroused state, rational advice is inaccessible.',
-      'True transformation requires "bottom-up" regulation. Before we can reframe a thought, we must soothe the somatic contraction in the chest, throat, or gut. Only when autonomic safety is restored can new neural pathways take root.',
-      'In our upcoming workbook, Understand Your Patterns, we introduce the 3-step Somatic Interception sequence used by clinical trauma therapists.'
+      'In the global education market, millions of students make lifetime financial decisions based on temporary immigration policies. A country announces relaxed 3-year post-study work rights, and aggregator agents flood social media with promises of effortless permanent residency.',
+      'Yet, history reveals an unyielding four-phase cycle: Phase 1 is The Welcome (shortage of domestic labor leads to open doors). Phase 2 is The Saturation (agents dump hundreds of thousands into diploma mills, breaking rental housing and healthcare). Phase 3 is The Inevitable Correction (host governments enact sudden visa caps, steep financial thresholds, and mass rejections). Phase 4 is Flight to Quality (only elite accredited universities in STEM and healthcare survive).',
+      'We witnessed this firsthand in Canada, where international student permits plummeted by 61% following housing shocks. The upcoming warning is Germany: a country cannot indefinitely generate corporate English-speaking employment for hundreds of thousands of non-German speakers.',
+      'Meanwhile, the United States remains the uncontested leader because its policy is explicit: filtering out diploma seekers while aggressively absorbing elite research, AI, and engineering talent through 3-year STEM OPT extensions.'
     ],
     keyTakeaways: [
-      'Emotional triggers fire at physiological speeds before logical cognition intervenes.',
-      'Top-down positive thinking collapses under acute sympathetic arousal.',
-      'Somatic settling creates the necessary physiological pause to make a conscious choice.'
+      'Immigration policies are cyclical responses to local infrastructure and political pressure, never permanent promises.',
+      'Generic diplomas at unaccredited colleges face the highest rejection and deportation rates during policy corrections.',
+      'High-tier STEM degrees with tangible technical depth insulate candidates from political turbulence across both the US and Europe.'
+    ]
+  },
+  {
+    slug: 'gccs-indias-hidden-100b-goldmine',
+    title: 'GCCs: India’s Hidden $100B Goldmine and the Reverse-Brain Drain Advantage',
+    subtitle: 'Why returning to Bengaluru or Hyderabad with a top foreign degree is often more lucrative than surviving on Western margins.',
+    publishedAt: 'October 5, 2026',
+    readTime: '6 min read',
+    category: 'Global Careers',
+    summary: 'India currently hosts over 2,100 Global Capability Centers (GCCs) generating $100B+ annually. These are Fortune 500 R&D and AI hubs offering ₹35L–₹75L+ packages with zero visa anxiety.',
+    content: [
+      'In the late 1990s, India pioneered Business Process Outsourcing (BPOs) and call centers—handling back-office repetitive workflows for Western multinationals.',
+      'Today, an unprecedented economic transformation is taking place across Bengaluru, Hyderabad, Pune, Mumbai, and Delhi-NCR: Global Capability Centers (GCCs). India now hosts more than 2,100 GCCs employing 2.36 million high-skill professionals.',
+      'These are not support centers; they are the core quantitative modeling, autonomous systems, semiconductor design, and cloud architecture engines of Goldman Sachs, Google, Boeing, Walmart, and AstraZeneca.',
+      'When an Indian student earns an advanced degree from a prestigious US or European university and returns, they bypass the junior ladder. GCC compensation for specialized foreign degree holders ranges from ₹35 Lakhs to ₹75+ Lakhs per annum with global equity—providing high purchasing power, zero H1B lottery dread, and exponential career trajectory.'
+    ],
+    keyTakeaways: [
+      'GCCs have replaced IT outsourcing as the primary high-compensation engine in corporate India.',
+      'A ₹50L CTC in Bengaluru or Hyderabad offers higher discretionary savings than a \$95k salary taxed in New York or London.',
+      'Returning graduates avoid 60-day deportation layoff rules while building massive entrepreneurial leverage.'
+    ]
+  },
+  {
+    slug: 'the-five-removals-test',
+    title: 'The Five Removals Test: The Proprietary Filter Before Spending a Single Rupee Abroad',
+    subtitle: 'How to strip away marketing brochures, prestige logos, and generational scripts to evaluate true university value.',
+    publishedAt: 'September 28, 2026',
+    readTime: '8 min read',
+    category: 'Admissions Strategy',
+    summary: 'Before applying to a single college or spending a dollar on application fees, Dr. Gupta insists every candidate subject their university choice to The Five Removals Test.',
+    content: [
+      'Every admissions season, glossy college prospectuses land in the mailboxes of Indian families. They feature manicured lawns, smiling multinational cohorts, and cinematic library halls. But Dr. Gupta reminds us: brochures are designed to sell seats, not guarantee outcomes.',
+      'The Five Removals Test forces candidates to audit their choice through five rigorous intellectual layers:',
+      '1. Remove the Brochure: Strip away the photos. Inspect the curriculum, the faculty h-indexes, and active laboratory grants. What are they actually publishing?',
+      '2. Remove the Logo: If this exact syllabus were taught by an unbranded college in your hometown, would the knowledge justify ₹50 Lakhs in debt?',
+      '3. Remove Other People: If nobody in your peer group, extended family, or LinkedIn network knew you attended, would you still enroll? Or are you buying social bragging rights?',
+      '4. Remove Parental Expectations: Erase your parents\' desire for a government or traditional banking badge. Remove generational scripts.',
+      '5. Remove the Fantasy of Placements: Assume that zero on-campus placement cells exist and no firm is waiting at graduation with an automatic contract.',
+      'The Verdict: If after removing all five layers, the program and academic journey still genuinely seduce your intellectual curiosity—then and only then should you go.'
+    ],
+    keyTakeaways: [
+      'Never confuse university brand marketing with verified employment outcomes.',
+      'If you cannot justify the tuition without social validation, you are buying status rather than skills.',
+      'Foreign universities run Career Management Centers, not Indian-style placement cells; responsibility rests 100% on you.'
+    ]
+  },
+  {
+    slug: 'the-match-strategy-foreign-jobs',
+    title: 'The MATCH Strategy: How Elite International Students Crack Jobs Without Placement Cells',
+    subtitle: 'Why sending 500 identical resumes on LinkedIn leads to unemployment, and how to build systemic hiring leverage.',
+    publishedAt: 'September 19, 2026',
+    readTime: '9 min read',
+    category: 'Career Frameworks',
+    summary: 'Outside India, nobody matches you to a job. Dr. Karan Gupta breaks down the 5-step MATCH algorithm used by graduates of Harvard, Bath, and Stanford to land high-paying roles.',
+    content: [
+      'Sending out 500 identical PDF resumes across LinkedIn job postings is the fastest route to exhausting your post-study work visa and returning home burdened with debt.',
+      'Dr. Gupta and Raj Shamani formulate the MATCH Strategy to engineer hiring advantage from your very first semester:',
+      '• M — Map the Market: Collect 25 exact target job descriptions in your niche. Feed them into an AI system to extract the common underlying technical and tool competencies.',
+      '• A — Assemble Evidence: Audit your current resume against those exact requirements. Don’t ask "fix my formatting." Identify specific project evidence gaps and build them into your semester coursework.',
+      '• T — Target the Ecosystem: Look beyond the Fortune 50 where 10,000 applicants fight for one seat. Map tier-2 suppliers, high-growth Series B/C startups, and regional champions.',
+      '• C — Combine AI with Human Networking: Use AI to trace where alumni landed. But write every outreach message by hand with authentic specificity. Meet people face to face. Humans hire humans.',
+      '• H — Hone Interview Mastery: Conduct rigorous, adversarial mock interviews with AI models. Instruct the system: "Stop being polite. Be a ruthless technical director and grill my weakest project assumptions."'
+    ],
+    keyTakeaways: [
+      'Job applications without tailored project evidence have a near-zero callback rate in foreign markets.',
+      'Mid-tier supply chain champions offer faster H1B sponsorship and higher executive visibility than saturated mega-corporations.',
+      'Adversarial AI practice builds instinctive fluency and boardroom composure under intense technical questioning.'
     ]
   }
 ];
+
+export function getArticleBySlug(slug: string): Article | undefined {
+  return ARTICLES.find((a) => a.slug === slug);
+}
+
+export function getAllArticles(): Article[] {
+  return ARTICLES;
+}

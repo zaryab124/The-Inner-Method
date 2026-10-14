@@ -11,7 +11,7 @@ export default function ShopPage() {
   const [readerProduct, setReaderProduct] = useState<Product | null>(null);
   const [isReaderOpen, setIsReaderOpen] = useState(false);
 
-  const categories = ['All', 'Focus & Productivity', 'Cognitive Psychology', 'Master Bundles'];
+  const categories = ['All', 'Global Education', 'Admissions & Strategy', 'Master Bundles'];
 
   const filteredProducts =
     activeCategory === 'All'
@@ -37,13 +37,13 @@ export default function ShopPage() {
         <div className="max-w-3xl mb-12 space-y-3">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-300 text-xs font-semibold">
             <BookOpen className="w-3.5 h-3.5 text-gold-400" />
-            <span>Digital Imprint Catalogue</span>
+            <span>Masterclass Publications Suite</span>
           </div>
           <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white tracking-tight">
-            Original Digital Editions & Guided Workbooks
+            The Study Abroad Playbook & Strategic Toolkits
           </h1>
           <p className="text-base text-obsidian-300 leading-relaxed">
-            Delivered immediately in high-resolution PDF, EPUB, and companion audio formats. Compatible with Apple Books, Kindle, Remarkable, tablets, and desktop readers.
+            Instant digital access to Dr. Karan Gupta’s operational frameworks, university evaluation checklists, and high-ROI career algorithms. Delivered in high-resolution printable PDF and interactive 3D browser editions.
           </p>
         </div>
 

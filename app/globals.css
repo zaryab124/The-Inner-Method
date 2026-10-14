@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #08090C;
+  --foreground: #F5F7FA;
+  --accent-gold: #D4AF37;
+  --accent-emerald: #10B981;
+  --card-bg: rgba(17, 20, 27, 0.85);
+  --card-border: rgba(212, 175, 55, 0.2);
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+/* Theme 1: Obsidian & 24K Royal Gold (Default Luxury) */
+.theme-obsidian {
+  --background: #08090C;
+  --foreground: #F5F7FA;
+  --card-bg: rgba(17, 20, 27, 0.85);
+  --card-border: rgba(212, 175, 55, 0.25);
+}
+
+/* Theme 2: Emerald Sanctum (Deep Forest & Glowing Mint) */
+.theme-emerald {
+  --background: #04100B;
+  --foreground: #F0FDF4;
+  --card-bg: rgba(6, 28, 20, 0.85);
+  --card-border: rgba(16, 185, 129, 0.3);
+}
+
+/* Theme 3: Imperial Ivory & Warm Bronze (High Contrast Light Mode) */
+.theme-ivory {
+  --background: #F8F5EE;
+  --foreground: #12141A;
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --card-border: rgba(184, 146, 40, 0.25);
+}
+
+body {
+  color: var(--foreground);
+  background-color: var(--background);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* 3D Perspective & Hardware Acceleration */
+.perspective-800 {
+  perspective: 800px;
+}
+.perspective-1000 {
+  perspective: 1000px;
+}
+.perspective-1500 {
+  perspective: 1500px;
+}
+.perspective-2000 {
+  perspective: 2000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Real 3D Book Page Flip Dynamics */
+.flip-page-origin-left {
+  transform-origin: left center;
+}
+.flip-page-origin-right {
+  transform-origin: right center;
+}
+
+/* Page Curvature Gradient (Simulates physical paper tension as it turns) */
+.page-curl-shadow-right {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.1) 8%,
+    rgba(255, 255, 255, 0.08) 15%,
+    rgba(0, 0, 0, 0) 40%
+  );
+}
+
+.page-curl-shadow-left {
+  background: linear-gradient(
+    270deg,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.12) 8%,
+    rgba(255, 255, 255, 0.08) 15%,
+    rgba(0, 0, 0, 0) 40%
+  );
+}
+
+/* Realistic 3D Book Spine & Page edges styling */
+.book-spine-gradient {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.25) 20%,
+    rgba(0, 0, 0, 0.4) 28%,
+    rgba(255, 255, 255, 0.25) 35%,
+    rgba(0, 0, 0, 0.15) 60%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+}
+
+.book-pages-side {
+  background: repeating-linear-gradient(
+    to bottom,
+    #FDFCF7 0px,
+    #FDFCF7 2px,
+    #E4DEC9 2px,
+    #E4DEC9 3px
+  );
+}
+
+/* Radiant Gold Foil Shimmer */
+.gold-shimmer {
+  background: linear-gradient(
+    90deg,
+    #B89228 0%,
+    #F4E4BD 25%,
+    #D4AF37 50%,
+    #FAF3E1 75%,
+    #B89228 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* Glowing Border effect */
+.border-glow-gold {
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3), inset 0 0 10px rgba(212, 175, 55, 0.15);
+}
+
+.border-glow-emerald {
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.3), inset 0 0 10px rgba(16, 185, 129, 0.15);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #0C0E13;
+}
+::-webkit-scrollbar-thumb {
+  background: #252B3A;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
+
+/* Text Selection */
+::selection {
+  background-color: #D4AF37;
+  color: #060709;
+}

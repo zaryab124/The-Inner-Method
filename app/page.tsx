@@ -248,12 +248,12 @@ export default function HomePage() {
                   </div>
                   <div className="flex items-center gap-2">
                     <a
-                      href={selectedProduct.pdfUrl || (selectedProduct.slug === 'the-huberman-blueprint' ? '/The_Huberman_Blueprint_EBook.pdf' : '/Study_Abroad_Playbook_EBook.pdf')}
-                      download={selectedProduct.slug === 'the-huberman-blueprint' ? 'The_Huberman_Blueprint_EBook.pdf' : 'The_Study_Abroad_Playbook_EBook.pdf'}
+                      href={selectedProduct.samplePdfUrl || (selectedProduct.slug === 'the-huberman-blueprint' ? '/samples/Huberman_Cortisol_Protocol_Sample_Guide.pdf' : '/samples/Study_Abroad_5_Removals_Sample_Playbook.pdf')}
+                      download={selectedProduct.slug === 'the-huberman-blueprint' ? 'Huberman_Cortisol_Protocol_Sample_Guide.pdf' : 'Study_Abroad_5_Removals_Sample_Playbook.pdf'}
                       className="hidden sm:inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-obsidian-800 text-obsidian-300 hover:text-white border border-white/10 text-xs font-semibold"
                     >
                       <Download className="w-3.5 h-3.5" />
-                      <span>Sample PDF</span>
+                      <span>Free Sample (4 Pages)</span>
                     </a>
                     <PaysafeCheckoutButton
                       product={selectedProduct}

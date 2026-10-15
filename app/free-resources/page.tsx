@@ -2,7 +2,8 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { FREE_RESOURCE } from '@/data/products';
 import EmailLeadForm from '@/components/EmailLeadForm';
-import { Sparkles, ShieldCheck, FileCheck, Download } from 'lucide-react';
+import { Sparkles, ShieldCheck, FileCheck, Download, ArrowRight, Lock } from 'lucide-react';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Free Masterclass Field Guides — The Inner Method',
@@ -49,13 +50,13 @@ export default function FreeResourcesPage() {
               <div className="flex items-center justify-between pb-4 border-b border-white/10 text-xs text-obsidian-400 font-mono">
                 <span className="flex items-center gap-1.5 font-sans font-bold text-white">
                   <FileCheck className="w-4 h-4 text-emerald-400" />
-                  Format: Printable High-Res PDF
+                  Format: Complimentary 4-Page PDF Field Guides
                 </span>
-                <span>Direct Master PDF Download</span>
+                <span className="text-gold-400 font-bold">Free Diagnostic Samples</span>
               </div>
 
               <h3 className="font-serif text-2xl font-bold text-white">
-                What You Will Master Inside This Guide:
+                What You Will Master Inside These Free Samples:
               </h3>
 
               <div className="space-y-4">
@@ -76,29 +77,47 @@ export default function FreeResourcesPage() {
                 ))}
               </div>
 
-              {/* Instant direct download option */}
+              {/* Instant direct download option for free samples */}
               <div className="pt-2 flex flex-col sm:flex-row gap-3">
                 <a
-                  href="/The_Huberman_Blueprint_EBook.pdf"
-                  download="The_Huberman_Blueprint_EBook.pdf"
+                  href="/samples/Huberman_Cortisol_Protocol_Sample_Guide.pdf"
+                  download="Huberman_Cortisol_Protocol_Sample_Guide.pdf"
                   className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-[#E07A5F] to-amber-600 hover:brightness-110 text-white font-bold text-xs transition-all shadow-md"
                 >
                   <Download className="w-4 h-4" />
-                  <span>Download Huberman Blueprint (PDF)</span>
+                  <span>Download Cortisol Sample (4 Pages)</span>
                 </a>
                 <a
-                  href="/Study_Abroad_Playbook_EBook.pdf"
-                  download="The_Study_Abroad_Playbook_EBook.pdf"
+                  href="/samples/Study_Abroad_5_Removals_Sample_Playbook.pdf"
+                  download="Study_Abroad_5_Removals_Sample_Playbook.pdf"
                   className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-obsidian-800 hover:bg-obsidian-750 border border-gold-500/40 text-gold-300 font-semibold text-xs transition-all shadow-md"
                 >
                   <Download className="w-4 h-4 text-gold-400" />
-                  <span>Download Study Abroad (PDF)</span>
+                  <span>Download 5 Removals Sample (4 Pages)</span>
                 </a>
+              </div>
+
+              {/* High-Converting Upsell Banner for Full 54-Page & 29-Page Editions */}
+              <div className="mt-4 p-4 rounded-2xl bg-gradient-to-br from-gold-500/10 via-obsidian-950 to-obsidian-900 border border-gold-500/40 space-y-3">
+                <div className="flex items-center gap-2 text-xs font-bold text-gold-400 uppercase tracking-wider">
+                  <Lock className="w-3.5 h-3.5" />
+                  <span>Unlock The Full Masterclass Publications</span>
+                </div>
+                <p className="text-xs text-obsidian-300 leading-relaxed">
+                  Looking for the complete, unabridged works? The full editions include the complete 54-page Huberman neurochemical blueprint, the 29-page Study Abroad framework, full 3D interactive flipbook editions, and fillable Excel calculators.
+                </p>
+                <Link
+                  href="/shop"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gold-500 text-obsidian-950 font-bold text-xs hover:bg-gold-400 transition-all shadow-glow-gold"
+                >
+                  <span>Explore Master Editions in Store</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
               </div>
 
               <div className="pt-4 border-t border-white/10 text-xs text-obsidian-400 flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Zero cost. No credit card required. Pure scientific clarity.</span>
+                <span>Zero cost samples. Full editions securely processed via Paysafe.</span>
               </div>
             </div>
           </div>

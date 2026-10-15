@@ -91,9 +91,9 @@ export default function Realistic3DFlipBook({
     );
   };
 
-  const pdfUrl = isHuberman
-    ? '/The_Huberman_Blueprint_EBook.pdf'
-    : '/Study_Abroad_Playbook_EBook.pdf';
+  const samplePdfUrl = isHuberman
+    ? '/samples/Huberman_Cortisol_Protocol_Sample_Guide.pdf'
+    : '/samples/Study_Abroad_5_Removals_Sample_Playbook.pdf';
 
   const accentColor = isHuberman ? '#E07A5F' : '#E63946';
 
@@ -671,12 +671,12 @@ export default function Realistic3DFlipBook({
                       label={isHuberman ? 'Unlock The Huberman Blueprint' : 'Unlock The Complete Playbook'}
                     />
                     <a
-                      href={pdfUrl}
-                      download={isHuberman ? 'The_Huberman_Blueprint_EBook.pdf' : 'The_Study_Abroad_Playbook_EBook.pdf'}
+                      href={samplePdfUrl}
+                      download={isHuberman ? 'Huberman_Cortisol_Protocol_Sample_Guide.pdf' : 'Study_Abroad_5_Removals_Sample_Playbook.pdf'}
                       className="mt-2 inline-flex items-center gap-1.5 text-[10px] text-stone-700 hover:text-[#E07A5F] font-semibold underline underline-offset-2"
                     >
                       <Download className="w-3 h-3" />
-                      <span>Download Sample Master PDF Instantly</span>
+                      <span>Download Free 4-Page Field Guide Sample</span>
                     </a>
                   </div>
 

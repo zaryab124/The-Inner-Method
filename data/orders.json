@@ -24,7 +24,7 @@
     "paymentStatus": "completed",
     "paymentReference": "PSC-VOUCHER-0123-****-2345",
     "downloadToken": "0c2506c5-9808-439f-a90f-98f7e0e88771",
-    "downloadCount": 1,
+    "downloadCount": 2,
     "maxDownloads": 50,
     "createdAt": "2026-10-15T14:51:28.580Z",
     "receiptNumber": "REC-2026-90349"
@@ -54,7 +54,7 @@
     "paymentStatus": "completed",
     "paymentReference": "PAYSAFE-DEMO-994821",
     "downloadToken": "sample-huberman-token-2026",
-    "downloadCount": 1,
+    "downloadCount": 2,
     "maxDownloads": 50,
     "createdAt": "2026-10-13T14:47:22.328Z",
     "receiptNumber": "REC-2026-88019",

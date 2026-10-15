@@ -35,16 +35,19 @@ export async function GET(
     const item = order.items[0];
     const requestedFileName = item?.pdfFileName || 'The_Huberman_Blueprint_EBook.pdf';
 
-    // Locate PDF asset in public or root directory
-    let filePath = path.join(process.cwd(), 'public', requestedFileName);
+    // Locate PDF asset in secured content_vault directory (server-side only, non-public)
+    let filePath = path.join(process.cwd(), 'content_vault', requestedFileName);
     if (!fs.existsSync(filePath)) {
-      // Fallback check in parent or alternative folder
+      // Fallback check in public or root directory
+      filePath = path.join(process.cwd(), 'public', requestedFileName);
+    }
+    if (!fs.existsSync(filePath)) {
       filePath = path.join(process.cwd(), requestedFileName);
     }
 
     if (!fs.existsSync(filePath)) {
-      // Fallback check default Huberman PDF
-      const fallbackPath = path.join(process.cwd(), 'public', 'The_Huberman_Blueprint_EBook.pdf');
+      // Final fallback check default Huberman PDF in content_vault
+      const fallbackPath = path.join(process.cwd(), 'content_vault', 'The_Huberman_Blueprint_EBook.pdf');
       if (fs.existsSync(fallbackPath)) {
         filePath = fallbackPath;
       } else {

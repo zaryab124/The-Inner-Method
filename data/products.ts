@@ -29,6 +29,7 @@ export interface Product {
   category: 'Neuroscience & Performance' | 'Global Education' | 'Admissions & Strategy' | 'Master Bundles' | 'Career Frameworks';
   coverImage?: string;
   pdfUrl?: string;
+  samplePdfUrl?: string;
   coverTheme: {
     bgGradient: string;
     accentColor: string;
@@ -72,7 +73,8 @@ export const PRODUCTS: Product[] = [
     ],
     category: 'Neuroscience & Performance',
     coverImage: '/huberman_blueprint_cover.png',
-    pdfUrl: '/The_Huberman_Blueprint_EBook.pdf',
+    samplePdfUrl: '/samples/Huberman_Cortisol_Protocol_Sample_Guide.pdf',
+    pdfUrl: '/samples/Huberman_Cortisol_Protocol_Sample_Guide.pdf',
     coverTheme: {
       bgGradient: 'from-[#09121D] via-[#112033] to-[#1D3147]',
       accentColor: '#E07A5F',
@@ -251,7 +253,8 @@ export const PRODUCTS: Product[] = [
     ],
     category: 'Global Education',
     coverImage: '/study_abroad_cover.png',
-    pdfUrl: '/Study_Abroad_Playbook_EBook.pdf',
+    samplePdfUrl: '/samples/Study_Abroad_5_Removals_Sample_Playbook.pdf',
+    pdfUrl: '/samples/Study_Abroad_5_Removals_Sample_Playbook.pdf',
     coverTheme: {
       bgGradient: 'from-[#0A192F] via-[#172A45] to-[#050E1A]',
       accentColor: '#E63946',
@@ -447,7 +450,8 @@ export const PRODUCTS: Product[] = [
     ],
     category: 'Admissions & Strategy',
     coverImage: '/study_abroad_cover.png',
-    pdfUrl: '/Study_Abroad_Playbook_EBook.pdf',
+    samplePdfUrl: '/samples/Study_Abroad_5_Removals_Sample_Playbook.pdf',
+    pdfUrl: '/samples/Study_Abroad_5_Removals_Sample_Playbook.pdf',
     coverTheme: {
       bgGradient: 'from-[#050E1A] via-[#0A192F] to-[#172A45]',
       accentColor: '#D4AF37',
@@ -525,7 +529,8 @@ export const PRODUCTS: Product[] = [
     ],
     category: 'Master Bundles',
     coverImage: '/huberman_blueprint_cover.png',
-    pdfUrl: '/The_Huberman_Blueprint_EBook.pdf',
+    samplePdfUrl: '/samples/Huberman_Cortisol_Protocol_Sample_Guide.pdf',
+    pdfUrl: '/samples/Huberman_Cortisol_Protocol_Sample_Guide.pdf',
     coverTheme: {
       bgGradient: 'from-[#09121D] via-[#112033] to-[#172A45]',
       accentColor: '#10B981',
@@ -593,7 +598,7 @@ export function getAllProducts(): Product[] {
 export const FREE_RESOURCE = {
   title: 'The Huberman Cortisol & Recovery Protocol + 5 Removals Field Guide',
   subtitle: 'A complimentary masterclass field guide featuring Stanford neuroscientist Dr. Andrew Huberman’s daily cortisol stack alongside Dr. Karan Gupta’s 5 Removals university diagnostic.',
-  pdfDownloadUrl: '/The_Huberman_Blueprint_EBook.pdf',
+  pdfDownloadUrl: '/samples/Huberman_Cortisol_Protocol_Sample_Guide.pdf',
   bullets: [
     'The Cortisol Timing Code: How morning sunlight (5–10 min) and delayed caffeine double daytime alertness and guarantee deep nighttime sleep.',
     'The Proprioceptive Sleep Reset: The closed-eye movement protocol to shut down body awareness and drop into sleep within 7 minutes.',

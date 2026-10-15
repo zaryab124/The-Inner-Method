@@ -2,7 +2,8 @@
 
 import React, { useState } from 'react';
 import confetti from 'canvas-confetti';
-import { CheckCircle, ShieldCheck, Download, ArrowRight } from 'lucide-react';
+import { CheckCircle, ShieldCheck, Download, ArrowRight, Lock } from 'lucide-react';
+import Link from 'next/link';
 
 interface EmailLeadFormProps {
   source?: string;
@@ -114,12 +115,12 @@ export default function EmailLeadForm({
           {/* Instant PDF Access Unlock Button */}
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
-              href="/Study_Abroad_Playbook_EBook.pdf"
-              download="The_Study_Abroad_Playbook_EBook.pdf"
+              href="/samples/Study_Abroad_5_Removals_Sample_Playbook.pdf"
+              download="Study_Abroad_5_Removals_Sample_Playbook.pdf"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-gold-500 to-gold-600 text-obsidian-950 font-bold hover:brightness-110 transition-all shadow-glow-gold text-sm"
             >
               <Download className="w-4 h-4" />
-              <span>Download Field Guide PDF (Free)</span>
+              <span>Download Free Field Guide Sample (4 Pages)</span>
             </a>
 
             {showWelcomeEmailCopy && (
@@ -130,6 +131,24 @@ export default function EmailLeadForm({
                 {showEmailSample ? 'Hide Welcome Email' : 'Preview Welcome Email'}
               </button>
             )}
+          </div>
+
+          {/* Upsell to Full Master Editions */}
+          <div className="mt-5 p-4 rounded-xl bg-obsidian-950/70 border border-gold-500/30 text-center space-y-2">
+            <div className="flex items-center justify-center gap-1.5 text-xs font-bold text-gold-400">
+              <Lock className="w-3.5 h-3.5" />
+              <span>Want the Complete 29-Page & 54-Page Master Editions?</span>
+            </div>
+            <p className="text-xs text-obsidian-300">
+              Unlock complete chapters, full neurochemical protocols, and 3D interactive flipbook editions in our store.
+            </p>
+            <Link
+              href="/shop"
+              className="inline-flex items-center gap-1.5 text-xs text-gold-300 hover:text-gold-200 font-semibold underline underline-offset-4"
+            >
+              <span>Explore Master Editions in Store</span>
+              <ArrowRight className="w-3 h-3" />
+            </Link>
           </div>
 
           {/* Welcome Email Copy Preview */}
@@ -145,11 +164,11 @@ export default function EmailLeadForm({
                 Hello {firstName || 'there'},
               </p>
               <p>
-                Thank you for requesting <em>The 5 Removals Test & Foreign University Audit Diagnostic</em>. You can access your high-resolution field guide PDF below:
+                Thank you for requesting <em>The 5 Removals Test & Foreign University Audit Diagnostic</em>. You can access your complimentary 4-page field guide sample below:
               </p>
               <p className="font-medium text-gold-300">
-                <a href="/Study_Abroad_Playbook_EBook.pdf" download className="underline">
-                  [Download: The_Study_Abroad_Playbook_EBook.pdf — 29 Pages]
+                <a href="/samples/Study_Abroad_5_Removals_Sample_Playbook.pdf" download className="underline">
+                  [Download: Study_Abroad_5_Removals_Sample_Playbook.pdf — 4 Pages]
                 </a>
               </p>
               <p>

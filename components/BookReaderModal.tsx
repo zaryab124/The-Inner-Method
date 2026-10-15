@@ -3,7 +3,8 @@
 import React, { useState } from 'react';
 import { Product } from '@/data/products';
 import { X, ChevronLeft, ChevronRight, BookOpen } from 'lucide-react';
-import GumroadButton from '@/components/GumroadButton';
+import PaysafeCheckoutButton from '@/components/PaysafeCheckoutButton';
+import { useCurrency } from '@/lib/currency';
 
 interface BookReaderModalProps {
   product: Product | null;
@@ -16,6 +17,7 @@ export default function BookReaderModal({
   isOpen,
   onClose,
 }: BookReaderModalProps) {
+  const { formatPrice } = useCurrency();
   const [currentPageIndex, setCurrentPageIndex] = useState(0);
 
   if (!isOpen || !product) return null;
@@ -231,10 +233,10 @@ export default function BookReaderModal({
             <div className="text-right hidden md:block">
               <span className="text-xs text-charcoal-500 block">Full Edition:</span>
               <span className="text-sm font-serif font-bold text-charcoal-900">
-                ${product.price.toFixed(2)} USD
+                {formatPrice(product.price)}
               </span>
             </div>
-            <GumroadButton
+            <PaysafeCheckoutButton
               product={product}
               variant="primary"
               size="sm"

@@ -1,0 +1,13 @@
+[
+  {
+    "id": "TIM-TKT-2026-4530",
+    "name": "Zaryab Khan",
+    "email": "zaryab@example.com",
+    "orderId": "TIM-ORD-2026-6AC0CC",
+    "subject": "Inquiry about 3D Reader Audio Dynamics",
+    "message": "Can I listen to the binaural audio tracks on an external Bluetooth DAC?",
+    "priority": "high",
+    "status": "open",
+    "createdAt": "2026-10-15T14:52:08.221Z"
+  }
+]

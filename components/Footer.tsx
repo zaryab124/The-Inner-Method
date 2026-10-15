@@ -85,6 +85,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/support" className="text-gold-400 hover:text-gold-300 transition-colors font-medium">
+                  Order Lookup & VAT Invoices
+                </Link>
+              </li>
+              <li>
                 <Link href="/contact" className="hover:text-gold-300 transition-colors">
                   Contact Support
                 </Link>
@@ -95,19 +100,25 @@ export default function Footer() {
           {/* Trust & Checkout Security Notice */}
           <div>
             <h5 className="font-mono text-xs uppercase tracking-widest text-gold-300 font-bold mb-4">
-              Secure Delivery
+              Paysafe Security
             </h5>
             <div className="space-y-3 text-xs text-obsidian-400">
               <div className="flex items-start gap-2">
                 <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                 <p className="leading-relaxed">
-                  Payments and instant global downloads are securely processed via <strong className="text-white">Gumroad</strong>.
+                  Payments and instant global downloads are securely processed via <strong className="text-white">Paysafe Secure Channel</strong>.
                 </p>
               </div>
+              <div className="flex flex-wrap gap-1.5 pt-1 text-[10px] font-mono text-neutral-300">
+                <span className="bg-neutral-900 border border-neutral-800 px-2 py-0.5 rounded">💳 Cards</span>
+                <span className="bg-neutral-900 border border-neutral-800 px-2 py-0.5 rounded">🎟️ paysafecard</span>
+                <span className="bg-neutral-900 border border-neutral-800 px-2 py-0.5 rounded">🟣 Skrill</span>
+                <span className="bg-neutral-900 border border-neutral-800 px-2 py-0.5 rounded"> Apple/GPay</span>
+              </div>
               <p className="text-[11px] text-obsidian-400 leading-relaxed">
-                We never store card numbers or banking credentials on our servers.
+                256-bit SSL encryption & PCI-DSS Level 1 compliance. We never store card or banking passwords.
               </p>
-              <div className="pt-2">
+              <div className="pt-1">
                 <span className="inline-block px-3 py-1 rounded-full bg-obsidian-900 text-gold-300 text-[10px] font-mono border border-gold-500/30">
                   30-Day Money Back Guarantee
                 </span>

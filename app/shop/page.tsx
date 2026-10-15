@@ -91,10 +91,10 @@ export default function ShopPage() {
             <div className="space-y-2">
               <h4 className="font-serif font-bold text-white text-base flex items-center gap-2">
                 <ShieldCheck className="w-5 h-5 text-emerald-400" />
-                <span>Secure External Checkout</span>
+                <span>Paysafe Secure Checkout</span>
               </h4>
               <p className="text-xs text-obsidian-300 leading-relaxed">
-                All purchases are processed securely through Gumroad with bank-level encryption. Your card data is never handled on our site.
+                All purchases are processed securely through our private Paysafe payment channel with bank-level encryption. Your card data is never stored on our servers.
               </p>
             </div>
 

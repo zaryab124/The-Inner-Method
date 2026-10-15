@@ -65,7 +65,7 @@ export default function ProductDetailPage({ params }: Props) {
         product.status === 'available'
           ? 'https://schema.org/InStock'
           : 'https://schema.org/PreOrder',
-      url: product.gumroadUrl,
+      url: `https://thestudyabroadplaybook.com/shop/${product.slug}`,
     },
     aggregateRating: {
       '@type': 'AggregateRating',

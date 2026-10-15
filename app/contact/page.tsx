@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { Mail, Clock, ShieldCheck, CheckCircle2, Send } from 'lucide-react';
 
 export default function ContactPage() {
@@ -74,9 +75,13 @@ export default function ContactPage() {
 
             <div className="p-6 rounded-2xl bg-obsidian-900 border border-white/10 text-xs text-obsidian-300 leading-relaxed">
               <strong className="block font-serif text-sm text-white mb-1">
-                Purchased via Gumroad?
+                Looking to Recover a Purchase?
               </strong>
-              If you are looking to redownload an earlier purchase, you can also access your permanent download library directly inside your Gumroad customer account using the email address you purchased with.
+              If you need to redownload an earlier purchase or view your official VAT invoice, visit our secure{' '}
+              <Link href="/support" className="text-gold-400 hover:text-gold-300 underline font-semibold">
+                Customer Order Vault & Support Portal
+              </Link>{' '}
+              using the email address you purchased with.
             </div>
           </div>
 

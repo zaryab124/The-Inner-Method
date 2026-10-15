@@ -6,7 +6,8 @@ import { Product } from '@/data/products';
 import ThreeBookCanvas from '@/components/ThreeBookCanvas';
 import Realistic3DFlipBook from '@/components/Realistic3DFlipBook';
 import BookReaderModal from '@/components/BookReaderModal';
-import GumroadButton from '@/components/GumroadButton';
+import PaysafeCheckoutButton from '@/components/PaysafeCheckoutButton';
+import { useCurrency } from '@/lib/currency';
 import {
   Sparkles,
   CheckCircle2,
@@ -25,6 +26,7 @@ interface Props {
 }
 
 export default function ProductDetailClient({ product }: Props) {
+  const { formatPrice } = useCurrency();
   const [isReaderOpen, setIsReaderOpen] = useState(false);
   const [viewMode, setViewMode] = useState<'flipbook' | 'webgl'>('flipbook');
   const [activeTab, setActiveTab] = useState<'overview' | 'curriculum' | 'deliverables' | 'faq'>('overview');
@@ -178,12 +180,11 @@ export default function ProductDetailClient({ product }: Props) {
               <div className="flex items-baseline justify-between">
                 <div>
                   <span className="text-3xl font-serif font-bold text-white">
-                    ${product.price.toFixed(2)}
+                    {formatPrice(product.price)}
                   </span>
-                  <span className="text-xs text-obsidian-400 ml-1 font-mono">USD</span>
                   {product.originalPrice && (
                     <span className="ml-3 text-sm text-obsidian-400 line-through">
-                      ${product.originalPrice.toFixed(2)}
+                      {formatPrice(product.originalPrice)}
                     </span>
                   )}
                 </div>
@@ -192,12 +193,13 @@ export default function ProductDetailClient({ product }: Props) {
                 </span>
               </div>
 
-              {/* Gumroad Hosted Button */}
-              <GumroadButton
+              {/* Paysafe Private Checkout Button */}
+              <PaysafeCheckoutButton
                 product={product}
                 variant="full"
                 size="lg"
                 showDisclaimer={true}
+                onOpenReader={() => setIsReaderOpen(true)}
               />
 
               <div className="pt-2 border-t border-white/10 grid grid-cols-2 gap-3 text-xs text-obsidian-300">
@@ -366,7 +368,7 @@ export default function ProductDetailClient({ product }: Props) {
                 What You Receive in Your Download Package
               </h3>
               <p className="text-sm text-obsidian-300 leading-relaxed">
-                Immediately after completing checkout on Gumroad, you gain access to an organized digital archive containing:
+                Immediately after completing payment via our secure Paysafe channel, you gain access to an organized digital archive containing:
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

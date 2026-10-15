@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Privacy Policy — Transparent Data Protection',
   description:
-    'Our commitment to privacy: how we collect email addresses with explicit consent, process payments via Gumroad, and respect your personal information.',
+    'Our commitment to privacy: how we collect email addresses with explicit consent, process payments via Paysafe secure payment channel, and respect your personal information.',
 };
 
 export default function PrivacyPage() {
@@ -41,7 +41,7 @@ export default function PrivacyPage() {
               <strong>Email Address & Name:</strong> When you voluntarily request our free guide (&ldquo;7 Practical Exercises for Better Focus&rdquo;) or subscribe to our weekly journal, we collect your email address and first name with your explicit consent.
             </p>
             <p>
-              <strong>Order Data:</strong> When you purchase a digital book, the transaction is processed directly through <strong>Gumroad</strong>. Gumroad collects the information required to process payment and deliver the download. We receive confirmation of the order (your email and purchased title) so we can provide customer support.
+              <strong>Order Data:</strong> When you purchase a digital book, the transaction is processed securely through our <strong>Paysafe</strong> payment channel. Paysafe handles cardholder, prepaid voucher, or digital wallet authorizations under banking-grade security. We retain only your order reference, name, email, and digital fulfillment token to deliver your publications and provide lifetime customer support.
             </p>
           </section>
 
@@ -50,7 +50,7 @@ export default function PrivacyPage() {
               3. Payment Processing & Card Security
             </h2>
             <p>
-              We do not collect, process, or store credit card numbers, CVVs, expiration dates, or banking passwords on our website. All checkout transactions take place on Gumroad’s secure, PCI-DSS Level 1 compliant servers using 256-bit SSL encryption.
+              We do not store credit card numbers, CVVs, expiration dates, or banking passwords on our servers. All checkout transactions are tokenized under PCI-DSS Level 1 compliant standards and 256-bit TLS encryption via the Paysafe payment network.
             </p>
           </section>
 

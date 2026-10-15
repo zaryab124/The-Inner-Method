@@ -114,12 +114,12 @@ export default function AboutPage() {
               Secure Global Distribution
             </h3>
             <p>
-              All publications are distributed globally through Gumroad’s secure checkout architecture. We do not store card numbers, bank credentials, or private payment data on our servers.
+              All publications are distributed globally through our private Paysafe payment channel. Transactions are tokenized under PCI-DSS Level 1 compliance and 256-bit TLS encryption. We do not store card numbers, bank credentials, or private payment data on our servers.
             </p>
             <div className="pt-2 flex items-center gap-4 text-xs font-mono text-emerald-400">
               <span className="flex items-center gap-1.5">
                 <ShieldCheck className="w-4 h-4" />
-                <span>Gumroad Hosted Checkout</span>
+                <span>Paysafe Secure Channel</span>
               </span>
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4" />

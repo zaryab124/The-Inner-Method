@@ -15,7 +15,8 @@ import {
   Globe,
   Download,
 } from 'lucide-react';
-import GumroadButton from '@/components/GumroadButton';
+import PaysafeCheckoutButton from '@/components/PaysafeCheckoutButton';
+import { useCurrency } from '@/lib/currency';
 
 interface Realistic3DFlipBookProps {
   product: Product;
@@ -27,6 +28,7 @@ export default function Realistic3DFlipBook({
   product,
   className = '',
 }: Realistic3DFlipBookProps) {
+  const { formatPrice } = useCurrency();
   // Page index: 0 = Closed Cover, 1 = Spread 1, 2 = Spread 2, 3 = Spread 3, 4 = Spread 4
   const [currentSpread, setCurrentSpread] = useState(0);
   const [soundEnabled, setSoundEnabled] = useState(true);
@@ -654,16 +656,15 @@ export default function Realistic3DFlipBook({
                   <div className="p-3 rounded-xl bg-amber-50/70 border border-stone-300" onClick={(e) => e.stopPropagation()}>
                     <div className="flex items-baseline justify-center gap-2 mb-1">
                       <span className="text-2xl font-serif font-black text-[#0A192F]">
-                        ${product.price.toFixed(2)}
+                        {formatPrice(product.price)}
                       </span>
-                      <span className="text-xs text-stone-500">USD</span>
                       {product.originalPrice && (
                         <span className="text-xs text-stone-400 line-through">
-                          ${product.originalPrice.toFixed(2)}
+                          {formatPrice(product.originalPrice)}
                         </span>
                       )}
                     </div>
-                    <GumroadButton
+                    <PaysafeCheckoutButton
                       product={product}
                       variant="primary"
                       size="sm"

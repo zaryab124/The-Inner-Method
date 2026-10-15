@@ -4,7 +4,8 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { Product } from '@/data/products';
 import { Eye, Sparkles, CheckCircle2 } from 'lucide-react';
-import GumroadButton from '@/components/GumroadButton';
+import PaysafeCheckoutButton from '@/components/PaysafeCheckoutButton';
+import { useCurrency } from '@/lib/currency';
 
 interface BookCard3DProps {
   product: Product;
@@ -17,6 +18,7 @@ export default function BookCard3D({
   onOpenReader,
   showActions = true,
 }: BookCard3DProps) {
+  const { formatPrice } = useCurrency();
   const [rotate, setRotate] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
 
@@ -215,7 +217,7 @@ export default function BookCard3D({
           </div>
           <div className="flex items-center gap-2">
             <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-            <span>Instant delivery worldwide via Gumroad</span>
+            <span>Instant delivery worldwide via Paysafe</span>
           </div>
         </div>
 
@@ -224,11 +226,11 @@ export default function BookCard3D({
           <div className="flex items-baseline justify-between mb-3">
             <div>
               <span className="text-2xl font-bold font-serif text-white">
-                ${product.price.toFixed(2)}
+                {formatPrice(product.price)}
               </span>
               {product.originalPrice && (
                 <span className="ml-2 text-sm text-obsidian-400 line-through">
-                  ${product.originalPrice.toFixed(2)}
+                  {formatPrice(product.originalPrice)}
                 </span>
               )}
             </div>
@@ -265,11 +267,12 @@ export default function BookCard3D({
                   Notify Me
                 </Link>
               ) : (
-                <GumroadButton
+                <PaysafeCheckoutButton
                   product={product}
                   variant="primary"
                   size="sm"
                   label="Purchase"
+                  onOpenReader={onOpenReader}
                 />
               )}
             </div>

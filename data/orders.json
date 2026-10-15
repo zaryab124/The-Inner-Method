@@ -1,0 +1,64 @@
+[
+  {
+    "id": "TIM-ORD-2026-6AC0CC",
+    "customer": {
+      "name": "Zaryab Khan",
+      "email": "zaryab@example.com",
+      "country": "Pakistan"
+    },
+    "items": [
+      {
+        "productId": "the-study-abroad-playbook",
+        "productTitle": "The Study Abroad Playbook",
+        "quantity": 1,
+        "unitPriceUsd": 19,
+        "pricePaid": 5282,
+        "currency": "PKR",
+        "pdfFileName": "Study_Abroad_Playbook_EBook.pdf"
+      }
+    ],
+    "totalAmount": 5282,
+    "currency": "PKR",
+    "paymentMethod": "paysafecard",
+    "paymentChannel": "paysafe",
+    "paymentStatus": "completed",
+    "paymentReference": "PSC-VOUCHER-0123-****-2345",
+    "downloadToken": "0c2506c5-9808-439f-a90f-98f7e0e88771",
+    "downloadCount": 1,
+    "maxDownloads": 50,
+    "createdAt": "2026-10-15T14:51:28.580Z",
+    "receiptNumber": "REC-2026-90349"
+  },
+  {
+    "id": "TIM-ORD-2026-VIP01",
+    "customer": {
+      "name": "Editorial Review Sample",
+      "email": "sample@theinnermethod.com",
+      "country": "United States"
+    },
+    "items": [
+      {
+        "productId": "the-huberman-blueprint",
+        "productTitle": "The Huberman Blueprint",
+        "quantity": 1,
+        "unitPriceUsd": 19,
+        "pricePaid": 19,
+        "currency": "USD",
+        "pdfFileName": "The_Huberman_Blueprint_EBook.pdf"
+      }
+    ],
+    "totalAmount": 19,
+    "currency": "USD",
+    "paymentMethod": "paysafe_card",
+    "paymentChannel": "paysafe",
+    "paymentStatus": "completed",
+    "paymentReference": "PAYSAFE-DEMO-994821",
+    "downloadToken": "sample-huberman-token-2026",
+    "downloadCount": 1,
+    "maxDownloads": 50,
+    "createdAt": "2026-10-13T14:47:22.328Z",
+    "receiptNumber": "REC-2026-88019",
+    "cardLast4": "4242",
+    "cardBrand": "Visa"
+  }
+]

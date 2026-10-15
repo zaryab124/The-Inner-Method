@@ -41,8 +41,8 @@ export interface Product {
   keyOutcomes: string[];
   targetAudience: string[];
   includedAssets: string[];
-  gumroadUrl: string; // Replace with your real Gumroad checkout link
-  gumroadProductId?: string;
+  paysafeProductId: string;
+  pdfFileName: string;
   chapters: BookChapter[];
   faqs: ProductFAQ[];
   metaDescription: string;
@@ -107,7 +107,8 @@ export const PRODUCTS: Product[] = [
       'The Left/Right Column Navy SEAL Mental Diagnostic Worksheet',
       'The Weekly 7-Day Performance & VO2 Max Exercise Template'
     ],
-    gumroadUrl: 'https://gumroad.com/l/the-huberman-blueprint',
+    paysafeProductId: 'TIM-PAYSAFE-HUBERMAN-2026',
+    pdfFileName: 'The_Huberman_Blueprint_EBook.pdf',
     chapters: [
       {
         number: '01',
@@ -210,7 +211,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         question: 'How do I receive my book after purchase?',
-        answer: 'Upon completing your secure checkout via Gumroad, you instantly receive access to download the full 54-page Master PDF (Letter Full-Bleed printable) and unlock private browser access to the interactive 3D flipbook.'
+        answer: 'Upon completing your secure payment via our private Paysafe channel (Cards, paysafecard, Skrill, or Apple/Google Pay), you instantly receive direct download access to the full 54-page Master PDF, an official VAT invoice, and encrypted lifetime digital access.'
       },
       {
         question: 'Are the protocols suitable for busy professionals and students?',
@@ -285,7 +286,8 @@ export const PRODUCTS: Product[] = [
       'The 5 Student Personas budget, country & risk mapping matrix',
       'The MATCH Job Search prompt templates for AI-assisted technical mock interviews'
     ],
-    gumroadUrl: 'https://gumroad.com/l/the-study-abroad-playbook',
+    paysafeProductId: 'TIM-PAYSAFE-ABROAD-2026',
+    pdfFileName: 'Study_Abroad_Playbook_EBook.pdf',
     chapters: [
       {
         number: '01',
@@ -406,7 +408,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         question: 'How do I receive my book after purchase?',
-        answer: 'Upon completing your secure checkout via Gumroad, you immediately receive access to download the high-resolution master PDF (Letter Full Bleed) and receive a private link to the interactive 3D browser flipbook edition.'
+        answer: 'Upon completing your secure payment via our private Paysafe channel (Cards, paysafecard, Skrill, or Apple/Google Pay), you immediately receive direct download access to the high-resolution master PDF and access to your customer portal.'
       },
       {
         question: 'Is this book only for students with high family budgets?',
@@ -472,7 +474,8 @@ export const PRODUCTS: Product[] = [
       'Automated Excel/Sheets University Comparison Calculator',
       'Alumni LinkedIn Outreach Scripts'
     ],
-    gumroadUrl: 'https://gumroad.com/l/the-5-removals-toolkit',
+    paysafeProductId: 'TIM-PAYSAFE-5REMOVALS-2026',
+    pdfFileName: 'Study_Abroad_Playbook_EBook.pdf',
     chapters: [
       {
         number: 'T1',
@@ -550,7 +553,8 @@ export const PRODUCTS: Product[] = [
       'The 5 Removals Diagnostic Excel & PDF Workbook',
       'All companion audio samples and prompt libraries'
     ],
-    gumroadUrl: 'https://gumroad.com/l/the-dual-masterclass-bundle',
+    paysafeProductId: 'TIM-PAYSAFE-BUNDLE-2026',
+    pdfFileName: 'The_Huberman_Blueprint_EBook.pdf',
     chapters: [
       {
         number: 'HB',

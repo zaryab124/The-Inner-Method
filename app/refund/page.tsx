@@ -46,12 +46,16 @@ export default function RefundPage() {
             </p>
             <ol className="list-decimal list-inside space-y-2 pl-2 text-xs sm:text-sm text-obsidian-300">
               <li>
-                <strong>Option A (Fastest):</strong> Open your Gumroad purchase receipt email and click the &ldquo;Request Refund&rdquo; or &ldquo;Manage Order&rdquo; link.
+                <strong>Option A (Fastest):</strong> Visit our{' '}
+                <Link href="/support" className="text-gold-400 hover:text-gold-300 underline font-semibold">
+                  Customer Support Portal
+                </Link>
+                , enter your purchase email or order ID, and select &ldquo;30-Day Money-Back Guarantee&rdquo;.
               </li>
               <li>
                 <strong>Option B:</strong> Send an email to{' '}
                 <span className="font-mono text-gold-300 font-medium">support@theinnermethod.com</span>{' '}
-                with the email address used during purchase.
+                with your order reference or purchase email address.
               </li>
             </ol>
           </section>

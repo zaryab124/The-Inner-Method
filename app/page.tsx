@@ -8,7 +8,8 @@ import Realistic3DFlipBook from '@/components/Realistic3DFlipBook';
 import BookCard3D from '@/components/BookCard3D';
 import BookReaderModal from '@/components/BookReaderModal';
 import EmailLeadForm from '@/components/EmailLeadForm';
-import GumroadButton from '@/components/GumroadButton';
+import PaysafeCheckoutButton from '@/components/PaysafeCheckoutButton';
+import { useCurrency } from '@/lib/currency';
 import {
   Sparkles,
   ArrowRight,
@@ -29,6 +30,7 @@ import {
 } from 'lucide-react';
 
 export default function HomePage() {
+  const { formatPrice } = useCurrency();
   const [selectedProduct, setSelectedProduct] = useState<Product>(PRODUCTS[0]);
   const [heroMode, setHeroMode] = useState<'flipbook' | 'webgl'>('flipbook');
   const [readerProduct, setReaderProduct] = useState<Product | null>(null);
@@ -241,7 +243,7 @@ export default function HomePage() {
                       {selectedProduct.title}
                     </span>
                     <span className="font-mono text-gold-400 font-bold text-sm">
-                      ${selectedProduct.price.toFixed(2)} USD
+                      {formatPrice(selectedProduct.price)}
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
@@ -253,11 +255,12 @@ export default function HomePage() {
                       <Download className="w-3.5 h-3.5" />
                       <span>Sample PDF</span>
                     </a>
-                    <GumroadButton
+                    <PaysafeCheckoutButton
                       product={selectedProduct}
                       variant="primary"
                       size="sm"
                       label={selectedProduct.slug === 'the-huberman-blueprint' ? 'Unlock Blueprint' : 'Unlock Playbook'}
+                      onOpenReader={handleOpenReader}
                     />
                   </div>
                 </div>
@@ -279,10 +282,10 @@ export default function HomePage() {
               </div>
               <div>
                 <h4 className="text-xs font-bold text-white uppercase tracking-wider">
-                  Secure Hosted Checkout
+                  Paysafe Secure Checkout
                 </h4>
                 <p className="text-[11px] text-obsidian-400">
-                  Global encrypted delivery via Gumroad
+                  Global 256-bit SSL encrypted payment channel
                 </p>
               </div>
             </div>

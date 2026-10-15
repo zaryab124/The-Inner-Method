@@ -6,7 +6,7 @@ import { HelpCircle, Mail } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'FAQ — The Study Abroad Playbook | Dr. Karan Gupta',
   description:
-    'Frequently asked questions regarding The Study Abroad Playbook, digital delivery, university audit toolkits, Gumroad checkout, and our 30-day guarantee.',
+    'Frequently asked questions regarding The Study Abroad Playbook, digital delivery, university audit toolkits, Paysafe checkout, and our 30-day guarantee.',
 };
 
 const FAQ_ITEMS = [
@@ -32,7 +32,7 @@ const FAQ_ITEMS = [
     questions: [
       {
         q: 'How do I receive my book after purchase?',
-        a: 'Immediately upon completing your checkout via Gumroad, you are directed to the download page and receive an email with your permanent file download link. You can download the master 29-page PDF immediately to any device.'
+        a: 'Immediately upon completing your payment via our secure Paysafe channel (Cards, paysafecard, Skrill, Apple/Google Pay), you are directed to the instant download screen and receive an email with your permanent file download link. You can also re-download anytime via our Order Vault at /support.'
       },
       {
         q: 'Can I read the playbook on my phone, iPad, or Kindle?',
@@ -49,11 +49,11 @@ const FAQ_ITEMS = [
     questions: [
       {
         q: 'Is my payment secure? Do you store my credit card data?',
-        a: 'All transactions are processed through Gumroad, a globally accredited digital payments infrastructure with PCI-DSS Level 1 compliance and 256-bit SSL encryption. We never handle, see, or store card numbers, CVVs, or banking credentials on our site.'
+        a: 'All transactions are processed through our private Paysafe payment channel, a globally accredited payments infrastructure with PCI-DSS Level 1 compliance and 256-bit TLS encryption. We never handle, see, or store card numbers, CVVs, or banking passwords on our servers.'
       },
       {
         q: 'What is your 30-day refund policy?',
-        a: 'We offer an unconditional 30-day money-back guarantee. If you study the frameworks and do not feel they provided immense clarity for your foreign education strategy, simply reply to your Gumroad receipt or email us for a full, prompt refund.'
+        a: 'We offer an unconditional 30-day money-back guarantee. If you study the frameworks and do not feel they provided immense clarity for your foreign education strategy, simply submit a request through our Support Portal or email support@theinnermethod.com for a full, prompt refund.'
       }
     ]
   }

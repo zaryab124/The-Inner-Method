@@ -4,6 +4,7 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import AnalyticsTracker from '@/components/AnalyticsTracker';
+import { CurrencyProvider } from '@/lib/currency';
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -94,10 +95,12 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen flex flex-col bg-obsidian-950 text-obsidian-100 font-sans selection:bg-gold-500 selection:text-obsidian-950">
-        <AnalyticsTracker />
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <CurrencyProvider>
+          <AnalyticsTracker />
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </CurrencyProvider>
       </body>
     </html>
   );

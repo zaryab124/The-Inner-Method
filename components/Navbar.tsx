@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { PRODUCTS } from '@/data/products';
+import { CurrencySelectorDropdown } from '@/lib/currency';
 import {
   Menu,
   X,
@@ -47,10 +48,11 @@ export default function Navbar() {
   };
 
   const navLinks = [
-    { label: 'Playbook & Editions', href: '/shop' },
-    { label: 'Free Diagnostic Guide', href: '/free-resources' },
-    { label: 'Admissions Journal', href: '/journal' },
-    { label: 'About Dr. Gupta', href: '/about' },
+    { label: 'Books & Editions', href: '/shop' },
+    { label: 'Free Field Guide', href: '/free-resources' },
+    { label: 'Masterclass Journal', href: '/journal' },
+    { label: 'Order Vault & Support', href: '/support' },
+    { label: 'About', href: '/about' },
     { label: 'FAQ', href: '/faq' },
   ];
 
@@ -76,7 +78,7 @@ export default function Navbar() {
               <span>30-Day Money-Back Guarantee</span>
             </span>
             <span className="text-white/20">|</span>
-            <span className="text-obsidian-300">USD $ Standard Rates</span>
+            <CurrencySelectorDropdown />
           </div>
         </div>
       </div>
@@ -294,6 +296,11 @@ export default function Navbar() {
                   Ivory
                 </button>
               </div>
+            </div>
+
+            <div className="flex items-center justify-between py-2 border-b border-white/10">
+              <span className="text-obsidian-400 font-mono text-xs">Currency:</span>
+              <CurrencySelectorDropdown />
             </div>
 
             {navLinks.map((link) => (

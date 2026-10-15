@@ -66,17 +66,31 @@ export default function HomePage() {
               {/* Badge */}
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-300 text-xs font-semibold tracking-wide shadow-glow-gold">
                 <Award className="w-3.5 h-3.5 text-gold-400" />
-                <span>Ivy League Admissions Masterclass · Dr. Karan Gupta</span>
+                <span>
+                  {selectedProduct.slug === 'the-huberman-blueprint'
+                    ? 'Stanford Neuroscience Masterclass · Dr. Andrew Huberman'
+                    : 'Ivy League Admissions Masterclass · Dr. Karan Gupta'}
+                </span>
               </div>
 
               {/* Main Headline */}
-              <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.12]">
-                How to win the global education game & avoid the <span className="text-[#E63946] gold-shimmer">1-Crore debt trap.</span>
-              </h1>
+              {selectedProduct.slug === 'the-huberman-blueprint' ? (
+                <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.12]">
+                  Train your brain for peak performance, resilience &{' '}
+                  <span className="text-[#E07A5F] gold-shimmer">deep rest.</span>
+                </h1>
+              ) : (
+                <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.12]">
+                  How to win the global education game & avoid the{' '}
+                  <span className="text-[#E63946] gold-shimmer">1-Crore debt trap.</span>
+                </h1>
+              )}
 
               {/* Subtitle */}
               <p className="text-base sm:text-lg text-obsidian-300 max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
-                Synthesized from 30 years of foreign admissions counseling and 100,000+ guided students across Harvard, Stanford, Oxford, and Cambridge into mathematical frameworks, visa reality checks, and high-ROI career algorithms.
+                {selectedProduct.slug === 'the-huberman-blueprint'
+                  ? 'Synthesized from Stanford professor Dr. Andrew Huberman’s viral masterclass with Raj Shamani into 54 pages of actionable neurochemical protocols, cortisol calibration, autonomic nervous system tools, and resilience frameworks.'
+                  : 'Synthesized from 30 years of foreign admissions counseling and 100,000+ guided students across Harvard, Stanford, Oxford, and Cambridge into mathematical frameworks, visa reality checks, and high-ROI career algorithms.'}
               </p>
 
               {/* Action Buttons */}
@@ -85,7 +99,11 @@ export default function HomePage() {
                   href="/shop"
                   className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-gradient-to-r from-gold-500 to-gold-600 text-obsidian-950 font-bold text-sm hover:brightness-110 transition-all flex items-center justify-center gap-2 shadow-glow-gold"
                 >
-                  <span>Explore The Playbook</span>
+                  <span>
+                    {selectedProduct.slug === 'the-huberman-blueprint'
+                      ? 'Explore The Blueprint'
+                      : 'Explore The Playbook'}
+                  </span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
 
@@ -111,10 +129,18 @@ export default function HomePage() {
                   </button>
                   <div className="text-left">
                     <span className="font-semibold text-white block">
-                      Masterclass Dialogue: Dr. Karan Gupta & Raj Shamani
+                      {selectedProduct.slug === 'the-huberman-blueprint'
+                        ? 'Masterclass Dialogue: Dr. Andrew Huberman & Raj Shamani'
+                        : 'Masterclass Dialogue: Dr. Karan Gupta & Raj Shamani'}
                     </span>
                     <span className="text-obsidian-400 text-[11px] font-mono">
-                      {isPlayingAudioSample ? 'Playing: "The Indian Scarcity Math & Dundee vs Bath"' : 'Click to hear Dr. Gupta on avoiding bad loans'}
+                      {isPlayingAudioSample
+                        ? selectedProduct.slug === 'the-huberman-blueprint'
+                          ? 'Playing: "The Cortisol Code & Why Off-Switch is Your Weapon"'
+                          : 'Playing: "The Indian Scarcity Math & Dundee vs Bath"'
+                        : selectedProduct.slug === 'the-huberman-blueprint'
+                        ? 'Click to hear Dr. Huberman on morning cortisol & turning off'
+                        : 'Click to hear Dr. Gupta on avoiding bad loans'}
                     </span>
                   </div>
                 </div>
@@ -125,11 +151,19 @@ export default function HomePage() {
               <div className="pt-2 border-t border-white/10 grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs text-obsidian-300">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>100,000+ Students Guided</span>
+                  <span>
+                    {selectedProduct.slug === 'the-huberman-blueprint'
+                      ? 'Stanford Lab Grounding'
+                      : '100,000+ Students Guided'}
+                  </span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Instant Master PDF</span>
+                  <span>
+                    {selectedProduct.slug === 'the-huberman-blueprint'
+                      ? '54-Page Master Edition'
+                      : 'Instant Master PDF'}
+                  </span>
                 </div>
                 <div className="flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
@@ -212,8 +246,8 @@ export default function HomePage() {
                   </div>
                   <div className="flex items-center gap-2">
                     <a
-                      href="/Study_Abroad_Playbook_EBook.pdf"
-                      download="The_Study_Abroad_Playbook_EBook.pdf"
+                      href={selectedProduct.pdfUrl || (selectedProduct.slug === 'the-huberman-blueprint' ? '/The_Huberman_Blueprint_EBook.pdf' : '/Study_Abroad_Playbook_EBook.pdf')}
+                      download={selectedProduct.slug === 'the-huberman-blueprint' ? 'The_Huberman_Blueprint_EBook.pdf' : 'The_Study_Abroad_Playbook_EBook.pdf'}
                       className="hidden sm:inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-obsidian-800 text-obsidian-300 hover:text-white border border-white/10 text-xs font-semibold"
                     >
                       <Download className="w-3.5 h-3.5" />
@@ -223,7 +257,7 @@ export default function HomePage() {
                       product={selectedProduct}
                       variant="primary"
                       size="sm"
-                      label="Unlock Playbook"
+                      label={selectedProduct.slug === 'the-huberman-blueprint' ? 'Unlock Blueprint' : 'Unlock Playbook'}
                     />
                   </div>
                 </div>
@@ -338,31 +372,31 @@ export default function HomePage() {
       </section>
 
       {/* ============================================================ */}
-      {/* 4. ADMISSIONS METHODOLOGY & OPERATIONAL FRAMEWORKS            */}
+      {/* 4. MASTERCLASS METHODOLOGY & OPERATIONAL FRAMEWORKS           */}
       {/* ============================================================ */}
       <section className="py-24 bg-obsidian-900 border-y border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5 space-y-5">
               <span className="text-xs font-mono uppercase tracking-[0.25em] text-gold-400 font-semibold">
-                Strategic Admissions Engine
+                Masterclass Operational Engines
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white leading-tight">
-                Why degrees alone never guarantee jobs.
+                Scientific protocols replacing superficial motivation.
               </h2>
               <p className="text-sm text-obsidian-300 leading-relaxed">
-                Aggregator agents sell students on glossy campus brochures and relaxed temporary visas. But without tier-1 academic pedigree, technical differentiation, and high-agency networking, hundreds of students end up stuck in low-wage survival loops.
+                Whether calibrating autonomic neurochemistry with Stanford professor Dr. Andrew Huberman or engineering foreign admissions ROI with Harvard alumnus Dr. Karan Gupta, our master editions replace empty advice with biological algorithms and verified career strategy.
               </p>
               <p className="text-sm text-obsidian-300 leading-relaxed">
-                Dr. Karan Gupta’s operational frameworks remove marketing illusions and engineer a calculated pathway to high-paying international employment or lucrative reverse-brain drain GCC leadership in India.
+                Learn how to train your brain for peak focus and deep restoration, while mastering the diagnostic filters to bypass student debt traps and secure global sovereignty.
               </p>
 
               <div className="pt-2">
                 <Link
-                  href="/about"
+                  href="/shop"
                   className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gold-400 hover:text-gold-300"
                 >
-                  <span>Learn about Dr. Gupta’s 30-year counseling track record</span>
+                  <span>Explore both complete masterclass editions</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
@@ -374,10 +408,10 @@ export default function HomePage() {
                   <Zap className="w-5 h-5" />
                 </div>
                 <h4 className="font-serif font-bold text-white text-lg">
-                  1. The 5 Removals Test
+                  1. The Cortisol Code
                 </h4>
                 <p className="text-xs text-obsidian-300 leading-relaxed">
-                  Strip away the brochure, the logo, other people’s opinions, parental expectations, and fantasy placements to verify if a degree justifies your family’s life savings.
+                  High morning cortisol via sunlight and delayed caffeine; low evening cortisol for restorative deep sleep, immune resilience, and doubled cognitive stamina.
                 </p>
               </div>
 
@@ -386,10 +420,10 @@ export default function HomePage() {
                   <Layers className="w-5 h-5" />
                 </div>
                 <h4 className="font-serif font-bold text-white text-lg">
-                  2. The 5 Student Personas
+                  2. The 5 Removals Test
                 </h4>
                 <p className="text-xs text-obsidian-300 leading-relaxed">
-                  Map your exact profile and budget: from Rahul (who should stay in India) to Ananya (US Ivy STEM), Zara (UK-to-US hybrid hack), and the 30+ Executive Pivot.
+                  Strip away the brochure, the logo, other people’s opinions, parental expectations, and fantasy placements to verify if a foreign university justifies your family’s life savings.
                 </p>
               </div>
 
@@ -398,10 +432,10 @@ export default function HomePage() {
                   <Globe className="w-5 h-5" />
                 </div>
                 <h4 className="font-serif font-bold text-white text-lg">
-                  3. India’s $100B GCC Goldmine
+                  3. Yoga Nidra & Proprioceptive Reset
                 </h4>
                 <p className="text-xs text-obsidian-300 leading-relaxed">
-                  Learn how 2,100+ Global Capability Centers in Bengaluru and Hyderabad hire returning international degree holders at ₹35L–₹75L+ with zero visa anxiety.
+                  10–30 min Non-Sleep Deep Rest (NSDR) to replenish striatal dopamine, plus the closed-eye proprioceptive movement trick to fall asleep in under 7 minutes.
                 </p>
               </div>
 
@@ -410,10 +444,10 @@ export default function HomePage() {
                   <ShieldCheck className="w-5 h-5" />
                 </div>
                 <h4 className="font-serif font-bold text-white text-lg">
-                  4. The MATCH Job Strategy
+                  4. The MATCH Job Strategy & GCCs
                 </h4>
                 <p className="text-xs text-obsidian-300 leading-relaxed">
-                  Map the market, assemble project evidence, target mid-tier ecosystems, combine AI with human networking, and hone mock interviews to bypass placement cells.
+                  Map the market, assemble evidence, combine AI with human networking, and unlock India’s $100B GCC goldmine paying ₹35L–₹75L+ with zero visa anxiety.
                 </p>
               </div>
             </div>

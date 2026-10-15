@@ -75,8 +75,15 @@ export default function BookReaderModal({
             {/* Page 0: Cover & Front Matter */}
             {currentPageIndex === 0 && (
               <div className="text-center py-6">
-                <span className="text-xs uppercase tracking-[0.3em] text-[#E63946] font-semibold">
-                  THE STUDY ABROAD PLAYBOOK
+                <span
+                  className="text-xs uppercase tracking-[0.3em] font-semibold"
+                  style={{
+                    color: product.slug === 'the-huberman-blueprint' ? '#E07A5F' : '#E63946',
+                  }}
+                >
+                  {product.slug === 'the-huberman-blueprint'
+                    ? 'THE HUBERMAN BLUEPRINT'
+                    : 'THE STUDY ABROAD PLAYBOOK'}
                 </span>
                 <div className="w-12 h-px bg-gold-400 mx-auto my-4" />
                 <h2 className="font-serif text-3xl sm:text-4xl font-bold text-charcoal-900 mt-2">
@@ -108,28 +115,56 @@ export default function BookReaderModal({
             {currentPageIndex === 1 && (
               <div className="space-y-5 text-charcoal-800 leading-relaxed text-sm sm:text-base">
                 <div className="border-b border-stone-200 pb-3">
-                  <span className="text-xs uppercase font-mono tracking-wider text-[#E63946] font-bold">
-                    Masterclass Dialogue · Dr. Karan Gupta & Raj Shamani
+                  <span
+                    className="text-xs uppercase font-mono tracking-wider font-bold"
+                    style={{
+                      color: product.slug === 'the-huberman-blueprint' ? '#E07A5F' : '#E63946',
+                    }}
+                  >
+                    {product.slug === 'the-huberman-blueprint'
+                      ? 'Masterclass Dialogue · Dr. Andrew Huberman & Raj Shamani'
+                      : 'Masterclass Dialogue · Dr. Karan Gupta & Raj Shamani'}
                   </span>
                   <h3 className="font-serif text-2xl font-bold text-charcoal-900 mt-1">
-                    On Scarcity Math, Visa Mirages & Real Education ROI
+                    {product.slug === 'the-huberman-blueprint'
+                      ? 'On Cortisol Timing, NSDR, Dynamic States & The Cost of Greatness'
+                      : 'On Scarcity Math, Visa Mirages & Real Education ROI'}
                   </h3>
                 </div>
 
                 <p className="first-letter:text-4xl first-letter:font-serif first-letter:font-bold first-letter:float-left first-letter:mr-2 first-letter:text-charcoal-900">
-                  Dr. Karan Gupta, an alumnus of Harvard Business School who has guided over 100,000 students across three decades of admissions counseling, begins with a truth that most education agents conceal: there is never a 100% guarantee of getting a job abroad unless you approach admissions with calculated precision.
+                  {product.slug === 'the-huberman-blueprint'
+                    ? 'Dr. Andrew Huberman, tenured professor of neurobiology and ophthalmology at Stanford University School of Medicine and host of the Huberman Lab podcast, begins with a truth that transforms how we understand human biology: high performance is not an accident of genetics—it is an engineered neurochemical cascade.'
+                    : 'Dr. Karan Gupta, an alumnus of Harvard Business School who has guided over 100,000 students across three decades of admissions counseling, begins with a truth that most education agents conceal: there is never a 100% guarantee of getting a job abroad unless you approach admissions with calculated precision.'}
                 </p>
 
                 <p>
-                  Every year, hundreds of thousands of Indian families pledge their life savings or mortgage ancestral homes with a singular vision. But degrees alone do not guarantee outcomes outside India where campus placement cells do not exist.
+                  {product.slug === 'the-huberman-blueprint'
+                    ? 'Anyone can push for a few hours. The person who wins over 5 to 10 years is the one who knows how to calibrate their off-switch, process emotional stress without burnout, and harness friction.'
+                    : 'Every year, hundreds of thousands of Indian families pledge their life savings or mortgage ancestral homes with a singular vision. But degrees alone do not guarantee outcomes outside India where campus placement cells do not exist.'}
                 </p>
 
-                <blockquote className="border-l-2 border-[#E63946] pl-4 py-1 italic font-serif text-charcoal-700 bg-red-50/60 rounded-r-md">
-                  &ldquo;If you are going to take a heavy loan, sell your mother’s jewelry, or mortgage your family home for an average degree at an unknown university—do not go abroad. We will find you something in India.&rdquo;
+                <blockquote
+                  className="border-l-2 pl-4 py-1 italic font-serif text-charcoal-700 bg-amber-50/60 rounded-r-md"
+                  style={{
+                    borderColor: product.slug === 'the-huberman-blueprint' ? '#E07A5F' : '#E63946',
+                  }}
+                >
+                  {product.slug === 'the-huberman-blueprint' ? (
+                    <>
+                      &ldquo;If I only had 5 minutes to talk to somebody, I would say: this is the best thing you can do for your health and performance. High morning cortisol, low nighttime cortisol.&rdquo;
+                    </>
+                  ) : (
+                    <>
+                      &ldquo;If you are going to take a heavy loan, sell your mother’s jewelry, or mortgage your family home for an average degree at an unknown university—do not go abroad. We will find you something in India.&rdquo;
+                    </>
+                  )}
                 </blockquote>
 
                 <p>
-                  This playbook synthesizes operational algorithms, profile evaluation architectures, and the MATCH framework to ensure your foreign education compounds for life.
+                  {product.slug === 'the-huberman-blueprint'
+                    ? 'This 54-page master blueprint distills protocols for morning light, autonomic nervous system down-regulation, non-sleep deep rest (Yoga Nidra), and the 10-Year Mastery Framework.'
+                    : 'This playbook synthesizes operational algorithms, profile evaluation architectures, and the MATCH framework to ensure your foreign education compounds for life.'}
                 </p>
               </div>
             )}

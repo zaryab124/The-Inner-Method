@@ -42,12 +42,21 @@ export default function ThreeBookCanvas({
     const ctx = canvas.getContext('2d');
     if (!ctx) return new THREE.CanvasTexture(canvas);
 
+    const isHuberman = product.slug === 'the-huberman-blueprint';
+
     // Background gradient: Deep Navy/Obsidian
     const gradient = ctx.createLinearGradient(0, 0, 1024, 1480);
-    gradient.addColorStop(0, '#050E1A');
-    gradient.addColorStop(0.35, '#0A192F');
-    gradient.addColorStop(0.7, '#172A45');
-    gradient.addColorStop(1, '#050E1A');
+    if (isHuberman) {
+      gradient.addColorStop(0, '#09121D');
+      gradient.addColorStop(0.35, '#112033');
+      gradient.addColorStop(0.7, '#1D3147');
+      gradient.addColorStop(1, '#0B1622');
+    } else {
+      gradient.addColorStop(0, '#050E1A');
+      gradient.addColorStop(0.35, '#0A192F');
+      gradient.addColorStop(0.7, '#172A45');
+      gradient.addColorStop(1, '#050E1A');
+    }
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, 1024, 1480);
 
@@ -62,10 +71,10 @@ export default function ThreeBookCanvas({
     }
 
     // Outer gold foil frame
-    ctx.strokeStyle = 'rgba(212, 175, 55, 0.55)';
+    ctx.strokeStyle = isHuberman ? 'rgba(212, 163, 115, 0.65)' : 'rgba(212, 175, 55, 0.55)';
     ctx.lineWidth = 3;
     ctx.strokeRect(50, 50, 924, 1380);
-    ctx.strokeStyle = 'rgba(212, 175, 55, 0.25)';
+    ctx.strokeStyle = isHuberman ? 'rgba(224, 122, 95, 0.35)' : 'rgba(212, 175, 55, 0.25)';
     ctx.lineWidth = 1;
     ctx.strokeRect(62, 62, 900, 1356);
 
@@ -74,7 +83,7 @@ export default function ThreeBookCanvas({
       ctx.save();
       ctx.translate(x, y);
       ctx.rotate(angle);
-      ctx.strokeStyle = 'rgba(212, 175, 55, 0.8)';
+      ctx.strokeStyle = isHuberman ? 'rgba(224, 122, 95, 0.8)' : 'rgba(212, 175, 55, 0.8)';
       ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.moveTo(0, 20);
@@ -91,39 +100,59 @@ export default function ThreeBookCanvas({
     if (isFront) {
       // Top Masterclass Pill
       ctx.fillStyle = 'rgba(10, 25, 47, 0.85)';
-      ctx.strokeStyle = 'rgba(212, 175, 55, 0.6)';
+      ctx.strokeStyle = isHuberman ? 'rgba(212, 163, 115, 0.6)' : 'rgba(212, 175, 55, 0.6)';
       ctx.lineWidth = 1.5;
       ctx.beginPath();
       ctx.roundRect(260, 150, 504, 48, 8);
       ctx.fill();
       ctx.stroke();
 
-      ctx.fillStyle = '#D4AF37';
+      ctx.fillStyle = isHuberman ? '#D4A373' : '#D4AF37';
       ctx.font = 'bold 18px -apple-system, sans-serif';
       ctx.textAlign = 'center';
       ctx.letterSpacing = '4px';
-      ctx.fillText('BASED ON THE IN-DEPTH MASTERCLASS', 512, 180);
+      ctx.fillText(
+        isHuberman ? 'BASED ON THE VIRAL INTERVIEW' : 'BASED ON THE IN-DEPTH MASTERCLASS',
+        512,
+        180
+      );
 
-      // Globe Emblem
+      // Emblem
       ctx.save();
       ctx.translate(512, 330);
-      const globeGlow = ctx.createRadialGradient(0, 0, 10, 0, 0, 80);
-      globeGlow.addColorStop(0, 'rgba(45, 212, 191, 0.35)');
-      globeGlow.addColorStop(0.7, 'rgba(14, 165, 233, 0.15)');
-      globeGlow.addColorStop(1, 'rgba(0, 0, 0, 0)');
-      ctx.fillStyle = globeGlow;
-      ctx.beginPath();
-      ctx.arc(0, 0, 80, 0, Math.PI * 2);
-      ctx.fill();
+      if (isHuberman) {
+        const brainGlow = ctx.createRadialGradient(0, 0, 10, 0, 0, 85);
+        brainGlow.addColorStop(0, 'rgba(224, 122, 95, 0.45)');
+        brainGlow.addColorStop(0.7, 'rgba(212, 163, 115, 0.15)');
+        brainGlow.addColorStop(1, 'rgba(0, 0, 0, 0)');
+        ctx.fillStyle = brainGlow;
+        ctx.beginPath();
+        ctx.arc(0, 0, 85, 0, Math.PI * 2);
+        ctx.fill();
 
-      const sphereGrad = ctx.createLinearGradient(-45, -45, 45, 45);
-      sphereGrad.addColorStop(0, '#38BDF8');
-      sphereGrad.addColorStop(0.5, '#0D9488');
-      sphereGrad.addColorStop(1, '#0369A1');
-      ctx.fillStyle = sphereGrad;
-      ctx.beginPath();
-      ctx.arc(0, 0, 52, 0, Math.PI * 2);
-      ctx.fill();
+        ctx.font = '72px -apple-system, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('🧠', 0, 0);
+      } else {
+        const globeGlow = ctx.createRadialGradient(0, 0, 10, 0, 0, 80);
+        globeGlow.addColorStop(0, 'rgba(45, 212, 191, 0.35)');
+        globeGlow.addColorStop(0.7, 'rgba(14, 165, 233, 0.15)');
+        globeGlow.addColorStop(1, 'rgba(0, 0, 0, 0)');
+        ctx.fillStyle = globeGlow;
+        ctx.beginPath();
+        ctx.arc(0, 0, 80, 0, Math.PI * 2);
+        ctx.fill();
+
+        const sphereGrad = ctx.createLinearGradient(-45, -45, 45, 45);
+        sphereGrad.addColorStop(0, '#38BDF8');
+        sphereGrad.addColorStop(0.5, '#0D9488');
+        sphereGrad.addColorStop(1, '#0369A1');
+        ctx.fillStyle = sphereGrad;
+        ctx.beginPath();
+        ctx.arc(0, 0, 52, 0, Math.PI * 2);
+        ctx.fill();
+      }
       ctx.restore();
 
       // Main Book Title
@@ -131,35 +160,50 @@ export default function ThreeBookCanvas({
       ctx.font = 'bold 64px "Playfair Display", Georgia, serif';
       ctx.textAlign = 'center';
       ctx.letterSpacing = '3px';
-      ctx.fillText('THE STUDY ABROAD', 512, 530);
+      ctx.fillText(isHuberman ? 'THE HUBERMAN' : 'THE STUDY ABROAD', 512, 530);
 
-      // Accent Word: PLAYBOOK
-      ctx.fillStyle = '#E63946';
+      // Accent Word
+      ctx.fillStyle = isHuberman ? '#E07A5F' : '#E63946';
       ctx.font = 'bold 84px "Playfair Display", Georgia, serif';
       ctx.letterSpacing = '5px';
-      ctx.fillText('PLAYBOOK', 512, 620);
+      ctx.fillText(isHuberman ? 'BLUEPRINT' : 'PLAYBOOK', 512, 620);
 
       // Gold divider line
-      ctx.fillStyle = '#D4AF37';
+      ctx.fillStyle = isHuberman ? '#D4A373' : '#D4AF37';
       ctx.fillRect(432, 665, 160, 4);
 
       // Subtitle
       ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
       ctx.font = '400 27px -apple-system, sans-serif';
       ctx.letterSpacing = '0.5px';
-      ctx.fillText('How to Win the Global Education Game,', 512, 730);
-      ctx.fillText('Secure High-Paying Careers & Avoid the 1-Crore Debt Trap', 512, 775);
+      if (isHuberman) {
+        ctx.fillText("A Neuroscientist's Complete System to Train Your Brain for", 512, 730);
+        ctx.fillText('Peak Performance, Unbreakable Resilience & Deep Rest', 512, 775);
+      } else {
+        ctx.fillText('How to Win the Global Education Game,', 512, 730);
+        ctx.fillText('Secure High-Paying Careers & Avoid the 1-Crore Debt Trap', 512, 775);
+      }
 
-      // Counselor Credentials Section
-      ctx.fillStyle = 'rgba(212, 175, 55, 0.95)';
+      // Credentials Section
+      ctx.fillStyle = isHuberman ? 'rgba(224, 122, 95, 0.95)' : 'rgba(212, 175, 55, 0.95)';
       ctx.font = 'bold 22px -apple-system, sans-serif';
       ctx.letterSpacing = '3px';
-      ctx.fillText('INSIGHTS FROM DR. KARAN GUPTA', 512, 1220);
+      ctx.fillText(
+        isHuberman ? 'INSIGHTS FROM DR. ANDREW HUBERMAN' : 'INSIGHTS FROM DR. KARAN GUPTA',
+        512,
+        1220
+      );
 
       ctx.fillStyle = 'rgba(255, 255, 255, 0.75)';
       ctx.font = '500 18px -apple-system, sans-serif';
       ctx.letterSpacing = '2px';
-      ctx.fillText('HARVARD BUSINESS SCHOOL ALUMNUS · COUNSELOR TO 100,000+ STUDENTS', 512, 1260);
+      ctx.fillText(
+        isHuberman
+          ? 'STANFORD NEUROSCIENTIST & HOST OF HUBERMAN LAB'
+          : 'HARVARD BUSINESS SCHOOL ALUMNUS · COUNSELOR TO 100,000+ STUDENTS',
+        512,
+        1260
+      );
 
       ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
       ctx.font = '16px -apple-system, sans-serif';
@@ -182,13 +226,17 @@ export default function ThreeBookCanvas({
       ctx.fillStyle = '#0A192F';
       ctx.font = 'bold 44px "Playfair Display", Georgia, serif';
       ctx.textAlign = 'center';
-      ctx.fillText('The Study Abroad Playbook', 512, 280);
+      ctx.fillText(isHuberman ? 'The Huberman Blueprint' : 'The Study Abroad Playbook', 512, 280);
 
-      ctx.fillStyle = '#E63946';
+      ctx.fillStyle = isHuberman ? '#E07A5F' : '#E63946';
       ctx.font = 'bold 24px -apple-system, sans-serif';
-      ctx.fillText('By Dr. Karan Gupta & Raj Shamani', 512, 340);
+      ctx.fillText(
+        isHuberman ? 'By Dr. Andrew Huberman & Raj Shamani' : 'By Dr. Karan Gupta & Raj Shamani',
+        512,
+        340
+      );
 
-      ctx.strokeStyle = '#D4AF37';
+      ctx.strokeStyle = isHuberman ? '#D4A373' : '#D4AF37';
       ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.moveTo(350, 390);
@@ -198,16 +246,31 @@ export default function ThreeBookCanvas({
       ctx.fillStyle = '#1E293B';
       ctx.font = '24px Georgia, serif';
       ctx.textAlign = 'center';
-      ctx.fillText('"If you take a heavy loan for an average degree abroad,', 512, 520);
-      ctx.fillText('do not go. We will find you something in India."', 512, 565);
+      if (isHuberman) {
+        ctx.fillText('"The person who can turn their mind off in the final hour', 512, 520);
+        ctx.fillText('will surpass the grinder within 5 to 10 years."', 512, 565);
+      } else {
+        ctx.fillText('"If you take a heavy loan for an average degree abroad,', 512, 520);
+        ctx.fillText('do not go. We will find you something in India."', 512, 565);
+      }
 
-      ctx.fillStyle = '#E63946';
+      ctx.fillStyle = isHuberman ? '#E07A5F' : '#E63946';
       ctx.font = 'bold 20px -apple-system, sans-serif';
-      ctx.fillText('— DR. KARAN GUPTA (HARVARD ALUMNUS)', 512, 620);
+      ctx.fillText(
+        isHuberman ? '— DR. ANDREW HUBERMAN (STANFORD)' : '— DR. KARAN GUPTA (HARVARD ALUMNUS)',
+        512,
+        620
+      );
 
       ctx.fillStyle = '#475569';
       ctx.font = '22px -apple-system, sans-serif';
-      ctx.fillText('Full 12-Chapter Master Edition · Instant PDF Access', 512, 750);
+      ctx.fillText(
+        isHuberman
+          ? 'Full 54-Page Master Edition · Instant PDF Access'
+          : 'Full 12-Chapter Master Edition · Instant PDF Access',
+        512,
+        750
+      );
     }
 
     const texture = new THREE.CanvasTexture(canvas);
@@ -223,7 +286,9 @@ export default function ThreeBookCanvas({
     const ctx = canvas.getContext('2d');
     if (!ctx) return new THREE.CanvasTexture(canvas);
 
-    ctx.fillStyle = '#050E1A';
+    const isHuberman = product.slug === 'the-huberman-blueprint';
+
+    ctx.fillStyle = isHuberman ? '#09121D' : '#050E1A';
     ctx.fillRect(0, 0, 160, 1480);
 
     // Spine shading
@@ -245,14 +310,14 @@ export default function ThreeBookCanvas({
     ctx.letterSpacing = '3px';
     ctx.fillText(product.title.toUpperCase(), 0, 10);
 
-    ctx.fillStyle = '#D4AF37';
+    ctx.fillStyle = isHuberman ? '#D4A373' : '#D4AF37';
     ctx.font = 'bold 20px -apple-system, sans-serif';
     ctx.letterSpacing = '4px';
-    ctx.fillText('DR. KARAN GUPTA', 0, 50);
+    ctx.fillText(isHuberman ? 'DR. ANDREW HUBERMAN' : 'DR. KARAN GUPTA', 0, 50);
     ctx.restore();
 
     // Top & bottom golden bands
-    ctx.fillStyle = '#D4AF37';
+    ctx.fillStyle = isHuberman ? '#D4A373' : '#D4AF37';
     ctx.fillRect(20, 50, 120, 6);
     ctx.fillRect(20, 1420, 120, 6);
 

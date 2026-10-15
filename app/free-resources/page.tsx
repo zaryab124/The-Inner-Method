@@ -5,9 +5,9 @@ import EmailLeadForm from '@/components/EmailLeadForm';
 import { Sparkles, ShieldCheck, FileCheck, Download } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Free Diagnostic: The 5 Removals Test & Foreign University Audit Guide',
+  title: 'Free Masterclass Field Guides — The Inner Method',
   description:
-    'Download our free operational field guide to audit prospective foreign colleges, detect diploma mills, and evaluate true employment ROI before spending a single rupee.',
+    'Download our free operational field guides: Dr. Andrew Huberman’s daily cortisol and sleep reset protocol, and Dr. Karan Gupta’s 5 Removals foreign university audit guide.',
 };
 
 export default function FreeResourcesPage() {
@@ -77,20 +77,28 @@ export default function FreeResourcesPage() {
               </div>
 
               {/* Instant direct download option */}
-              <div className="pt-2">
+              <div className="pt-2 flex flex-col sm:flex-row gap-3">
+                <a
+                  href="/The_Huberman_Blueprint_EBook.pdf"
+                  download="The_Huberman_Blueprint_EBook.pdf"
+                  className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-[#E07A5F] to-amber-600 hover:brightness-110 text-white font-bold text-xs transition-all shadow-md"
+                >
+                  <Download className="w-4 h-4" />
+                  <span>Download Huberman Blueprint (PDF)</span>
+                </a>
                 <a
                   href="/Study_Abroad_Playbook_EBook.pdf"
                   download="The_Study_Abroad_Playbook_EBook.pdf"
-                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-obsidian-800 hover:bg-obsidian-750 border border-gold-500/40 text-gold-300 font-semibold text-xs transition-all shadow-md"
+                  className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-obsidian-800 hover:bg-obsidian-750 border border-gold-500/40 text-gold-300 font-semibold text-xs transition-all shadow-md"
                 >
                   <Download className="w-4 h-4 text-gold-400" />
-                  <span>Direct Download (No Email Required)</span>
+                  <span>Download Study Abroad (PDF)</span>
                 </a>
               </div>
 
               <div className="pt-4 border-t border-white/10 text-xs text-obsidian-400 flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Zero cost. No credit card required. Pure strategic clarity.</span>
+                <span>Zero cost. No credit card required. Pure scientific clarity.</span>
               </div>
             </div>
           </div>

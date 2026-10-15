@@ -66,7 +66,7 @@ export default function Navbar() {
           <div className="flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-gold-400 animate-pulse" />
             <span className="font-mono text-gold-200">
-              ⚡ New Release: The Study Abroad Playbook by Dr. Karan Gupta is Live · Instant Master PDF Download
+              ⚡ New Flagship Release: The Huberman Blueprint (54-Page System) & The Study Abroad Playbook are Live · Instant PDF Access
             </span>
           </div>
 
@@ -100,14 +100,14 @@ export default function Navbar() {
             {/* Brand Logo & Editorial Crest */}
             <Link href="/" className="flex items-center gap-3 group">
               <div className="w-9 h-9 rounded-full bg-gradient-to-br from-gold-400 to-gold-600 text-obsidian-950 flex items-center justify-center font-serif text-base font-bold shadow-glow-gold transition-transform group-hover:scale-105">
-                🎓
+                ⚡
               </div>
               <div className="flex flex-col">
                 <span className="font-serif text-base sm:text-lg font-bold tracking-wider text-white group-hover:text-gold-300 transition-colors leading-tight">
-                  THE STUDY ABROAD PLAYBOOK
+                  THE INNER METHOD
                 </span>
                 <span className="text-[9px] uppercase tracking-[0.25em] text-gold-400/90 font-semibold font-mono">
-                  DR. KARAN GUPTA · MASTERCLASS
+                  MASTERCLASS PUBLISHING HOUSE
                 </span>
               </div>
             </Link>

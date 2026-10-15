@@ -26,7 +26,7 @@ export interface Product {
   pageCount: number;
   readTime: string;
   formats: string[];
-  category: 'Global Education' | 'Admissions & Strategy' | 'Master Bundles' | 'Career Frameworks';
+  category: 'Neuroscience & Performance' | 'Global Education' | 'Admissions & Strategy' | 'Master Bundles' | 'Career Frameworks';
   coverImage?: string;
   pdfUrl?: string;
   coverTheme: {
@@ -49,6 +49,184 @@ export interface Product {
 }
 
 export const PRODUCTS: Product[] = [
+  {
+    id: 'the-huberman-blueprint',
+    slug: 'the-huberman-blueprint',
+    title: 'The Huberman Blueprint',
+    subtitle: "A Neuroscientist's Complete System to Train Your Brain for Peak Performance, Unbreakable Resilience & Deep Rest",
+    tagline: 'Insights from Stanford neuroscientist Dr. Andrew Huberman & Raj Shamani based on their viral masterclass dialogue.',
+    price: 19.00,
+    originalPrice: 29.00,
+    currency: 'USD',
+    status: 'available',
+    badge: 'Official Masterclass Edition · Instant PDF Access',
+    rating: 4.99,
+    reviewsCount: 428,
+    pageCount: 54,
+    readTime: '3.5 hours',
+    formats: [
+      'High-Resolution Master PDF (Letter Full-Bleed 54 Pages)',
+      'Interactive 3D FlipBook Access with Audio Dynamics',
+      'The Daily Morning Stack & Evening Wind-Down Checklist',
+      'The Left vs. Right Column Navy SEAL Mental Diagnostic'
+    ],
+    category: 'Neuroscience & Performance',
+    coverImage: '/huberman_blueprint_cover.png',
+    pdfUrl: '/The_Huberman_Blueprint_EBook.pdf',
+    coverTheme: {
+      bgGradient: 'from-[#09121D] via-[#112033] to-[#1D3147]',
+      accentColor: '#E07A5F',
+      textColor: '#FFFFFF',
+      badgeBg: '#D4A373',
+      spineColor: '#09121D',
+    },
+    shortDescription: 'The definitive neurochemical, physiological, and psychological system distilled from Stanford professor Dr. Andrew Huberman’s masterclass with Raj Shamani.',
+    longDescription: [
+      'What separates individuals who crumble under high-pressure stakes from those who execute with surgical clarity? As Stanford neuroscientist Dr. Andrew Huberman explains, high performance is not an accident of genetics—it is an engineered neurochemical cascade.',
+      'Across 54 comprehensive pages, this master volume breaks down the biology of alertness, cortisol timing, proprioceptive sleep resets, non-sleep deep rest (NSDR), and the counterintuitive mechanics of choking under pressure.',
+      'Inside, you will master the 10-Year Mastery Framework, deploy the Navy SEAL Left/Right Column operational exercise, build resilience through deliberate cold water and "the slightly harder thing", discover why clutch states outperform flow states, and uncover the raw personal truth behind the cost of greatness.'
+    ],
+    keyOutcomes: [
+      'Calibrate your cortisol peak via morning sunlight and delayed caffeine to double daily focus and guarantee deep sleep.',
+      'Deploy the Navy SEAL Left vs. Right Column exercise to silence rumination and ruthlessly prioritize what you control.',
+      'Execute 10–30 minute Non-Sleep Deep Rest (Yoga Nidra) and proprioceptive eye-movement resets to fall asleep in under 7 minutes.',
+      'Navigate the 10-Year Mastery Framework: Years 1–3 Gas Pedal, Years 4–6 Dynamic Regulation, and Years 7–10 Pro Stage.',
+      'Stop choking under pressure by de-recruiting excess motor neurons and lowering artificial mental stakes.',
+      'Build unbreakable courage using "The Wall Method" in cold exposure and panoramic vision resets.',
+      'Harness clutch states over flow states to execute flawlessly during high-friction, unexpected life crises.'
+    ],
+    targetAudience: [
+      'Entrepreneurs, founders, and knowledge workers seeking sustained cognitive stamina and laser focus without burnout.',
+      'Students, researchers, and competitive professionals looking to eliminate brain fog, optimize sleep, and crush high-stakes deadlines.',
+      'Athletes and high-performers wanting scientific protocols for recovery, dopamine calibration, and clutch execution.',
+      'Anyone struggling with insomnia, afternoon fatigue, chronic anxiety, or emotional exhaustion.'
+    ],
+    includedAssets: [
+      'The Huberman Blueprint complete high-resolution 54-page Master Publication (PDF)',
+      'The Daily Morning Stack & Evening Wind-Down Checklist (PDF)',
+      'The Left/Right Column Navy SEAL Mental Diagnostic Worksheet',
+      'The Weekly 7-Day Performance & VO2 Max Exercise Template'
+    ],
+    gumroadUrl: 'https://gumroad.com/l/the-huberman-blueprint',
+    chapters: [
+      {
+        number: '01',
+        title: 'The Cortisol Code',
+        description: 'The single most important behavior for performance. High morning cortisol, low nighttime cortisol, light in eyes, hydration, and why cortisol is an energy-deploying hormone.',
+        sampleText: [
+          '"If I only had 5 minutes to talk to somebody, I would say: this is the best thing you can do for your health and well-being and performance. High morning cortisol, low nighttime cortisol."',
+          'Cortisol’s primary job is not to deal with stress. Its main function is to deploy glucose and lipids from areas in your body that give you energy. When you spike cortisol in the morning within 30-60 minutes of waking via bright sunlight, you set a biological countdown timer for deep sleep 14 to 16 hours later.'
+        ]
+      },
+      {
+        number: '02',
+        title: 'The Art of Turning Off',
+        description: 'Why your off switch is your greatest weapon. Navy SEAL Andy Stumpf’s Left vs. Right Column exercise, dynamic attractor states, and the weekly zero-cortisol reset day.',
+        sampleText: [
+          '"The person that can turn their mind off in the final hour of their day and get the better, deeper sleep — I’m going to put all my money on that person within 5 to 10 years, far surpassing the other."',
+          'Left Column: All the things that concern you (what people think, worries, algorithms). Right Column: All the things you actually control (hydration, sleep, workouts, focus). You have zero control over the left column. Stop feeding it.'
+        ]
+      },
+      {
+        number: '03',
+        title: 'Yoga Nidra & The Sleep Reset',
+        description: 'The no-pill protocol for deep restoration. How NSDR restores striatal dopamine, and the proprioceptive eye-movement trick that turns off body awareness.',
+        sampleText: [
+          '"No drug will do this, at least not in a healthy way. Any drug that takes you out of thinking and planning and just into pure sensation — that drug is going to rebound you into a rough place when you come out of it."',
+          'Proprioceptive Eye Movement Reset: Keep eyes closed. Move eyes left to right, counterclockwise, clockwise, and look toward the tip of the nose with a long exhale. This disrupts your proprioceptive circuits, enabling the brain to forget body position and plunge into deep sleep.'
+        ]
+      },
+      {
+        number: '04',
+        title: 'The 10-Year Mastery Framework',
+        description: 'Years 1–3 Gas Pedal, Years 4–6 Dynamic Regulation, and Years 7–10+ Pro Stage. Moving from brute volume to focused intensity and deliberate recovery.',
+        sampleText: [
+          'Years 1–3: All Gas Pedal. Work, learn, learn, learn. Just don’t die. Find your edge. Years 4–6: Dynamic Regulation. Work around your average capacity ±2 hours to prevent autoimmune crashes. Years 7–10+: The Pro Stage. Integrating mastery with playfulness and emotional sovereignty.'
+        ]
+      },
+      {
+        number: '05',
+        title: 'The Neuroscience of Choking',
+        description: 'Why we freeze when the stakes are highest. Over-recruiting motor neurons, psyching ourselves out with how great it could go, and the chop wood carry water fix.',
+        sampleText: [
+          '"People think they’re imagining how terrible it could go. But what causes us to choke is: so much is at stake. They’re psyching themselves out with how great it could be."',
+          'The antidote: Lower the stakes in your mind. Shorten the time horizon to 3 days. Chop wood, carry water.'
+        ]
+      },
+      {
+        number: '06',
+        title: 'Building Courage & Resilience',
+        description: 'The Wall Method in cold exposure, 3 daily mental games (10-breath morning meditation, max intensity sets, panoramic vision reset), and the slightly harder thing.',
+        sampleText: [
+          'The Wall Method: Don’t count down a timer in cold water. Sense when you hit the wall of wanting to exit. Stay just a bit longer. Ride the pulses of adrenaline. In real life, stress doesn’t come with a 3-minute timer.'
+        ]
+      },
+      {
+        number: '07',
+        title: 'Clutch States Over Flow States',
+        description: 'Why flow is only an expression of existing skills, while clutch states (forcing yourself at the edge of friction and effort) are where real neuroplasticity is forged.',
+        sampleText: [
+          '"Clutch states are the states of forcing oneself to do something at that edge of friction and effort. Most athletes, investors, high performers, business people live in this state 90% of their waking hours."',
+          'Flow has nothing to do with learning. Plasticity requires errors. The gap between desired performance and actual performance triggers the norepinephrine that rewires brain circuitry.'
+        ]
+      },
+      {
+        number: '08',
+        title: 'The Winner’s Mentality',
+        description: 'Transmuting hardship into generative action. The stark rules: no self-attack, no attacking others, the Last Resort Protocol, and the Depth-Height Law.',
+        sampleText: [
+          '"Losers take things that happened to them and turn those thoughts and emotions into things that harm themselves or others. Winners take the things that happen to them — good or bad — and they transmute that into actions that are supportive and generative for them and for others."'
+        ]
+      },
+      {
+        number: '09',
+        title: 'The Immigrant Edge & Identity',
+        description: 'Why mindset beats circumstance, the paradox of too much comfort, and the daily compass question: "Am I a consumer or a creator in this moment?"',
+        sampleText: [
+          'Spend some time being a creator every day, and you’re going to be okay. If you’re purely a consumer every day, you’ll end up spent. Better yet: become the producer of the thing you consume the most.'
+        ]
+      },
+      {
+        number: '10',
+        title: 'The Cost of Greatness',
+        description: 'Holding intense emotions and relentless ambition inside the same vessel. The three times Huberman felt powerless, academic orphaning, and making peace with mortality.',
+        sampleText: [
+          '"I experience emotions very intensely. And I’m also very ambitious. And I have a vision of the world that I want to help contribute to creating. Holding those two things inside can be challenging — sometimes downright agony. But I look forward to the day that someone says: I heard this conversation and I went for it."'
+        ]
+      },
+      {
+        number: 'A',
+        title: 'Appendix: The Complete Playbook',
+        description: 'Every protocol on one page: Morning Stack (0–60 min), Weekly Exercise Template, Evening Wind-Down, and Mental Performance Tools.',
+        sampleText: [
+          'Morning: 5–10 min sunlight, 16–32 oz hydration, delay caffeine 90 min. Evening: dim lights, 3–5 long exhales, cool room, eye movement proprioceptive reset.'
+        ]
+      }
+    ],
+    faqs: [
+      {
+        question: 'Who authored The Huberman Blueprint?',
+        answer: 'This publication distills the key principles, laboratory research, and operational protocols of Stanford neuroscientist Dr. Andrew Huberman (Host of the Huberman Lab Podcast) from his viral in-depth masterclass dialogue with Raj Shamani.'
+      },
+      {
+        question: 'How do I receive my book after purchase?',
+        answer: 'Upon completing your secure checkout via Gumroad, you instantly receive access to download the full 54-page Master PDF (Letter Full-Bleed printable) and unlock private browser access to the interactive 3D flipbook.'
+      },
+      {
+        question: 'Are the protocols suitable for busy professionals and students?',
+        answer: 'Yes. Most protocols require zero additional time—they optimize timing of things you already do (light exposure upon waking, hydration, caffeine timing, and sleep resets). Tools like NSDR take just 10 to 20 minutes.'
+      },
+      {
+        question: 'Does this book include supplements and dietary advice?',
+        answer: 'It covers behavioral fundamentals first (sunlight, sleep, temperature, breathing). It addresses supplement rules like why Ashwagandha should never be taken in the morning, and night-time wind-down compounds like magnesium threonate and apigenin.'
+      },
+      {
+        question: 'What if I am unhappy with the blueprint?',
+        answer: 'We provide an unconditional 30-day money-back guarantee. If you do not experience deeper rest, sharper daytime focus, and enhanced resilience, email us for a full 100% refund.'
+      }
+    ],
+    metaDescription: "The Huberman Blueprint by Dr. Andrew Huberman & Raj Shamani. A neuroscientist's complete system to train your brain for peak performance, unbreakable resilience, and deep rest."
+  },
   {
     id: 'the-study-abroad-playbook',
     slug: 'the-study-abroad-playbook',
@@ -98,7 +276,7 @@ export const PRODUCTS: Product[] = [
     targetAudience: [
       'Students planning undergraduate or master\'s studies in the US, UK, Canada, Europe, or Australia.',
       'Parents contemplating education loans, ancestral property mortgages, or significant family savings deployment.',
-      'Working professionals (30+) seeking a STEM-designated executive MBA pivot to \$200,000+ compensation.',
+      'Working professionals (30+) seeking a STEM-designated executive MBA pivot to $200,000+ compensation.',
       'Undergrads wanting to avoid the generic Indian IT/placement bottleneck and build global career leverage.'
     ],
     includedAssets: [
@@ -321,81 +499,82 @@ export const PRODUCTS: Product[] = [
     metaDescription: 'The 5 Removals & University Audit Toolkit by Dr. Karan Gupta. The ultimate diagnostic checklist before spending a single rupee on foreign education.'
   },
   {
-    id: 'global-career-masterclass-bundle',
-    slug: 'global-career-masterclass-bundle',
-    title: 'The Global Education & Career Master Bundle',
-    subtitle: 'The Study Abroad Playbook + 30+ Executive Pivot Guide + The $100B GCC Playbook',
-    tagline: 'The complete master suite for parents, undergraduates, and ambitious 30+ working professionals targeting global careers.',
-    price: 29.00,
-    originalPrice: 49.00,
+    id: 'the-complete-masterclass-bundle',
+    slug: 'the-complete-masterclass-bundle',
+    title: "The Dual Masterclass Collector's Edition: Mind & Global Career",
+    subtitle: 'The Huberman Blueprint (54 Pages) + The Study Abroad Playbook (29 Pages) + All Toolkits',
+    tagline: 'The complete master suite uniting peak brain performance, neurobiology, and elite global education strategy.',
+    price: 34.00,
+    originalPrice: 58.00,
     currency: 'USD',
     status: 'available',
-    badge: 'Best Value · Complete Suite (Save 40%)',
+    badge: 'Collector\'s Edition · Save 41%',
     rating: 5.0,
-    reviewsCount: 512,
-    pageCount: 65,
-    readTime: '4.5 hours',
+    reviewsCount: 592,
+    pageCount: 97,
+    readTime: '6.5 hours',
     formats: [
-      'The Complete Study Abroad Playbook (High-Res PDF)',
-      'The 5 Removals Diagnostic Workbook',
-      'The 30+ Executive Pivot Strategy Guide',
+      'The Huberman Blueprint 54-Page Master Edition (PDF)',
+      'The Study Abroad Playbook 29-Page Master Edition (PDF)',
+      'The 5 Removals Diagnostic Excel & PDF Workbook',
+      'The Navy SEAL Left/Right Column Protocol Sheet',
       'The MATCH Job Search Prompt Repository for AI'
     ],
     category: 'Master Bundles',
-    coverImage: '/study_abroad_cover.png',
-    pdfUrl: '/Study_Abroad_Playbook_EBook.pdf',
+    coverImage: '/huberman_blueprint_cover.png',
+    pdfUrl: '/The_Huberman_Blueprint_EBook.pdf',
     coverTheme: {
-      bgGradient: 'from-[#172A45] via-[#0A192F] to-[#050E1A]',
+      bgGradient: 'from-[#09121D] via-[#112033] to-[#172A45]',
       accentColor: '#10B981',
       textColor: '#FAF7F2',
       badgeBg: '#D4AF37',
-      spineColor: '#050E1A',
+      spineColor: '#09121D',
     },
-    shortDescription: 'The all-in-one strategic bundle containing every publication, audit tool, and operational career framework from Dr. Karan Gupta’s masterclass series.',
+    shortDescription: 'The ultimate dual masterclass library containing both flagship publications, interactive 3D browser editions, and all operational diagnostic worksheets.',
     longDescription: [
-      'The ultimate package for those who leave nothing to chance. You receive The Study Abroad Playbook, the full 5 Removals Toolkit, and the specialized guides covering executive STEM MBAs and high-growth Global Capability Centers in India.',
-      'Empowers you or your child to enter the global education arena with unfair clarity, bulletproof financial planning, and a direct pipeline to high-paying international employment.'
+      'The definitive collection for ambitious high-performers. You receive both full masterclass publications: Dr. Andrew Huberman’s complete system to train your brain for alertness and recovery, alongside Dr. Karan Gupta’s 30-year playbook to win international admissions and avoid the 1-Crore debt trap.',
+      'Unlocks maximum mental performance, sleep restoration, and strategic career leverage in one unified package.'
     ],
     keyOutcomes: [
-      'Complete mastery of foreign university evaluation, scholarship acquisition, and visa cycles.',
-      'Executive roadmap for professionals 30+ targeting \$200,000+ career transitions.',
-      'Step-by-step reverse brain-drain playbook to secure ₹35L-₹75L+ compensation packages in Indian GCCs.'
+      'Complete mastery of neurochemical energy systems, cortisol rhythms, and non-sleep deep rest.',
+      'Full command of international university selection, scholarship funding, and visa corrections.',
+      'Dual access to both interactive 3D FlipBooks and printable high-resolution PDF editions.'
     ],
     targetAudience: [
-      'Families planning a comprehensive multi-year study abroad journey.',
-      'Experienced professionals seeking accelerated global career mobility.'
+      'Ambitious professionals, founders, and students who demand both biological excellence and high-ROI career strategy.',
+      'Readers seeking the absolute complete library at the best possible price point.'
     ],
     includedAssets: [
-      'All 3 Digital Master Publications (PDF + Web 3D FlipBook)',
+      'The Huberman Blueprint (54-Page Full Master PDF)',
+      'The Study Abroad Playbook (29-Page Full Master PDF)',
       'The 5 Removals Diagnostic Excel & PDF Workbook',
-      'AI Job Acquisition MATCH Prompt Pack',
-      'Exclusive Access to Future Edition Revisions'
+      'All companion audio samples and prompt libraries'
     ],
-    gumroadUrl: 'https://gumroad.com/l/the-global-education-master-bundle',
+    gumroadUrl: 'https://gumroad.com/l/the-dual-masterclass-bundle',
     chapters: [
       {
-        number: 'B1',
+        number: 'HB',
+        title: 'The Huberman Blueprint (Full 10 Chapters + Appendix)',
+        description: 'Neuroscience of cortisol, NSDR, dynamic regulation, courage, and clutch states.'
+      },
+      {
+        number: 'SA',
         title: 'The Study Abroad Playbook (Full 12 Chapters)',
-        description: 'The foundational masterclass synthesis.'
+        description: 'Scarcity math, 5 Removals Test, 5 Personas, and the MATCH framework.'
       },
       {
-        number: 'B2',
-        title: 'The 30+ Executive Pivot Playbook',
-        description: 'STEM MBAs, regional top schools, and debt amortization realities.'
-      },
-      {
-        number: 'B3',
-        title: 'The MATCH Framework & GCC Playbook',
-        description: 'Cracking global jobs and dominating Fortune 500 GCC leadership.'
+        number: 'TK',
+        title: 'The 5 Removals Diagnostic Workbook & Toolkits',
+        description: 'Fillable university audit templates and alumni outreach scripts.'
       }
     ],
     faqs: [
       {
-        question: 'Does the bundle include everything?',
-        answer: 'Yes! Purchasing the Master Bundle unlocks the complete 29-page Master Playbook, the 5 Removals Audit Toolkit, and all supplementary career frameworks.'
+        question: 'Does the bundle include both books?',
+        answer: 'Yes! The Collector’s Edition includes instant access to both complete masterclass editions: The Huberman Blueprint (54 pages) and The Study Abroad Playbook (29 pages), plus all companion worksheets.'
       }
     ],
-    metaDescription: 'The Global Education & Career Master Bundle by Dr. Karan Gupta. Complete publications, audit tools, and job frameworks.'
+    metaDescription: "The Dual Masterclass Collector's Edition: The Huberman Blueprint and The Study Abroad Playbook. Train your brain and win the global career game."
   }
 ];
 
@@ -408,13 +587,13 @@ export function getAllProducts(): Product[] {
 }
 
 export const FREE_RESOURCE = {
-  title: 'The 5 Removals Test & Foreign University Audit Diagnostic',
-  subtitle: 'A complimentary operational field guide to audit prospective foreign colleges, detect diploma mills, and evaluate true employment outcomes before spending a single rupee.',
-  pdfDownloadUrl: '/Study_Abroad_Playbook_EBook.pdf',
+  title: 'The Huberman Cortisol & Recovery Protocol + 5 Removals Field Guide',
+  subtitle: 'A complimentary masterclass field guide featuring Stanford neuroscientist Dr. Andrew Huberman’s daily cortisol stack alongside Dr. Karan Gupta’s 5 Removals university diagnostic.',
+  pdfDownloadUrl: '/The_Huberman_Blueprint_EBook.pdf',
   bullets: [
-    'The 5 Removals Diagnostic: How to strip away glossy brochures, promotional videos, and brand prestige to evaluate raw curriculum authority.',
-    'The 4-Point Audited Outcome Verification: How to audit verified 90-day employment percentages and median base compensation versus bonuses.',
-    'The 5 Student Personas Mapping: Practical roadmap determining whether you belong in the US, UK, Europe, or should target Indian institutions.',
-    'Non-Traditional Funding Vehicles: How to secure 100% free tuition through Graduate Assistantships (TA/RA) and need-based Ivy League grants.'
+    'The Cortisol Timing Code: How morning sunlight (5–10 min) and delayed caffeine double daytime alertness and guarantee deep nighttime sleep.',
+    'The Proprioceptive Sleep Reset: The closed-eye movement protocol to shut down body awareness and drop into sleep within 7 minutes.',
+    'The 5 Removals Diagnostic: How to strip away glossy college brochures, promotional videos, and brand prestige to evaluate raw curriculum authority.',
+    'The 4-Point Audited Outcome Verification: How to audit verified 90-day employment percentages and median base compensation versus bonuses.'
   ]
 };

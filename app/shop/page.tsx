@@ -11,7 +11,13 @@ export default function ShopPage() {
   const [readerProduct, setReaderProduct] = useState<Product | null>(null);
   const [isReaderOpen, setIsReaderOpen] = useState(false);
 
-  const categories = ['All', 'Global Education', 'Admissions & Strategy', 'Master Bundles'];
+  const categories = [
+    'All',
+    'Neuroscience & Performance',
+    'Global Education',
+    'Admissions & Strategy',
+    'Master Bundles',
+  ];
 
   const filteredProducts =
     activeCategory === 'All'
@@ -40,10 +46,10 @@ export default function ShopPage() {
             <span>Masterclass Publications Suite</span>
           </div>
           <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white tracking-tight">
-            The Study Abroad Playbook & Strategic Toolkits
+            The Inner Method Publications & Toolkits
           </h1>
           <p className="text-base text-obsidian-300 leading-relaxed">
-            Instant digital access to Dr. Karan Gupta’s operational frameworks, university evaluation checklists, and high-ROI career algorithms. Delivered in high-resolution printable PDF and interactive 3D browser editions.
+            Instant digital access to original masterclass editions by Stanford neuroscientist Dr. Andrew Huberman and Harvard alumnus Dr. Karan Gupta. Delivered in high-resolution printable PDF and interactive 3D browser editions.
           </p>
         </div>
 

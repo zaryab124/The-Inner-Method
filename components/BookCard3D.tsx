@@ -93,8 +93,12 @@ export default function BookCard3D({
             }}
           >
             <div className="w-full h-full flex flex-col justify-between py-4 items-center book-spine-gradient">
-              <span className="text-[9px] uppercase tracking-widest text-gold-300/80 font-semibold rotate-90">
-                DR. GUPTA
+              <span className="text-[9px] uppercase tracking-widest text-gold-300/80 font-semibold rotate-90 whitespace-nowrap">
+                {product.slug === 'the-huberman-blueprint'
+                  ? 'DR. HUBERMAN'
+                  : product.slug === 'the-study-abroad-playbook'
+                  ? 'DR. GUPTA'
+                  : 'THE INNER METHOD'}
               </span>
               <span className="text-[10px] font-serif font-bold text-white tracking-wider rotate-90 whitespace-nowrap">
                 {product.title}
